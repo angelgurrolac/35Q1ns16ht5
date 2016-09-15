@@ -1,0 +1,189 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+@font-face {
+    font-family: "SFUIDisplay-Bold";
+    src: url(../SF-UI/SF-UI-Display/SF-UI-Display-Bold.otf) format("opentype");
+}
+@font-face {
+    font-family: "SFUIDisplay-Thin";
+    src: url(../SF-UI/SF-UI-Display/SF-UI-Display-Thin.otf) format("opentype");
+}
+@font-face {
+    font-family: "SFUIDisplay-Regular";
+    src: url(../SF-UI/SF-UI-Display/SF-UI-Display-Regular.otf) format("opentype");
+}
+@font-face {
+    font-family: "SFUIDisplay-Light";
+    src: url(../SF-UI/SF-UI-Display/SF-UI-Display-Light.otf) format("opentype");
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    width:100%;
+}
+
+h1 {
+    font-family: "SFUIDisplay-Bold";
+    font-size:35px;
+    line-height: 41px;
+    color: #000000;
+}
+
+h2{
+    font-family: "SFUIDisplay-Regular";
+    font-size:24px;
+    line-height: 29px;
+    color: #000000;
+}
+
+h3{
+    font-family: "SFUIDisplay-Thin";
+    font-size:24px;
+    line-height: 29px;
+    color: #000000;
+}
+
+/*Widgets*/
+
+.widgets {
+    border: 1px ;
+    position: relative;
+}
+
+.drag {
+      border: 1px solid #d9d9d9;
+      position: absolute;
+      height: 150px;
+}
+
+.title-widget {
+    font-family: "SFUIDisplay-Thin";
+    font-size:20px;
+    line-height: 24px;
+    color: #F59292;
+}
+
+/*Dropdowns widgets*/
+
+a{
+font-family: "SFUIDisplay-Bold";
+color: #462255;
+background: #C2C0C2;
+font-size: 14px;
+text-decoration: none;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 44px;
+}
+
+a:focus, a:hover {
+    color: #EB7777;
+    text-decoration: underline;
+}
+
+.nav>li>a:focus{
+color: #F59292;
+background: #ffffff;
+text-decoration: none;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #EB7777;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color: #eee;
+    border-color: transparent;
+}
+
+/*Footer*/
+
+.footer{
+  font-family:"SFUIDisplay-Light";
+  color:   #ffffff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: right;
+  background-color: rgba(49, 59, 114, 0.8);
+}
+
+
+/* Mobile */
+@media only screen and (min-width: 375px) {
+
+.col-m-1{width:50px; padding: 12px;}
+.col-m-2{width:112px; padding: 12px;}
+.col-m-3{width:174px; padding: 12px;}
+.col-m-4{width:236px; padding: 12px;}
+.col-m-5{width:298px; padding: 12px;}
+.col-m-6{width:360px; padding: 12px;}
+}
+
+/* Tablet Portrait */
+@media only screen and (min-width: 768px) {
+
+.col-t-1{width:59px; padding: 5px;}
+.col-t-2{width:123px; padding: 5px;}
+.col-t-3{width:187px; padding: 5px;}
+.col-t-4{width:251px; padding: 5px;}
+.col-t-5{width:315px; padding: 5px;}
+.col-t-6{width:379px; padding: 5px;}
+.col-t-7{width:443px; padding: 5px;}
+.col-t-8{width:507px; padding: 5px;}
+.col-t-9{width:571px; padding: 5px;}
+.col-t-10{width:635px; padding: 5px;}
+.col-t-11{width:699px; padding: 5px;}
+.col-t-12{width:763px; padding: 5px;}
+}
+
+/* Desktop/Tablet */
+@media only screen and (min-width: 1024px) {
+
+.col-d-1{width:70px; padding: 15px;}
+.col-d-2{width:155px; padding: 15px;}
+.col-d-3{width:240px; padding: 15px;}
+.col-d-4{width:325px; padding: 15px;}
+.col-d-5{width:410px; padding: 15px;}
+.col-d-6{width:495px; padding: 15px;}
+.col-d-7{width:580px; padding: 15px;}
+.col-d-8{width:665px; padding: 15px;}
+.col-d-9{width:750px; padding: 15px;}
+.col-d-10{width:835px; padding: 15px;}
+.col-d-11{width:920px; padding: 15px;}
+.col-d-12{width:1005px; padding: 15px;}  
+
+}
+
