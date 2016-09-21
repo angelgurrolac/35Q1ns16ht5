@@ -44,7 +44,6 @@ body {
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
     width:100%;
 }
 
@@ -68,6 +67,83 @@ h3{
     line-height: 29px;
     color: #000000;
 }
+
+/*Log In*/
+
+.text-login{
+  font-size: 14px;
+  background: none;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.data-login{
+  text-align: center;
+  padding: 0px;
+}
+
+.button-login{
+  padding-top: 0px;
+  text-align: center;
+}
+
+.forgot-password{
+  text-align: center;
+  bottom: 5%;
+  position: fixed;
+}
+
+.forgot-password>a{
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: none;
+  color: #ffffff;
+}
+
+.forgot-password>a:focus, .forgot-password>a:hover {
+    color: #ffffff;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+input{
+  background: none;
+  color: #ffffff;
+  font-family: "SFUIDisplay-Bold";
+  font-size: 20px;
+  text-align: center;
+}
+
+input[type="text"], input[type="password"] {
+  padding-bottom: 15px;
+  border: none;
+  border-bottom: solid 2px #ffffff;
+}
+
+::-webkit-input-placeholder {
+    color: #fff;
+}
+
+input[type="button"] {
+  background: #ffffff;
+  border: 0;
+  color: #E06060;
+  box-shadow: rgb(224, 96, 96) 0px 6px 23px;
+  border-radius: 57px;
+  height: 50px;
+  width: 35%;
+}
+
+input[type="text"]:focus,
+input[type="text"].focus,
+input[type="password"]:focus,
+input[type="password"].focus,
+input[type="button"]:focus,
+input[type="button"].focus {
+  outline: none;
+}
+
 /*Lateral menu*/
 #menu_smartphone {
   height:100%;  
@@ -79,31 +155,6 @@ h3{
   width:1920px;
   z-index:9999;
 } 
-
-@media (max-width: 1200px) {
-    #menu_smartphone {
-        left:-1200px;
-        width:1200px;    
-    }
-}
-@media (max-width: 1024px) {
-    #menu_smartphone {
-        left:-1024px;
-        width:1024px;    
-    }
-}
-@media (max-width: 768px) {
-    #menu_smartphone {
-        left:-768px;
-        width:768px;    
-    }
-}
-@media (max-width: 375px) {
-    #menu_smartphone {
-        left:-375px;
-        width:375px;    
-    }
-}
 
 .top{
   background-color:#e51c23;
@@ -140,26 +191,25 @@ h3{
 }
 
 .complete {
-  background-color: #ffffff;
+      background-color: #ffffff;
       border: 1px solid #d9d9d9;
       position: absolute;
       height: 160px; /*por lo pronto*/
 }
 
 .vertical {
-  background-color: #ffffff;
+      background-color: #ffffff;
       border: 1px solid #d9d9d9;
       position: absolute;
       height: 160px; /*por lo pronto*/
 }
 
 .horizontal {
-  background-color: #ffffff;
+      background-color: #ffffff;
       border: 1px solid #d9d9d9;
       position: absolute;
       height: 200px; /*por lo pronto*/
 }
-
 
 .title-widget {
     font-family: "SFUIDisplay-Thin";
@@ -169,37 +219,37 @@ h3{
     margin-top: 0px;
 }
 
-/*Graphs-Information*/
+/*Graphs-Information positions*/
 
 .left{
-  border-right: 1px solid #EB7777;
-  width:174px;
-  position: absolute;
+    border-right: 1px solid #EB7777;
+    width:50%;
+    position: absolute;
+    left: 0;
 }
 .right{
-  border-left: 1px solid #d9d9d9;
-  width:174px;
-  position: absolute;
-  right: 0;
+    border-left: 1px solid #d9d9d9;
+    width:50%;
+    position: absolute;
+    right: 0;
 }
 .up{
-  height: 76px;
-  border-bottom: 1px solid #d9d9d9;
+    height: 66px;
+    border-bottom: 1px solid #d9d9d9;
 }
 .bottom{
-   height: 76px;
-  border-bottom: 1px solid #d9d9d9;
+    height: 66px;
+    border-bottom: 1px solid #d9d9d9;
 }
-
 
 /*Dropdowns widgets*/
 
 a{
-font-family: "SFUIDisplay-Bold";
-color: #462255;
-background-color: #C2C0C2;
-font-size: 14px;
-text-decoration: none;
+    font-family: "SFUIDisplay-Bold";
+    color: #462255;
+    background-color: #C2C0C2;
+    font-size: 14px;
+    text-decoration: none;
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
     color: #F59292;
@@ -217,8 +267,92 @@ a:focus, a:hover {
 .nav>li>a {
     position: relative;
     display: block;
-    padding: 10px 44px;
+  
 }
+
+/*Widgets Selection*/
+
+.collection-type{
+    color: #462255;
+    font-size: 20px;
+    background: #F7F0F0;
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.select-widget{
+  height: 45px;
+}
+
+.widget-name{
+  left: 0;
+  float: left;
+}
+
+.button-switch{
+  right: 0;
+  float: right;
+}
+
+.switch input {display:none;}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.slider {
+  border-radius: 34px;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #F7F0F0 ;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #313B72;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.buy-widget {
+    font-family: "SFUIDisplay-Light";
+    background-color: transparent;
+    color: #3A8686;
+    border-radius: 10px;
+    border: 1px solid #3A8686;
+    right: 0;
+    padding: 0px 10px;
+    text-align: center;
+    font-size: 14px;
+    outline: none;
+}
+
 /*Footer*/
 
 .footer{
@@ -227,53 +361,93 @@ a:focus, a:hover {
   position: fixed;
   bottom: 0;
   width: 100%;
+  height: 20px;
+  padding-right: 25px;
   text-align: right;
   background-color: rgba(49, 59, 114, 0.8);
 }
 
+/*Media queries*/
 
 /* Mobile */
+
+[class*="col-"] {
+    width: 100%;
+    padding-top: 12px;
+}
 @media only screen and (min-width: 375px) {
 
-.col-m-1{width:50px; padding: 12px;}
-.col-m-2{width:112px; padding: 12px;}
-.col-m-3{width:174px; padding: 12px;}
-.col-m-4{width:236px; padding: 12px;}
-.col-m-5{width:298px; padding: 12px;}
-.col-m-6{width:360px; padding: 12px;}
+.col-sm-1{width:50px; padding: 12px;}
+.col-sm-2{width:112px; padding: 12px;}
+.col-sm-3{width:174px; padding: 12px;}
+.col-sm-4{width:236px; padding: 12px;}
+.col-sm-5{width:298px; padding: 12px;}
+.col-sm-6{width:360px; padding: 12px;}
 }
 
 /* Tablet Portrait */
 @media only screen and (min-width: 768px) {
 
-.col-t-1{width:59px; padding: 5px;}
-.col-t-2{width:123px; padding: 5px;}
-.col-t-3{width:187px; padding: 5px;}
-.col-t-4{width:251px; padding: 5px;}
-.col-t-5{width:315px; padding: 5px;}
-.col-t-6{width:379px; padding: 5px;}
-.col-t-7{width:443px; padding: 5px;}
-.col-t-8{width:507px; padding: 5px;}
-.col-t-9{width:571px; padding: 5px;}
-.col-t-10{width:635px; padding: 5px;}
-.col-t-11{width:699px; padding: 5px;}
-.col-t-12{width:763px; padding: 5px;}
+.col-md-1{width:59px; padding: 5px;}
+.col-md-2{width:123px; padding: 5px;}
+.col-md-3{width:187px; padding: 5px;}
+.col-md-4{width:251px; padding: 5px;}
+.col-md-5{width:315px; padding: 5px;}
+.col-md-6{width:379px; padding: 5px;}
+.col-md-7{width:443px; padding: 5px;}
+.col-md-8{width:507px; padding: 5px;}
+.col-md-9{width:571px; padding: 5px;}
+.col-md-10{width:635px; padding: 5px;}
+.col-md-11{width:699px; padding: 5px;}
+.col-md-12{width:763px; padding: 5px;}
 }
 
 /* Desktop/Tablet */
 @media only screen and (min-width: 1024px) {
 
-.col-d-1{width:70px; padding: 15px;}
-.col-d-2{width:155px; padding: 15px;}
-.col-d-3{width:240px; padding: 15px;}
-.col-d-4{width:325px; padding: 15px;}
-.col-d-5{width:410px; padding: 15px;}
-.col-d-6{width:495px; padding: 15px;}
-.col-d-7{width:580px; padding: 15px;}
-.col-d-8{width:665px; padding: 15px;}
-.col-d-9{width:750px; padding: 15px;}
-.col-d-10{width:835px; padding: 15px;}
-.col-d-11{width:920px; padding: 15px;}
-.col-d-12{width:1005px; padding: 15px;}  
+.col-lg-1{width:70px; padding: 15px;}
+.col-lg-2{width:155px; padding: 15px;}
+.col-lg-3{width:240px; padding: 15px;}
+.col-lg-4{width:325px; padding: 15px;}
+.col-lg-5{width:410px; padding: 15px;}
+.col-lg-6{width:495px; padding: 15px;}
+.col-lg-7{width:580px; padding: 15px;}
+.col-lg-8{width:665px; padding: 15px;}
+.col-lg-9{width:750px; padding: 15px;}
+.col-lg-10{width:835px; padding: 15px;}
+.col-lg-11{width:920px; padding: 15px;}
+.col-lg-12{width:1005px; padding: 15px;}  
 }
+
+/*media queries lateral-menu, button-login*/
+
+@media (max-width: 1024px) {
+    #menu_smartphone {
+        left:-1024px;
+        width:1024px;    
+    }
+
+    input[type="button"] {
+      width: 35%;
+    }
+}
+@media (max-width: 768px) {
+    #menu_smartphone {
+        left:-768px;
+        width:768px;    
+    }
+     input[type="button"] {
+      width: 40%;
+    }
+}
+@media (max-width: 375px) {
+    #menu_smartphone {
+        left:-375px;
+        width:375px;    
+    }
+     input[type="button"] {
+      width: 85%;
+    }
+}
+
 
