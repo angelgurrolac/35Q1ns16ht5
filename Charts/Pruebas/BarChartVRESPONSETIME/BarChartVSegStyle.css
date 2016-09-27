@@ -1,0 +1,53 @@
+/*Import the font to aply on the text*/
+@font-face {
+    font-family: "SFUIDisplay-Regular";
+    src: url(font/SF-UI-Display/SF-UI-Display-Regular.otf) format("opentype");
+}
+/*Hide the domain label*/
+.y.axis .domain {
+  display: none;
+}
+/*Hide the ticks on Y axis*/
+.y.axis .tick{
+	display: none;
+	fill: none;
+}
+/*Set color of the line label on X axis*/
+.x.axis .tick line{
+  fill: none;
+  stroke: #9B9B9B;
+  stroke-width: 1px;
+}
+/*Set color to a first bar*/
+.bar:first-of-type{
+	fill: #313B72;
+	fill-opacity: 1;
+}
+/*Set color to a second bar*/
+.bar:last-of-type{
+	fill: #E06060;
+	fill-opacity: 1;
+}
+/*Hide path label on X Axis*/
+.x.axis path{
+	display: none;
+}
+/*Hide text label on X axis*/
+.x.axis .tick text{
+	display: none;
+}
+/*Set color of the line label on Y Axis*/
+.lineAxis{
+	stroke: #C2C0C2;
+  stroke-width: 1px;
+}
+/*Set the font, size and color of text label on Y axis*/
+.textAxis{
+	font-family: SFUIDisplay-Regular;
+	font-size: 10px;
+	fill: #727072;
+}
+
+#BarChartVSeg{
+	width: 143px;
+}
