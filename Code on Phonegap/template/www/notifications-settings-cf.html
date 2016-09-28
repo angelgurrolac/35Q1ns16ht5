@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+	<meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/bootstrap.min.js" ></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+
+<script>
+
+$(document).ready(function(){
+
+     // This button will increment the value
+    $('.plus').click(function(e){
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // Get its current value
+        var currentVal = parseInt($('input[name='+fieldName+']').val());
+        // If is not undefined
+        if (!isNaN(currentVal)  && currentVal <100) {
+            // Increment
+            $('input[name='+fieldName+']').val(currentVal + 1);
+        } else {
+            // Otherwise put a 0 there
+            $('input[name='+fieldName+']').val(0);
+        }
+    });
+    // This button will decrement the value till 0
+    $(".less").click(function(e) {
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // Get its current value
+        var currentVal = parseInt($('input[name='+fieldName+']').val());
+        // If it isn't undefined or its greater than 0
+        if (!isNaN(currentVal) && currentVal > 0) {
+            // Decrement one
+            $('input[name='+fieldName+']').val(currentVal - 1);
+        } else {
+            // Otherwise put a 0 there
+            $('input[name='+fieldName+']').val(0);
+        }
+    });
+
+    //collapse out of cash
+     $('#out-cash').on('shown.bs.collapse', function () {
+       $(".icon-cash").removeClass("more-icon").addClass("less-icon");
+    });
+
+    $('#out-cash').on('hidden.bs.collapse', function () {
+       $(".icon-cash").removeClass("less-icon").addClass("more-icon");
+    });
+
+    //Collapse printer
+    $('#printer').on('shown.bs.collapse', function () {
+       $(".icon-print").removeClass("more-icon").addClass("less-icon");
+    });
+
+    $('#printer').on('hidden.bs.collapse', function () {
+       $(".icon-print").removeClass("less-icon").addClass("more-icon");
+    });
+
+    //Collapse Other
+    $('#other').on('shown.bs.collapse', function () {
+       $(".icon-other").removeClass("more-icon").addClass("less-icon");
+    });
+
+    $('#other').on('hidden.bs.collapse', function () {
+       $(".icon-other").removeClass("less-icon").addClass("more-icon");
+    });
+
+});
+
+  function save() {
+    var service1 = document.getElementById("percent-service1").value;
+    var service2 = document.getElementById("percent-service2").value;
+    var communication = document.getElementById("percent-communication").value;
+    alert(" First value : " + service1 + "" + " Second value : " + service2 + "" + " Third value: " + communication);
+    }
+
+</script>
+
+<title>NOTIFICATIONS SETTINGS</title>
+</head>
+
+<body>
+<!--Header-->
+<div class="header">
+<a class="encabezado back-icon" href="index.html"></a>
+<h1 class="title-menu encabezado">NOTIFICATIONS SETTINGS</h1>
+</div> <!--header-->
+
+<div class="container">
+<div class="notification-widget col-lg-12 col-md-6 col-sm-6 col-xs-12">
+    <div class="title-widget">CRITICAL FAILURES
+        <div  class="button-switch">
+            <label class="switch">
+              <input type="checkbox">
+              <div class="slider"></div>
+            </label>
+        </div>
+    </div>
+        <br>
+    <span>Notify me when...</span>
+</div>
+
+<!--Values widget critical failures/ Out of service / First option-->
+<div class="values-widget col-lg-12 col-md-6 col-sm-6 col-xs-12">
+<h1 class="settings-option">OUT OF SERVICE</h1>
+<br>
+    <div class="dropdown dropdown-notification">
+        <span class="label-notification">IS</span>
+        <!--Button dropdown-->
+        <button class="btn btn-primary dropdown-toggle button-notification" type="button" data-toggle="dropdown">ABOVE
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-options">
+          <li><a class="option-notification" href="#">ABOVE</a></li>
+          <li><a class="option-notification" href="#">EQUALS</a></li>
+          <li><a class="option-notification" href="#">BELOW</a></li>
+        </ul>
+    </div> <!--Dropdown-->
+
+    <!--Notification values-->
+    <div class="notification-values">
+        <form  method='POST' action='#' class="select-percent" id="select-percent">
+            <input type='button' value='-' class='less' field='out-service-1' />
+            <input type='text' name='out-service-1' value='0' class='percent' id="percent-service1" />
+            <input type='button' value='+' class='plus' field='out-service-1' />
+        </form>
+    </div>
+
+</div><!--Values-widget-First Option-->
+<br>
+<!--Values widget critical failures/ Out of service / Second option-->
+<div class="values-widget col-lg-12 col-md-6 col-sm-6 col-xs-12">
+<br>
+    <div class="dropdown dropdown-notification">
+        <span class="label-notification">IS</span>
+        <!--Button dropdown-->
+        <button class="btn btn-primary dropdown-toggle button-notification" type="button" data-toggle="dropdown">ABOVE
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-options">
+          <li><a class="option-notification" href="#">ABOVE</a></li>
+          <li><a class="option-notification" href="#">EQUALS</a></li>
+          <li><a class="option-notification" href="#">BELOW</a></li>
+        </ul>
+    </div> <!--Dropdown-->
+
+    <!--Notification values-->
+    <div class="notification-values">
+        <form  method='POST' action='#' class="select-percent" id="select-percent">
+            <input type='button' value='-' class='less' field='out-service-2' />
+            <input type='text' name='out-service-2' value='0' class='percent' id="percent-service2" />
+            <input type='button' value='+' class='plus' field='out-service-2' />
+        </form>
+    </div>
+</div><!-- Values-widget-Second option-->
+<br>
+
+<!--Values widget critical failures / Communication-->
+<div class="values-widget col-lg-12 col-md-6 col-sm-6 col-xs-12">
+
+<h1 class="settings-option">COMMUNICATION</h1>
+<br>
+    <div class="dropdown dropdown-notification">
+        <span class="label-notification">IS</span>
+        <!--Button dropdown-->
+        <button class="btn btn-primary dropdown-toggle button-notification" type="button" data-toggle="dropdown">ABOVE
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-options">
+          <li><a class="option-notification" href="#">ABOVE</a></li>
+          <li><a class="option-notification" href="#">EQUALS</a></li>
+          <li><a class="option-notification" href="#">BELOW</a></li>
+        </ul>
+    </div> <!--Dropdown-->
+
+    <!--Notification values-->
+    <div class="notification-values">
+        <form  method='POST' action='#' class="select-percent" id="select-percent">
+            <input type='button' value='-' class='less' field='communication' />
+            <input type='text' name='communication' value='0' class='percent' id="percent-communication" />
+            <input type='button' value='+' class='plus' field='communication' />
+        </form>
+    </div>
+</div><!-- Values-widget-Communication-->
+
+
+ <!--Options collapsible-->
+<div class="panel-group col-lg-12 col-md-6 col-sm-6 col-xs-12" id="accordion">
+
+<!--out of cash-->
+
+        <div class="panel-heading col-lg-12 col-md-6 col-sm-6 col-xs-12">
+            <h4 class="title-panel">OUT OF CASH</h4>
+            <button class="icon" data-toggle="collapse" data-parent="#accordion" href="#out-cash"><span class="icon-cash more-icon"></span></button>
+        </div>
+
+        <div id="out-cash" class="panel-collapse collapse">
+          <div class="panel-body">Contenido...</div>
+        </div>
+     
+
+<!--Printer-->
+<br>
+        <div class="panel-heading col-lg-12 col-md-6 col-sm-6 col-xs-12">
+           <h4 class="title-panel">PRINT</h4>
+            <button class="icon" data-toggle="collapse" data-parent="#accordion" href="#printer"><span class="icon-print more-icon"></span></button>
+        </div>
+
+        <div id="printer" class="panel-collapse collapse">
+          <div class="panel-body">Contenido</div>
+        </div>
+<br>
+<!--Other-->
+
+        <div class="panel-heading col-lg-12 col-md-6 col-sm-6 col-xs-12">
+            <h4 class="title-panel">OTHER</h4>
+            <button class="icon" data-toggle="collapse" data-parent="#accordion" href="#other"><span class="icon-other more-icon"></span></button>
+        </div>
+        <div id="other" class="panel-collapse collapse">
+          <div class="panel-body">CONTENIDO</div>
+        </div>
+   
+</div> <!--options collapsible-->
+
+
+<div class="notification-save col-lg-12 col-md-6 col-sm-6 col-xs-12 ">
+        <input type='submit' value='SAVE' class="btn-save" onclick="save()"/>
+</div>
+
+</div><!--container-->
+</body>
+</html>
+
