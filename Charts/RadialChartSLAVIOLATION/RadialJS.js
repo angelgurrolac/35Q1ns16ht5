@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  
+
   /* Variables definition (angle, percent, avgPercent, difference)
   * angle: this had the value of oval charted
   * percent: this is the percent that show about how many ATM's are working
@@ -69,7 +69,7 @@ $(document).ready(function() {
       .attr("class", "background")
       .attr("d", arc.endAngle(twoPi));
 
-  /*Add a foreground circle to meter with the foreground class and a stroke attribute with the value url(#gradRadial), 
+  /*Add a foreground circle to meter with the foreground class and a stroke attribute with the value url(#gradRadial),
   the url(#gradRadial) is added to paint the circle with the gradient color*/
   var foreground = meter.append("path")
       .attr("class", "foreground")
@@ -81,19 +81,19 @@ $(document).ready(function() {
       .attr("dy", "-0.50em")
       .attr("dx", "0.35em");
 
-  /*Add a text label in avgMeter with position text-anchor to the end, then the value on y position is 3em and x position is 2em, 
+  /*Add a text label in avgMeter with position text-anchor to the end, then the value on y position is 3em and x position is 2em,
   this is the difference percent*/
   var avg = avgMeter.append("text")
       .attr("text-anchor", "end")
       .attr("dy", "3em")
       .attr("dx", "2em");
 
-  /*Add a path label in avgMeter with position text-anchor to the end, then the value on y position is 1em, 
+  /*Add a path label in avgMeter with position text-anchor to the end, then the value on y position is 1em,
   this triangle indicates if it is above or below the average*/
   var triangle = UDMeter.append("path")
       .attr("dy", "1em");
 
-  /*Add a path label in UDMeter with position text-anchor in the middle, then the value on y position is -0.5em and x position is 0.5em, 
+  /*Add a path label in UDMeter with position text-anchor in the middle, then the value on y position is -0.5em and x position is 0.5em,
   this text indicates the average percent*/
   var ud = UDMeter.append("text")
       .attr("text-anchor", "middle")
@@ -107,7 +107,7 @@ $(document).ready(function() {
     avgPercent = data.avg;//avgPercent gives the average
     angle2 = avgPercent *  twoPi;//angle2 is the imaginary circle and it's equals to a avgPercent times twoPi
     difference = avgPercent - percent;//difference is equals to avgPercent minus percent
-    
+
     /*Here is a condition that paint the triangle, if the difference is higher than 0 the triangle will be pink color*/
     if (difference > 0) {
       triangle.attr("d", "M-25 5 L-30 0 L-20 0 Z")
@@ -136,7 +136,7 @@ $(document).ready(function() {
         difference = d(t);//difference is the interpolate d and give the t parameter
         avgPercent = h(t) / twoPi;//avgPercent is the interpolate h and give the t parameter
         angle = i(t);//angle is the interpolate i and give the t parameter
-        
+
         /*Here is a condition, if angle is equals to 0 dissapear stroke attribute*/
         if (angle == 0) {
           foreground.style("stroke", "")
