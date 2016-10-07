@@ -59,8 +59,8 @@ $(document).ready(function() {
 	d3.json("data.json", function(data) {
 
 		//Bar width definition
-		var barWidth = width / data.letters.length;
-
+		var barWidth = (width / data.letters.length) / 1.2;
+		console.log(barWidth);
 		//Map the X scale with the lenght of letters
 		x.domain(data.letters.map(function(d) { return d.letter; }));
 		//Give to Y scale the range with 1, 1 equals 100%
@@ -72,7 +72,7 @@ $(document).ready(function() {
 			.enter().append("text")
 			.attr("class", "percent")
 			.attr("x", function(d, i) {
-				return 20 + (i  * (barWidth / 1.3)) + (barWidth / 100);
+				return 15 + (i  * (barWidth / 1.15)) + (barWidth / 100);
 			})
 			.attr("y", height)
 	      	.text(0);
@@ -126,7 +126,7 @@ $(document).ready(function() {
 				return height;//Add the y position
 			})
 			.attr("height", 0)//Zero in height, this is for the transition begin in 0
-			.attr("transform", function(d, i) { return "translate(" + i * (barWidth / 3) + ",0)"; });
+			.attr("transform", function(d, i) { return "translate(" + i * (barWidth / 2.5) + ",0)"; });
 
 		/*The transition start here*/
 		bar.transition()
