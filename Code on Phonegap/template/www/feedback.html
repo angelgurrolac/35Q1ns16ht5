@@ -21,7 +21,7 @@
 -->
 <html>
 <head>
-<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
@@ -44,44 +44,56 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
 
-<script>
-$(function(){
-  
- $(".dropdown-menu li a").click(function(){
-  $(this).parents(".btn-group").find('.btn').html($(this).text() + ' <span class="caret"></span>');
-  //$(this).parents(".btn-group").find('.btn').val($(this).data('value'));
-});
-
-});
-</script>
-
-<title>TRENDS MOBILE</title>
-
-<!--Header-->
-<div class="header-trends">
-    <div class="menu-back"><a class="encabezado back-icon-white" href="index.html"></a></div>
-<div><h1 class="title-menu-trends encabezado col-lg-12 col-md-12 col-sm-5 col-xs-6">WORKING</h1></div>
-
-</div> <!--header-->
-
+    <title>Feedback</title>
 </head>
+<body class="background-body">
 
-<body class="trend">
+<div class="row background-version row-border">
+    <div class="col-xs-2 text-center"><a class="encabezado back-icon" href="index.html"></a></div>
+    <div class="col-xs-8 text-center"><h1 class="title-menu">FEEDBACK</h1></div>
+    <div class="col-xs-2"></div>
+</div>
 
 <div class="container">
-
-	<div class="btn-group group-trends">
-	  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">TODAY<span class="caret"></span></button>
-	    <ul class="dropdown-menu dropdown-trends">
-	    	<li><a href="#">TODAY</a></li>
-	      <li><a href="#">WEEKLY</a></li>
-	      <li><a href="#">MONTHLY</a></li>
-	    </ul>
-	</div>
-
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-6 text-center"><img class="size-logo-feedback" src="img/logo-color.png" alt=""></div>
+        <div class="col-xs-3"></div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-10"> <h3 class="color-feedback">ESQ Feedback</h3></div>
+        <div class="col-xs-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-10"> <p class="paragraph-feedback">You are welcome to send us suggestions <br>
+            about our Insights App. We welcome <br>
+            problems reports, feature ideas and general comments.</p>
 </div>
+        <div class="col-xs-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-10"><h1 class="comments">COMMENTS</h1></div>
+        <div class="col-xs-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12"><textarea class="comments-textarea" name="" id="" cols="30" rows="10"></textarea></div>
+    </div>
+        <br>
+        
+     <div class="button-login">
+        <a  class="btn-sign col-lg-12 col-md-12 col-sm-12 col-xs-12" href="index.html"><span>SEND</span></a>
+    </div>
 
-</div>
+</div><!--Container Transactional Collection-->
+
+<!--Scripts Phonegap-->
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript"> app.initialize(); </script>
 
 </body>
 </html>

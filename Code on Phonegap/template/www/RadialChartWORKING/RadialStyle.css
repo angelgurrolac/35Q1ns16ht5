@@ -4,13 +4,13 @@
 }
 .progress-meter .background {
   stroke: #F7F0F0;
-  stroke-width: 13px;
+  stroke-width: 11px;
   fill: #F7F0F0;
 }
 
 .progress-meter .foreground {
   box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.50);
-  stroke-width: 6px;
+  stroke-width: 5px;
   stroke-linejoin: round;
   stroke-linejoin: round;
   fill: none;
@@ -44,5 +44,5 @@
 #radialChart{
   padding: 0px;
   margin: 0px;
-  width: 174px;
+ 
 }

@@ -50,7 +50,7 @@
 $(document).ready(function() {
 
  // This button will increment the value
-    $('.plus').click(function(e){
+    $(document).on("click touchstart",".plus", function(e){
         // Stop acting like a button
         e.preventDefault();
         // Get the field name
@@ -67,7 +67,7 @@ $(document).ready(function() {
         }
     });
     // This button will decrement the value till 0
-    $(".less").click(function(e) {
+    $(document).on("click touchstart",".less",function(e) {
         // Stop acting like a button
         e.preventDefault();
         // Get the field name
@@ -80,107 +80,146 @@ $(document).ready(function() {
             $('input[name='+fieldName+']').val(currentVal - 1);
         } else {
             // Otherwise put a 0 there
-            $('input[name='+fieldName+']').val(0);
+            $('input[name='+fieldName+']').val();
         }
     });
+
+    //Add the value selected in every notifications settings button 
+$(document).on("click",".dropdown-menu li a",function() {    
+    var btnwork = $(this).attr('id');  
+    var selText = $(this).text();
+     $("button[id="+btnwork+"]").html(selText + ' <span class="caret"> </span>');
+
+});
+
 
 });
 
     function save() {
+
+    var Sworking1 = $('#working-1').text();   
     var percent1 = document.getElementById("percent-working1").value;
+    var Sworking2 = $('#working-2').text();  
     var percent2 = document.getElementById("percent-working2").value;
-    alert(" First value : " + percent1 + "" + " Second value : " + percent2);
+    var Sworking3 = $('#working-3').text();  
+    var percent3 = document.getElementById("percent-working3").value;
+    alert(" First value : " +Sworking1+ "" +percent1+ "" + " Second value : " + Sworking2+ "" + percent2 + "" + " third value : " +Sworking3+ "" + percent3);
     }
 
 </script> 
 
 <title>NOTIFICATIONS SETTINGS</title>
 
-<!--Header-->
-<div class="header">
-<div><a class="encabezado back-icon" href="index.html"></a></div>
-<div><h1 class="title-menu">NOTIFICATIONS SETTINGS</h1></div>
-
-</div> <!--header-->
+<div class="row background-version row-border">
+    <div class="col-xs-2 text-center"><a class="encabezado back-icon" href="index.html"></a></div>
+    <div class="col-xs-8 text-center"><h1 class="title-menu">NOTIFICATIONS SETTINGS</h1></div>
+    <div class="col-xs-2"></div>
+</div>
 
 </head>
 <body>
 
-
-
-
 <div class="container">
 
-<div class="notification-widget col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="notification-widget col-lg-12 col-md-12 col-sm-12 col-xs-12">
 	<div class="title-widget">WORKING ATM
 		<div  class="button-switch">
-			<label class="switch">
+			<label class ="switch">
 			  <input type="checkbox">
-			  <div class="slider"></div>
+			  <div class ="slider"></div>
 			</label>
 		</div>
 	</div>
-		<br>
+<br>
 	<span>Notify me when...</span>
 </div>
-
+<br>
 <!-- First option-->
-<div class=" values-test col-lg-12 col-md-6 col-sm-6 col-xs-12">
+<div class="values-widget col-lg-12 col-md-12 col-sm-12 col-xs-12" >
 
 <div class="dropdown dropdown-notification">
 	<span class="label-notification">VAR.</span>
     <!--Button dropdown-->
-    <button class="btn btn-primary dropdown-toggle button-notification" type="button" data-toggle="dropdown">ABOVE
+    <button class="btn btn-primary dropdown-toggle button-notification" type="button" data-toggle="dropdown" id="working-1">ABOVE
     <span class="caret"></span></button>
-    <ul class="dropdown-menu dropdown-options">
-      <li><a class="option-notification" href="#">ABOVE</a></li>
-      <li><a class="option-notification" href="#">EQUALS</a></li>
-      <li><a class="option-notification" href="#">BELOW</a></li>
-    </ul>
+        <ul class="dropdown-menu dropdown-options" >
+          <li><a class="option-notification" id="working-1" href="#">ABOVE</a></li>
+          <li><a class="option-notification" id="working-1" href="#">EQUALS</a></li>
+          <li><a class="option-notification" id="working-1" href="#">BELOW</a></li>
+        </ul>
 </div> <!--Dropdown-->
 
     <!--Notification values-->
     <div class="notification-values">
         <form  method='POST' action='#' class="select-percent" id="select-percent">
             <input type='button' value='-' class='less' field='quantity' />
-            <input type='text' name='quantity' value='0' class='percent' id="percent-working1" />
+            <input type='number' name='quantity' value='0' class='percent' id="percent-working1" />
+            <span class="label-percent">%</span>
             <input type='button' value='+' class='plus' field='quantity' />
         </form>
     </div>
 
-</div><!-- values-test -->
+</div><!-- values-widget -->
 
 <!-- Second option-->
-<div class=" values-test col-lg-12 col-md-6 col-sm-6 col-xs-12">
+<div class=" values-widget col-lg-12 col-md-12 col-sm-12 col-xs-12" >
 
 <div class="dropdown dropdown-notification">
     <span class="label-notification">VAR.</span>
     <!--Button dropdown-->
-    <button class="btn btn-primary dropdown-toggle button-notification" type="button" data-toggle="dropdown">BELOW
+    <button class="btn btn-primary dropdown-toggle button-notification" type="button" data-toggle="dropdown" id="working-2">ABOVE
     <span class="caret"></span></button>
-    <ul class="dropdown-menu dropdown-options">
-      <li><a class="option-notification" href="#">ABOVE</a></li>
-      <li><a class="option-notification" href="#">EQUALS</a></li>
-      <li><a class="option-notification" href="#">BELOW</a></li>
-    </ul>
+        <ul class="dropdown-menu dropdown-options" >
+          <li><a class="option-notification" id="working-2" href="#">ABOVE</a></li>
+          <li><a class="option-notification" id="working-2" href="#">EQUALS</a></li>
+          <li><a class="option-notification" id="working-2" href="#">BELOW</a></li>
+        </ul>
 </div> <!--Dropdown-->
 
     <!--Notification values-->
     <div class="notification-values">
         <form  method='POST' action='#' class="select-percent" id="select-percent">
             <input type='button' value='-' class='less' field='amount' />
-            <input type='text' name='amount' value='0' class='percent' id="percent-working2"/>
+            <input type='number' name='amount' value='0' class='percent' id="percent-working2"/>
+            <span class="label-percent">%</span>
             <input type='button' value='+' class='plus' field='amount' />
         </form>
     </div>
 
 </div><!--values widget-->
 
-<div class="col-lg-12 col-md-6 col-sm-6 col-xs-12 ">
-        <input type='submit' value='SAVE' class="btn-save" onclick="save()"/>
-</div>
+<!-- Third option-->
+<div class=" values-widget col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+
+<div class="dropdown dropdown-notification">
+    <span class="label-notification">VAR.</span>
+    <!--Button dropdown-->
+    <button class="btn btn-primary dropdown-toggle button-notification" type="button" data-toggle="dropdown" id="working-3">ABOVE
+    <span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-options" >
+          <li><a class="option-notification" id="working-3" href="#">ABOVE</a></li>
+          <li><a class="option-notification" id="working-3" href="#">EQUALS</a></li>
+          <li><a class="option-notification" id="working-3" href="#">BELOW</a></li>
+        </ul>
+</div> <!--Dropdown-->
+
+    <!--Notification values-->
+    <div class="notification-values">
+        <form  method='POST' action='#' class="select-percent" id="select-percent">
+            <input type='button' value='-' class='less' field='value' />
+            <input type='number' name='value' value='0' class='percent' id="percent-working3"/>
+            <span class="label-percent">%</span>
+            <input type='button' value='+' class='plus' field='value' />
+        </form>
+    </div>
+
+</div><!--values widget-->
 
 </div><!--container-->
+
+<div class="save-notification-working col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <input type='submit' value='SAVE' class="btn-save" onclick="save()"/>
+</div>
 
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript"> app.initialize(); </script>

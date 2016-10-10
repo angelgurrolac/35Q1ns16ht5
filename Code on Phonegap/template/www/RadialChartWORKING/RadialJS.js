@@ -28,10 +28,10 @@ $(document).ready(function() {
   /*Create the svg with the container width and height, then add label g with the circle class to svg and it's move to the middle of svg */
   var svg = d3.select("#radialChart").append("svg")
       .attr("width", width)
-      .attr("height", height)
+      .attr("height", height+20)
     .append("g")
       .attr("class", "circle")
-      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+      .attr("transform", "translate(" + width / 2 + "," + height /2 + ")");
 
   /*Create the color gradient label and add to svg*/
   var lineGra = svg.append("linearGradient")
@@ -165,7 +165,7 @@ $(document).ready(function() {
 
       d3.select("svg")
         .attr("width", width)
-        .attr("height", height);
+        .attr("height", height + 20);
 
       d3.select(".circle")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
