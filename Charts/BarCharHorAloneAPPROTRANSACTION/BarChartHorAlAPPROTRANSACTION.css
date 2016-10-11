@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "SFUIDisplay-Regular";
+    src: url(font/SF-UI-Display/SF-UI-Display-Regular.otf) format("opentype");
+}
+body {
+  padding: 0;
+  margin: 0;
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis {
+  display: none;
+}
+
+.percent{
+  font-family: SFUIDisplay-Regular;
+  fill: #F7F0F0;;
+  font-size: 14px;
+}
+.avg{
+  font-family: SFUIDisplay-Regular;
+  fill: #E06060;
+  font-size: 10px;
+}
+.divChart{
+  width: 375px;
+  padding: 0px;
+  margin: 0px;
+}
