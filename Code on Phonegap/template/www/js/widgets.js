@@ -35,15 +35,17 @@
         }
     });
 
+//Nav.
+   $(".nav-tabs a").click(function(){
+     $(this).tab('show');
+});
 
-    	//Drag/Drop
-        $(".widgets").shapeshift();
 
-    //Nav.
-        $(".nav-tabs a").click(function(){
-        $(this).tab('show');
-        });
+//Drag/Drop
+    $(".widgets").shapeshift();
 
-    });
+});
+
+
 
     

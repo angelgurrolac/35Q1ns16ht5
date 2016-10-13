@@ -40,13 +40,14 @@
 
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-
     <script src="js/bootstrap.min.js" ></script>
+
+    <!-- let you add the drag/drop on widgets -->
     <script src="js/jquery.shapeshift.js"></script>
     <script src="js/jquery.touch-punch.min.js"></script>
+    <!-- Graph´s Code-->
     <script type="text/javascript" src="js/widgets.js"></script>
     <script src="RadialChartWORKING/libd3v3.5.17/d3.min.js"></script>
-
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
@@ -55,7 +56,7 @@
 
 </head>
 
-<body>
+<body class="animate fadeIn">
     
 <!--header-->
 <div class="row row-border">
@@ -69,13 +70,12 @@
             
 <a href="#"><span class="info-icon"></span></a>
 <a href="#"><span class="notification"></span></a>
-
-        </div>
     </div>
-
+</div>
+ <!--Lateral menu-->
 <div id="menu_smartphone">  
 <div class="row">
-    <img class="menu_btn back-icon-white" id="back" s/>
+    <img class="menu_btn back-icon-white" id="back"/>
 </div>  
 <br>
 <br>
@@ -131,22 +131,22 @@
 
 <div class="widgets">  
 
-    <div class="vertical col-lg-4 col-md-6 col-sm-6 col-xs-12">
+<!--Working-->
+    <div id="w-working" class="vertical col-lg-4 col-md-6 col-sm-6 col-xs-12">
         <!-- Graph radial -->
         <div id="radialChart" class="left"></div>
-
         <!-- Active/Inactive -->
         <div class="right">
             <h1 class="title-widgets" align="center">WORKING</h1>
             <a href="notification-settings.html"><span class="notification-config"></span></a>
             <br>
             <br>
-            <a href="#"><span class="tendency-icon"></span></a>
+            <a href="trends.html"><span class="tendency-icon"></span></a>
         </div>
+    </div> <!--Working-->
 
-    </div> <!--working-->
-
-    <div class="complete col-lg-4 col-md-6 col-sm-6 col-xs-12">
+<!--Transactions-->
+    <div id="w-transactions" class="complete col-lg-4 col-md-6 col-sm-6 col-xs-12">
         <h1 class="title-widgets">TRANSACTIONS</h1>
         <a href="#"><span class="notification-config"></span></a>
         <br>
@@ -154,7 +154,8 @@
         <a href="#"><span class="tendency-icon"></span></a>
     </div> <!--Transactions-->
 
-    <div class="horizontal col-lg-4 col-md-6 col-sm-6 col-xs-12">
+<!--Approved transactions-->
+    <div id="w-approved-t" class="horizontal col-lg-4 col-md-6 col-sm-6 col-xs-12">
         <!--Graph bar-->
         <div class="up">
             <h1 class="title-widgets">APPROVED TRANSACTIONS</h1>
@@ -165,9 +166,10 @@
             <a href="#"><span class="tendency-icon"></span></a>
         </div>
 
-    </div> <!--Approved transactions-->
+    </div><!--Approved transactions-->
 
-    <div class="vertical col-lg-4 col-md-6 col-sm-6 col-xs-12">
+<!--Origin-->
+    <div id="w-origin" class="vertical col-lg-4 col-md-6 col-sm-6 col-xs-12">
         <h1 class="title-widgets">ORIGIN</h1>
         <br>
         <!-- Graph bar -->
@@ -182,30 +184,31 @@
             <a href="#"><span class="tendency-icon"></span></a>
         </div>
 
-    </div> <!--origin-->
+    </div><!--Origin-->
 
-    <div class="complete col-lg-4 col-md-6 col-sm-6 col-xs-12">
+<!--Critical failures-->
+    <div id="w-critical-failures" class="complete col-lg-4 col-md-6 col-sm-6 col-xs-12">
         <h1 class="title-widgets">CRITICAL FAILURES</h1>
             <a href="notifications-settings-cf.html"><span class="notification-config"></span></a>
             
-    </div> <!--Critical failures-->
+    </div><!--Critical failures-->
 
-    <div class="complete col-lg-4 col-md-6 col-sm-6 col-xs-12">
+<!--Disposals/Available-->
+    <div id="w-DisposalsAvailable" class="complete col-lg-4 col-md-6 col-sm-6 col-xs-12">
     <!--menu-->
     <ul class="nav nav-tabs">
         <li class="active"><a class="widget-nav title-widgets" href="#disposals">DISPOSALS</a></li>
         <li><a class="widget-nav title-widgets" href="#available">AVAILABLE</a></li>
     </ul>
-                <!--Content Disposals-->
+        <!--Content Disposals-->
         <div class="tab-content">
             <div id="disposals" class="tab-pane fade in active">
-            
                 <p>Information Disposals</p>
                         <a href="notifications-settings-cf.html"><span class="notification-config"></span></a>
                         <br>
                         <br>
                         <a href="#"><span class="tendency-icon"></span></a>
-                        </div>
+            </div>
                 <!--Content Available-->
             <div id="available" class="tab-pane fade">
                 <p>Information Available</p>
@@ -214,11 +217,11 @@
                             <br>
                         <a href="#"><span class="tendency-icon"></span></a>
             </div>
-        </div>
+        </div><!--tab content-->
+    </div><!--Disposals/Available-->
 
-    </div> <!--Disposals/Available-->
-
-    <div class="complete col-lg-4 col-md-6 col-sm-6 col-xs-12">
+<!--Transactions per second-->
+    <div id="w-transactions-second" class="complete col-lg-4 col-md-6 col-sm-6 col-xs-12">
         <h1 class="title-widgets">TRANSACTIONS PER SECOND</h1>
 
             <a href="#"><span class="notification-config"></span></a>
@@ -228,10 +231,13 @@
 
     </div><!--Transactions per second-->
 
-    <div class="vertical col-lg-4 col-md-6 col-sm-6 col-xs-12">
+<!--Response time-->
+    <div id="w-response" class="vertical col-lg-4 col-md-6 col-sm-6 col-xs-12">
         <h1 class="title-widgets">RESPONSE TIME</h1>
+        <br>
+        <br>
         <!-- Graph bar -->
-        <div class="left"></div>
+        <div id="BarChartVSeg" class="left"></div>
         <!-- Information -->
         <div class="right">
             <a href="#"><span class="notification-config"></span></a>
@@ -239,10 +245,10 @@
             <br>
             <a href="#"><span class="tendency-icon"></span></a>
         </div>
-
     </div><!--Response time-->
 
-    <div class="vertical col-lg-4 col-md-6 col-sm-6 col-xs-12">
+<!--SLA violation-->
+    <div id="w-SlaViolation" class="vertical col-lg-4 col-md-6 col-sm-6 col-xs-12">
         <h1 class="title-widgets">SLA VIOLATION</h1>
         <!-- Information -->
         <div class="left"></div>
@@ -256,7 +262,8 @@
 
     </div><!--SLA violation-->
 
-    <div class="horizontal col-lg-4 col-md-6 col-sm-6 col-xs-12">
+<!--Network availability-->
+    <div id="w-Network" class="horizontal col-lg-4 col-md-6 col-sm-6 col-xs-12">
         <h1 class="title-widgets">NETWORK AVAILABILITY</h1>
         <!--Graph bar-->
         <div class="up">
@@ -280,9 +287,13 @@
     <!--RadialCharts-->
     <script src="RadialChartWORKING/RadialJS.js"></script>
     <link rel="stylesheet" href="RadialChartWORKING/RadialStyle.css">
-    <!--RadialCharts-->
+    <!--Origin Graph-->
     <script src="BarChartV/BarChartVJS.js"></script>
     <link rel="stylesheet" href="BarChartV/BarChartStyle.css">
+
+    <!--Response Time-->
+    <script src="BarChartVRESPONSETIME/BarChartVSegJS.js"></script>
+    <link rel="stylesheet" href="BarChartVRESPONSETIME/BarChartVSegStyle.css">
 
    <!--Scripts Phonegap-->
     <script type="text/javascript" src="js/index.js"></script>

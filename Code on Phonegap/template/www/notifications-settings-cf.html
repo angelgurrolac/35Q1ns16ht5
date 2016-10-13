@@ -52,7 +52,10 @@ $(document).ready(function(){
 
 positionService = 0;
 
-    $(document).on("click","#out-service",function(){
+    $(document).on("click touchstart","#out-service",function(e){
+    // Stop acting like a button
+        e.preventDefault();
+        //Add the option settings in the title selected
         fieldName = "Oservice";
         positionPanel = 0;
         positionService = positionService + 1;
@@ -62,7 +65,10 @@ positionService = 0;
 
 positionComm = 0;
 
-    $(document).on("click","#communication-icon",function(){
+    $(document).on("click touchstart","#communication-icon",function(e){
+    // Stop acting like a button
+        e.preventDefault();
+        //Add the option settings in the title selected
         fieldName = "communication";
         positionPanel = 1;
         positionComm = positionComm + 1;
@@ -71,7 +77,10 @@ positionComm = 0;
     });
 
 positionOut = 0;
-    $(document).on("click","#out-cash-icon",function(){
+    $(document).on("click touchstart","#out-cash-icon",function(e){
+    // Stop acting like a button
+        e.preventDefault();
+        //Add the option settings in the title selected
         fieldName = "Ocash";
         positionPanel = 2;
         positionOut = positionOut + 1;
@@ -80,7 +89,10 @@ positionOut = 0;
     });
 
 positionPrinter = 0;
-    $(document).on("click","#printer",function(){
+    $(document).on("click touchstart","#printer",function(e){
+    // Stop acting like a button
+        e.preventDefault();
+        //Add the option settings in the title selected
         fieldName = "printer";
         positionPanel = 3;
         positionPrinter = positionPrinter + 1;
@@ -89,7 +101,10 @@ positionPrinter = 0;
     });
 
 positionOther = 0;
-    $(document).on("click","#other",function(){
+    $(document).on("click touchstart","#other",function(e){
+    // Stop acting like a button
+        e.preventDefault();
+        //Add the option settings in the title selected
         fieldName = "other";
         positionPanel = 4;
         positionOther = positionOther + 1;
@@ -107,9 +122,9 @@ positionOther = 0;
                     html += '<button class="btn btn-primary dropdown-toggle button-notification" name="position-' + positionPanel + '' + position + '" type="button" data-toggle="dropdown">ABOVE ';
                     html += '<span class="caret"> </span></button>';
                     html += '<ul class="dropdown-menu dropdown-options">';
-                        html += '<li><a class="option-notification" id="position-' + positionPanel + '' + position + '">ABOVE</a></li>';
-                        html += '<li><a class="option-notification" id="position-' + positionPanel + '' + position + '">EQUALS</a></li>';
-                        html += '<li><a class="option-notification" id="position-' + positionPanel + '' + position + '">BELOW</a></li>';
+                        html += '<li><a class="option-notification" href="#" id="position-' + positionPanel + '' + position + '">ABOVE</a></li>';
+                        html += '<li><a class="option-notification" href="#" id="position-' + positionPanel + '' + position + '">EQUALS</a></li>';
+                        html += '<li><a class="option-notification" href="#" id="position-' + positionPanel + '' + position + '">BELOW</a></li>';
                     html += '</ul>';
                 html += '</div>';
                 html += '<div class="notification-values">';
@@ -126,7 +141,7 @@ positionOther = 0;
     }
 
 // This button will increment the value
-    $(document).on("click",".plus", function(e){
+    $(document).on("click touchstart",".plus", function(e){
         // Stop acting like a button
         e.preventDefault();
         // Get the field name
@@ -144,7 +159,7 @@ positionOther = 0;
 });
 
 // This button will decrement the value till 0
-$(document).on("click",".less",function(e) {
+$(document).on("click touchstart",".less",function(e) {
         // Stop acting like a button
         e.preventDefault();
         // Get the field name
@@ -162,13 +177,22 @@ $(document).on("click",".less",function(e) {
 });
 
 //This button remove the notifications settings   
-$(document).on("click",".remove",function(){
-    var iddiv = $(this).parent().parent().parent().attr("id");
-    $("#" + iddiv).remove();
+$(document).on("click touchstart",".remove",function(e){
+    // Stop acting like a button
+        e.preventDefault();
+//Var iddiv select the ID you want remover
+var iddiv = $(this).parent().parent().parent().attr("id");
+
+//Animation
+  $("#" + iddiv).hide( "fast", function() {
+   //Remove the selected item
+     $("#" + iddiv).remove();
+  });
 });
 
+
 //Add the value selected in every notifications settings button 
-$(document).on("click",".dropdown-menu li a",function() {    
+$(document).on("click",".dropdown-menu li a",function() {
     var idb = $(this).attr("id");
     var selText = $(this).text();
     $("button[name="+idb+"]").html(selText + ' <span class="caret"> </span>');
@@ -177,7 +201,7 @@ $(document).on("click",".dropdown-menu li a",function() {
 
 
 
-$(document).on("click",".btn-save",function(){
+$(document).on("click touchstart",".btn-save",function(){
 
 var btntext = $(".btn").attr('name');
 var inputext = $(".percent").attr('id');
@@ -191,7 +215,6 @@ console.log(vt, prct2);
 });
 
 
-
 });
 </script>
     
@@ -203,7 +226,7 @@ console.log(vt, prct2);
 
 </head>
 
-<body>
+<body class="animate fadeInUp">
 
 <div class="notification-widget col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="title-widget"><span>CRITICAL FAILURES</span>
@@ -272,5 +295,8 @@ console.log(vt, prct2);
 </div>
 
 </div><!--container-->
+
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript"> app.initialize(); </script>
 </body>
 </html>

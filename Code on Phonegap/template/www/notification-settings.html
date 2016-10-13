@@ -41,7 +41,6 @@
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js" ></script>
 
-
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
 
@@ -117,7 +116,7 @@ $(document).on("click",".dropdown-menu li a",function() {
 </div>
 
 </head>
-<body>
+<body class="animate fadeInDown">
 
 <div class="container">
 
@@ -142,7 +141,7 @@ $(document).on("click",".dropdown-menu li a",function() {
     <!--Button dropdown-->
     <button class="btn btn-primary dropdown-toggle button-notification" type="button" data-toggle="dropdown" id="working-1">ABOVE
     <span class="caret"></span></button>
-        <ul class="dropdown-menu dropdown-options" >
+        <ul class="dropdown-menu dropdown-options drpw" >
           <li><a class="option-notification" id="working-1" href="#">ABOVE</a></li>
           <li><a class="option-notification" id="working-1" href="#">EQUALS</a></li>
           <li><a class="option-notification" id="working-1" href="#">BELOW</a></li>
@@ -169,7 +168,7 @@ $(document).on("click",".dropdown-menu li a",function() {
     <!--Button dropdown-->
     <button class="btn btn-primary dropdown-toggle button-notification" type="button" data-toggle="dropdown" id="working-2">ABOVE
     <span class="caret"></span></button>
-        <ul class="dropdown-menu dropdown-options" >
+        <ul class="dropdown-menu dropdown-options drpw" >
           <li><a class="option-notification" id="working-2" href="#">ABOVE</a></li>
           <li><a class="option-notification" id="working-2" href="#">EQUALS</a></li>
           <li><a class="option-notification" id="working-2" href="#">BELOW</a></li>
@@ -196,7 +195,7 @@ $(document).on("click",".dropdown-menu li a",function() {
     <!--Button dropdown-->
     <button class="btn btn-primary dropdown-toggle button-notification" type="button" data-toggle="dropdown" id="working-3">ABOVE
     <span class="caret"></span></button>
-        <ul class="dropdown-menu dropdown-options" >
+        <ul class="dropdown-menu dropdown-options drpw" >
           <li><a class="option-notification" id="working-3" href="#">ABOVE</a></li>
           <li><a class="option-notification" id="working-3" href="#">EQUALS</a></li>
           <li><a class="option-notification" id="working-3" href="#">BELOW</a></li>
@@ -217,9 +216,13 @@ $(document).on("click",".dropdown-menu li a",function() {
 
 </div><!--container-->
 
+<br>
+<div class="row space-work"></div>
 <div class="save-notification-working col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <input type='submit' value='SAVE' class="btn-save" onclick="save()"/>
+     <input type='submit' value='SAVE' class="btn-save" onclick="save()"/>
 </div>
+
+
 
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript"> app.initialize(); </script>

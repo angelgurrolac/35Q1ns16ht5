@@ -40,48 +40,138 @@
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="js/widgets.js"></script>
+    <script src="RadialChartWORKING/libd3v3.5.17/d3.min.js"></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/animate.css">
+
 
 <script>
 $(function(){
-  
- $(".dropdown-menu li a").click(function(){
-  $(this).parents(".btn-group").find('.btn').html($(this).text() + ' <span class="caret"></span>');
-  //$(this).parents(".btn-group").find('.btn').val($(this).data('value'));
+
+$("a").click(function(){
+  $(this).parents(".group-trends").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+   var trends = $(this).attr('href');
+   $(trends).tab('show');
 });
+
+$("#panel").tabs();
 
 });
 </script>
 
 <title>TRENDS MOBILE</title>
 
-<!--Header-->
-<div class="header-trends">
-    <div class="menu-back"><a class="encabezado back-icon-white" href="index.html"></a></div>
-<div><h1 class="title-menu-trends encabezado col-lg-12 col-md-12 col-sm-5 col-xs-6">WORKING</h1></div>
-
-</div> <!--header-->
-
 </head>
-
 <body class="trend">
 
-<div class="container">
+<!--header-->
+<div class="row row-border">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
+        <img class="menu_btn menu_function hamburguer" align="left"/>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
+        <img class="logo-esq" src="img/logo-color.png">
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center icons">         
+        <a href="#"><span class="info-icon"></span></a>
+        <a href="#"><span class="notification"></span></a>
+    </div>
+</div><!--Header end-->
 
-	<div class="btn-group group-trends">
-	  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">TODAY<span class="caret"></span></button>
-	    <ul class="dropdown-menu dropdown-trends">
-	    	<li><a href="#">TODAY</a></li>
-	      <li><a href="#">WEEKLY</a></li>
-	      <li><a href="#">MONTHLY</a></li>
-	    </ul>
-	</div>
-
+<!--Lateral menu-->
+<div id="menu_smartphone">  
+<div class="row">
+    <img class="menu_btn back-icon-white" id="back"/>
+</div>  
+<br>
+<br>
+<div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><img src="img/images.jpg" alt="" class="img-circle img-border"></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+</div>
+<br>
+<div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><h2 class="title-widget-smartphone">WELCOME</h2></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+</div>
+<div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><h3 class="name-user">Leroy Saunders</h3></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
 </div>
 
+<div class="row space-row">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href="widgetSelection.html"><h1 class="select-widget-smartphone">SELECT KPI WIDGETS</h1></a></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
 </div>
 
+<div class="row space-row-about">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href="about.html"><h1 class="text-about">ABOUT</h1></a></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+</div>
+<div class="row space-row-feedback">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href="feedback.html"><h3 class="text-about">GIVE FEEDBACK</h3></a></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+</div>
+<div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><hr></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+</div>
+<div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href="login.html"><h1 class="logout">LOG OUT</h1></a></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+</div>
+
+</div><!--Lateral menu close-->
+
+<!--Header trends-->
+<div class="row header-trends  animated zoomIn">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center"><a class="encabezado back-icon-white" href="index.html"></a></div>
+    <div class="col-xs-8 text-center"><h1 class="title-menu-trends">WORKING</h1></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+</div> <!--Header trends close-->
+
+
+<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center"></div>
+
+<div class="text-center col-lg-10 col-md-10 col-sm-10 col-xs-10">
+     <div id="panel" class="group-trends animated zoomIn text-center">
+        <button type="button" class="btn dropdown-toggle btn-trend" data-toggle="dropdown">TODAY<span class="caret"></span></button>
+            <ul class="dropdown-menu dropdown-trends">
+                   <li><a href="#TrendTWork">TODAY</a></li>
+                   <li><a href="#TrendWWork">WEEKLY</a></li>
+                   <li><a href="#TrendMWork">MONTHLY</a></li>
+            </ul>
+        <!--Space between menu and graphs-->
+        <div class="space"></div>
+        
+        <!--Graphs -->
+        <div class="row row-graph workToday" id="TrendTWork"></div>
+        <div class="row row-graph workWeek" id="TrendWWork"></div>
+        <div class="row row-graph workMonth" id="TrendMWork"></div>
+
+     </div> <!--Tabs-->
+</div> <!--Close Menú trends-->
+
+<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center"></div>
+
+
+
+<link rel="stylesheet" href="BarCharHorWeekWORKING/BarChartWeekWORKING.css">
+<script type="text/javascript" src="BarCharHorWeekWORKING/BarChartWeekWORKINGJS.js"></script>
+
+<!--Scripts Phonegap-->
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript"> app.initialize(); </script>
 </body>
 </html>
