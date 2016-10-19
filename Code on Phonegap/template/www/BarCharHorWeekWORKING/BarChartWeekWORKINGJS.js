@@ -233,7 +233,7 @@ $(document).ready(function() {
             sombra = d3.select(this)
               .transition()
               .duration(500)
-              .style("filter", "url(#f2)");
+              .attr("class","j sombra");
 
             tooltip.append("rect")
               .attr("class", "tooltipBar")
@@ -243,7 +243,6 @@ $(document).ready(function() {
               .attr("rx", "4px")
               .attr("ry", "4px")
               .transition().duration(300)
-              .style("filter", "url(#f1)")
               .ease('linear');
 
             tooltip.append("text")
@@ -326,6 +325,7 @@ $(document).ready(function() {
             tooltip.transition().duration(500).delay(3000).style('opacity', 0).ease('linear').remove();
 
             sombra.transition().duration(500).delay(3000).style('filter', "").ease('linear').each('end', function() {
+              d3.select(this).attr("class","j")
               activeTooltip = false;
               //activeDblClick = false;
               //tapped=false;

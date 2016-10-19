@@ -40,6 +40,7 @@
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js" ></script>
+    <script src="js/validate.min.js"></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
@@ -79,7 +80,7 @@ $(document).ready(function() {
             $('input[name='+fieldName+']').val(currentVal - 1);
         } else {
             // Otherwise put a 0 there
-            $('input[name='+fieldName+']').val();
+            $('input[name='+fieldName+']').val(100);
         }
     });
 
@@ -104,6 +105,7 @@ $(document).on("click",".dropdown-menu li a",function() {
     var percent3 = document.getElementById("percent-working3").value;
     alert(" First value : " +Sworking1+ "" +percent1+ "" + " Second value : " + Sworking2+ "" + percent2 + "" + " third value : " +Sworking3+ "" + percent3);
     }
+
 
 </script> 
 
@@ -142,17 +144,17 @@ $(document).on("click",".dropdown-menu li a",function() {
     <button class="btn btn-primary dropdown-toggle button-notification" type="button" data-toggle="dropdown" id="working-1">ABOVE
     <span class="caret"></span></button>
         <ul class="dropdown-menu dropdown-options drpw" >
-          <li><a class="option-notification" id="working-1" href="#">ABOVE</a></li>
-          <li><a class="option-notification" id="working-1" href="#">EQUALS</a></li>
-          <li><a class="option-notification" id="working-1" href="#">BELOW</a></li>
+          <li><a class="option-notification" id="working-1" href="javascript:void(0);">ABOVE</a></li>
+          <li><a class="option-notification" id="working-1" href="javascript:void(0);">EQUALS</a></li>
+          <li><a class="option-notification" id="working-1" href="javascript:void(0);">BELOW</a></li>
         </ul>
 </div> <!--Dropdown-->
 
     <!--Notification values-->
     <div class="notification-values">
-        <form  method='POST' action='#' class="select-percent" id="select-percent">
+        <form class="notification-form"  method='POST' action='#' class="select-percent" id="select-percent">
             <input type='button' value='-' class='less' field='quantity' />
-            <input type='number' name='quantity' value='0' class='percent' id="percent-working1" />
+            <input type='number' name='quantity' value='0' class='percent'  min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" id="percent-working1"/>
             <span class="label-percent">%</span>
             <input type='button' value='+' class='plus' field='quantity' />
         </form>
@@ -169,17 +171,17 @@ $(document).on("click",".dropdown-menu li a",function() {
     <button class="btn btn-primary dropdown-toggle button-notification" type="button" data-toggle="dropdown" id="working-2">ABOVE
     <span class="caret"></span></button>
         <ul class="dropdown-menu dropdown-options drpw" >
-          <li><a class="option-notification" id="working-2" href="#">ABOVE</a></li>
-          <li><a class="option-notification" id="working-2" href="#">EQUALS</a></li>
-          <li><a class="option-notification" id="working-2" href="#">BELOW</a></li>
+          <li><a class="option-notification" id="working-2" href="javascript:void(0);">ABOVE</a></li>
+          <li><a class="option-notification" id="working-2" href="javascript:void(0);">EQUALS</a></li>
+          <li><a class="option-notification" id="working-2" href="javascript:void(0);">BELOW</a></li>
         </ul>
 </div> <!--Dropdown-->
 
     <!--Notification values-->
     <div class="notification-values">
-        <form  method='POST' action='#' class="select-percent" id="select-percent">
+        <form class="notification-form"  method='POST' action='#' class="select-percent" id="select-percent">
             <input type='button' value='-' class='less' field='amount' />
-            <input type='number' name='amount' value='0' class='percent' id="percent-working2"/>
+            <input type='number' name='amount' value='0' class='percent' min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" id="percent-working2"/>
             <span class="label-percent">%</span>
             <input type='button' value='+' class='plus' field='amount' />
         </form>
@@ -196,17 +198,17 @@ $(document).on("click",".dropdown-menu li a",function() {
     <button class="btn btn-primary dropdown-toggle button-notification" type="button" data-toggle="dropdown" id="working-3">ABOVE
     <span class="caret"></span></button>
         <ul class="dropdown-menu dropdown-options drpw" >
-          <li><a class="option-notification" id="working-3" href="#">ABOVE</a></li>
-          <li><a class="option-notification" id="working-3" href="#">EQUALS</a></li>
-          <li><a class="option-notification" id="working-3" href="#">BELOW</a></li>
+          <li><a class="option-notification" id="working-3" href="javascript:void(0);">ABOVE</a></li>
+          <li><a class="option-notification" id="working-3" href="javascript:void(0);">EQUALS</a></li>
+          <li><a class="option-notification" id="working-3" href="javascript:void(0);">BELOW</a></li>
         </ul>
 </div> <!--Dropdown-->
 
     <!--Notification values-->
     <div class="notification-values">
-        <form  method='POST' action='#' class="select-percent" id="select-percent">
+        <form class="notification-form"  method='POST' action='#' class="select-percent" id="select-percent">
             <input type='button' value='-' class='less' field='value' />
-            <input type='number' name='value' value='0' class='percent' id="percent-working3"/>
+            <input type='number' name='value' value='0' class='percent' min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" id="percent-working3"/>
             <span class="label-percent">%</span>
             <input type='button' value='+' class='plus' field='value' />
         </form>

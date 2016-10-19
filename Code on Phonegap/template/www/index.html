@@ -42,15 +42,13 @@
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js" ></script>
 
-    <!-- let you add the drag/drop on widgets -->
+    <!-- Let you add the drag/drop on widgets -->
     <script src="js/jquery.shapeshift.js"></script>
     <script src="js/jquery.touch-punch.min.js"></script>
-    <!-- Graph´s Code-->
-    <script type="text/javascript" src="js/widgets.js"></script>
-    <script src="RadialChartWORKING/libd3v3.5.17/d3.min.js"></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/animate.css">
 
     <title>ESQ</title>
 
@@ -60,15 +58,15 @@
     
 <!--header-->
 <div class="row row-border">
-        <div class="col-xs-3 text-center">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
             <img class="menu_btn menu_function hamburguer" align="left"/>
         </div>
-        <div class="col-xs-6 text-center">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
             <img class="logo-esq" src="img/logo-color.png">
         </div>
-        <div class="col-xs-3 text-center icons">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center icons">
             
-<a href="#"><span class="info-icon"></span></a>
+<a href="#help-info" data-toggle="modal"><span class="info-icon"></span></a>
 <a href="#"><span class="notification"></span></a>
     </div>
 </div>
@@ -80,50 +78,113 @@
 <br>
 <br>
 <div class="row">
-    <div class="col-xs-2"></div>
-    <div class="col-xs-8"><img src="img/images.jpg" alt="" class="img-circle img-border"></div>
-    <div class="col-xs-2"></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><img src="img/images.jpg" alt="" class="img-circle img-border"></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
 </div>
 <br>
 <div class="row">
-    <div class="col-xs-2"></div>
-    <div class="col-xs-8"><h2 class="title-widget-smartphone">WELCOME</h2></div>
-    <div class="col-xs-2"></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><h2 class="title-widget-smartphone">WELCOME</h2></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
 </div>
 <div class="row">
-    <div class="col-xs-2"></div>
-    <div class="col-xs-8"><h3 class="name-user">Leroy Saunders</h3></div>
-    <div class="col-xs-2"></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><h3 class="name-user">Leroy Saunders</h3></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
 </div>
 
 <div class="row space-row">
-    <div class="col-xs-2"></div>
-    <div class="col-xs-8"><a href="widgetSelection.html"><h1 class="select-widget-smartphone">SELECT KPI WIDGETS</h1></a></div>
-    <div class="col-xs-2"></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href="widgetSelection.html"><h1 class="select-widget-smartphone">SELECT KPI WIDGETS</h1></a></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
 </div>
 
 <div class="row space-row-about">
-    <div class="col-xs-2"></div>
-    <div class="col-xs-8"><a href="about.html"><h1 class="text-about">ABOUT</h1></a></div>
-    <div class="col-xs-2"></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href="about.html"><h1 class="text-about">ABOUT</h1></a></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
 </div>
 <div class="row space-row-feedback">
-    <div class="col-xs-2"></div>
-    <div class="col-xs-8"><a href="feedback.html"><h3 class="text-about">GIVE FEEDBACK</h3></a></div>
-    <div class="col-xs-2"></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href="feedback.html"><h3 class="text-about">GIVE FEEDBACK</h3></a></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
 </div>
 <div class="row">
-    <div class="col-xs-2"></div>
-    <div class="col-xs-8"><hr></div>
-    <div class="col-xs-2"></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><hr></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
 </div>
 <div class="row">
-    <div class="col-xs-2"></div>
-    <div class="col-xs-8"><a href="login.html"><h1 class="logout">LOG OUT</h1></a></div>
-    <div class="col-xs-2"></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href="login.html"><h1 class="logout">LOG OUT</h1></a></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
 </div>
 
 </div>
+
+<!--Help info -->
+<div class="modal modal-fullscreen fade animated pulse" id="help-info" tabindex="-1" aria-hidden="true">
+
+<div class="row header-trends">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center"><a class="encabezado back-icon" href="index.html"></a></div>
+    <div class="col-xs-8 text-center"></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+</div> 
+
+<div class="text-icons">
+    <div class="row">
+        <div class="col-xs-5"><span class="icons-info hamburguer"></span></div>
+        <div class="col-xs-6"><h2 class="title-info">Main Menu</h2></div>
+        <div class="col-xs-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-5"><span class="icons-info info-icon"></span></div>
+        <div class="col-xs-6"><h2 class="title-info">Help</h2></div>
+        <div class="col-xs-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-5"><span class="notification icons-info"></span></div>
+        <div class="col-xs-6"><h2 class="title-info">Notifications</h2></div>
+        <div class="col-xs-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-5"><span class="filter-inactive icons-info"></span></div>
+        <div class="col-xs-6"><h2 class="title-info">Last 5 minutes filter</h2></div>
+        <div class="col-xs-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-5"><span class="notification-config icons-info"></span></div>
+        <div class="col-xs-6"><h2 class="title-info">Set notifications/alerts</h2></div>
+        <div class="col-xs-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-5"><span class="tendency-icon icons-info"></span></div>
+        <div class="col-xs-6"><h2 class="title-info">See tendency</h2></div>
+        <div class="col-xs-1"></div>
+    </div>
+
+    <div class="row text-center">
+        <img src="img/Transactions.png" class="info-img">
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-7 text-center">
+            <label class="instruction">If you need to repositionany widget, 
+            tap and holdto enter the 'setup 
+            mode'; and drag the widget  to the
+            desired position.
+            </label>
+        </div>
+        <div class="col-xs-2"></div>
+  
+    </div>
+
+</div>
+
+</div><!--close help-info-->
+
 
 <div class="container">
 
@@ -132,7 +193,7 @@
 <div class="widgets">  
 
 <!--Working-->
-    <div id="w-working" class="vertical col-lg-4 col-md-6 col-sm-6 col-xs-12">
+    <div id="w-working" class="vertical col-lg-4 col-md-4 col-sm-4 col-xs-12 working">
         <!-- Graph radial -->
         <div id="radialChart" class="left"></div>
         <!-- Active/Inactive -->
@@ -146,16 +207,16 @@
     </div> <!--Working-->
 
 <!--Transactions-->
-    <div id="w-transactions" class="complete col-lg-4 col-md-6 col-sm-6 col-xs-12">
+    <div id="w-transactions" class="complete col-lg-4 col-md-4 col-sm-4 col-xs-12 transactions">
         <h1 class="title-widgets">TRANSACTIONS</h1>
         <a href="#"><span class="notification-config"></span></a>
         <br>
         <br>
-        <a href="#"><span class="tendency-icon"></span></a>
+        <a href="trends_transactions.html"><span class="tendency-icon"></span></a>
     </div> <!--Transactions-->
 
 <!--Approved transactions-->
-    <div id="w-approved-t" class="horizontal col-lg-4 col-md-6 col-sm-6 col-xs-12">
+    <div id="w-approved-t" class="horizontal col-lg-4 col-md-4 col-md-pull-6 col-sm-4 col-xs-12 approved-transactions">
         <!--Graph bar-->
         <div class="up">
             <h1 class="title-widgets">APPROVED TRANSACTIONS</h1>
@@ -163,15 +224,14 @@
         </div>
         <!--Information-->
         <div class="bottom">
-            <a href="#"><span class="tendency-icon"></span></a>
+            <a href="trends_approved.html"><span class="tendency-icon"></span></a>
         </div>
 
     </div><!--Approved transactions-->
 
 <!--Origin-->
-    <div id="w-origin" class="vertical col-lg-4 col-md-6 col-sm-6 col-xs-12">
+    <div id="w-origin" class="vertical col-lg-4 col-md-4 col-sm-4 col-xs-12 origin">
         <h1 class="title-widgets">ORIGIN</h1>
-        <br>
         <!-- Graph bar -->
         <div id="verticalChart" class="left">
             
@@ -181,33 +241,35 @@
             <a href="#"><span class="notification-config"></span></a>
             <br>
             <br>
-            <a href="#"><span class="tendency-icon"></span></a>
+            <a href="trends_origin.html"><span class="tendency-icon"></span></a>
         </div>
 
     </div><!--Origin-->
 
 <!--Critical failures-->
-    <div id="w-critical-failures" class="complete col-lg-4 col-md-6 col-sm-6 col-xs-12">
+    <div id="w-critical-failures" class="complete col-lg-4 col-md-4 col-sm-4 col-xs-12 critical-failures">
         <h1 class="title-widgets">CRITICAL FAILURES</h1>
             <a href="notifications-settings-cf.html"><span class="notification-config"></span></a>
             
     </div><!--Critical failures-->
 
 <!--Disposals/Available-->
-    <div id="w-DisposalsAvailable" class="complete col-lg-4 col-md-6 col-sm-6 col-xs-12">
+    <div id="w-DisposalsAvailable" class="complete col-lg-4 col-md-4 col-sm-4 col-xs-12 Disposals-Available">
     <!--menu-->
+
     <ul class="nav nav-tabs">
         <li class="active"><a class="widget-nav title-widgets" href="#disposals">DISPOSALS</a></li>
         <li><a class="widget-nav title-widgets" href="#available">AVAILABLE</a></li>
     </ul>
+
         <!--Content Disposals-->
         <div class="tab-content">
             <div id="disposals" class="tab-pane fade in active">
                 <p>Information Disposals</p>
-                        <a href="notifications-settings-cf.html"><span class="notification-config"></span></a>
+                        <a href="#"><span class="notification-config"></span></a>
                         <br>
                         <br>
-                        <a href="#"><span class="tendency-icon"></span></a>
+                        <a href="trends_Disposals.html"><span class="tendency-icon"></span></a>
             </div>
                 <!--Content Available-->
             <div id="available" class="tab-pane fade">
@@ -215,27 +277,24 @@
                         <a href="notifications-settings-cf.html"><span class="notification-config"></span></a>
                             <br>
                             <br>
-                        <a href="#"><span class="tendency-icon"></span></a>
+                        <a href="trends_available.html"><span class="tendency-icon"></span></a>
             </div>
         </div><!--tab content-->
     </div><!--Disposals/Available-->
 
 <!--Transactions per second-->
-    <div id="w-transactions-second" class="complete col-lg-4 col-md-6 col-sm-6 col-xs-12">
+    <div id="w-transactions-second" class="complete col-lg-4 col-md-4 col-sm-4 col-xs-12 transactions-second">
         <h1 class="title-widgets">TRANSACTIONS PER SECOND</h1>
-
             <a href="#"><span class="notification-config"></span></a>
             <br>
             <br>
-            <a href="#"><span class="tendency-icon"></span></a>
+            <a href="trends_transactionsSecond.html"><span class="tendency-icon"></span></a>
 
     </div><!--Transactions per second-->
 
 <!--Response time-->
-    <div id="w-response" class="vertical col-lg-4 col-md-6 col-sm-6 col-xs-12">
+    <div id="w-response" class="vertical col-lg-4 col-md-4 col-sm-4 col-xs-12 response-time">
         <h1 class="title-widgets">RESPONSE TIME</h1>
-        <br>
-        <br>
         <!-- Graph bar -->
         <div id="BarChartVSeg" class="left"></div>
         <!-- Information -->
@@ -243,12 +302,12 @@
             <a href="#"><span class="notification-config"></span></a>
             <br>
             <br>
-            <a href="#"><span class="tendency-icon"></span></a>
+            <a href="trends_responseTime.html"><span class="tendency-icon"></span></a>
         </div>
     </div><!--Response time-->
 
 <!--SLA violation-->
-    <div id="w-SlaViolation" class="vertical col-lg-4 col-md-6 col-sm-6 col-xs-12">
+    <div id="w-SlaViolation" class="vertical col-lg-4 col-md-4 col-sm-4 col-xs-12 sla-violation">
         <h1 class="title-widgets">SLA VIOLATION</h1>
         <!-- Information -->
         <div class="left"></div>
@@ -257,13 +316,13 @@
             <a href="#"><span class="notification-config"></span></a>
             <br>
             <br>
-            <a href="#"><span class="tendency-icon"></span></a>
+            <a href="trends_SlaViolation.html"><span class="tendency-icon"></span></a>
         </div>
 
     </div><!--SLA violation-->
 
 <!--Network availability-->
-    <div id="w-Network" class="horizontal col-lg-4 col-md-6 col-sm-6 col-xs-12">
+    <div id="w-Network" class="horizontal col-lg-4 col-md-4 col-sm-4 col-xs-12 network-availability">
         <h1 class="title-widgets">NETWORK AVAILABILITY</h1>
         <!--Graph bar-->
         <div class="up">
@@ -271,7 +330,7 @@
         </div>
         <!--Information-->
         <div class="bottom">
-            <a href="#"><span class="tendency-icon"></span></a>
+            <a href="trends_NAvailability.html"><span class="tendency-icon"></span></a>
         </div>
 
     </div><!--Network availability-->
@@ -283,7 +342,13 @@
 <div class="footer">
     <p>FOOTER</p>
 </div>
-    
+
+
+    <!--JS-->
+    <script type="text/javascript" src="js/widgets.js"></script>
+    <script type="text/javascript" src="js/user-preferences.js"></script>
+    <script src="RadialChartWORKING/libd3v3.5.17/d3.min.js"></script>
+
     <!--RadialCharts-->
     <script src="RadialChartWORKING/RadialJS.js"></script>
     <link rel="stylesheet" href="RadialChartWORKING/RadialStyle.css">

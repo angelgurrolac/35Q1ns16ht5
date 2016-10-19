@@ -50,6 +50,7 @@ body {
   font-weight: bold;
 }
 .tooltipBar{
+  -webkit-fill: #F7F0F0;
   fill: #F7F0F0;
 }
 .textTooltip{
@@ -60,13 +61,23 @@ body {
 .textTooltipDay{
   font-family: SFUIDisplay-Regular;
   font-size: 10px;
+  -webkit-fill: #9B9B9B;
+  -moz-fill: #9B9B9B;
+  -o-fill: #9B9B9B;
   fill: #9B9B9B;
 }
 .textDifference{
   font-family: SFUIDisplay-Regular;
   font-size: 10px;
+  -webkit-fill: #C2C0C2;
+  -moz-fill: #C2C0C2;
+  -o-fill: #C2C0C2;
   fill:#C2C0C2;
 }
 .x.axis .tick:first-of-type{
   	display: none;
+}
+.sombra{
+   -webkit-filter: drop-shadow( 0px 0px 8px rgba(245, 146, 146, 1) );
+   filter: drop-shadow( 0px 0px 8px rgba(245, 146, 146, 1) );
 }

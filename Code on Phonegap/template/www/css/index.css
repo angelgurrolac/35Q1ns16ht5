@@ -82,11 +82,13 @@ h3{
 
 a:focus, a:hover{
   text-decoration: none;
+  outline: none;
 } 
 
 .menu-back{
   padding:12px;
 }
+
 
 /*Log In*/
 
@@ -190,14 +192,12 @@ border-radius : 57px;
 }
 
 .logo-esq{
-  width: 40%;
   height: 40%;
   margin: 2%;
   padding: 3%;
 }
 #back {
   cursor      : pointer;
-  left        :0px;
   margin-left : 5%;
   margin-top  : 7%;
 }
@@ -333,13 +333,13 @@ input:checked + .slider:before {
     font-family     : "SFUIDisplay-Light";
     background-color: transparent;
     color           : #3A8686;
-    border-radius   : 10px;
+    border-radius   : 7px;
     border          : 1px solid #3A8686;
-    right           : 0;
-    padding         : 0px 10px;
     text-align      : center;
     font-size       : 14px;
     outline         : none;
+    padding         : 5px 14px;
+    padding-top     : 6px;
 }
 
 /*Widgets*/
@@ -350,24 +350,24 @@ input:checked + .slider:before {
 }
 
 .complete {
-      background-color: #ffffff;
-      border          : 4px solid #F7F0F0;
-      position        : absolute;
-      height          : 160px; /*por lo pronto*/
+    background-color: #ffffff;
+    border          : 4px solid #F7F0F0;
+    position        : absolute;
+    height          : 160px; /*por lo pronto*/
 }
 
 .vertical {
-      background-color: #ffffff;
-      border          : 4px solid #F7F0F0;
-      position        : absolute;
-      height          : 160px; /*por lo pronto*/
+    background-color: #ffffff;
+    border          : 4px solid #F7F0F0;
+    position        : absolute;
+    height          : 160px; /*por lo pronto*/
 }
 
 .horizontal {
-      background-color: #ffffff;
-      border          : 4px solid #F7F0F0;
-      position        : absolute;
-      height          : 200px; /*por lo pronto*/
+    background-color: #ffffff;
+    border          : 4px solid #F7F0F0;
+    position        : absolute;
+    height          : 200px; /*por lo pronto*/
 }
 
 .title-widgets {
@@ -382,7 +382,7 @@ input:checked + .slider:before {
 /*Widgets, Graphs-Information positions*/
 
 .left{
-   width     :50%;
+    width     :50%;
     position : absolute;
     left     : -12px;
 }
@@ -502,6 +502,8 @@ input:checked + .slider:before {
   margin-right: 15px;
 }
 
+input.error{border:1px solid red;}
+
 .label-percent{
   color       : #462255;
   font-family : "SFUIDisplay-Regular";
@@ -555,6 +557,7 @@ input:checked + .slider:before {
     padding           : 8px;
     width             : 40px;
     text-align        : center;
+    outline           : none;
 }
 
 .less, .plus{
@@ -567,8 +570,8 @@ input:checked + .slider:before {
 }
 
 .values-widget {
-  border-bottom       : none;
-  padding             : 15px;
+  border-bottom: none;
+  padding      : 15px;
 }
 
 .values-widget + .values-widget{
@@ -576,7 +579,7 @@ input:checked + .slider:before {
 }
 
 .dropdown-notification{
-  float : left;
+  float      : left;
   margin-left: 3px;
 }
 
@@ -622,14 +625,14 @@ input:checked + .slider:before {
 }
 
 .settings-option{
-font-family   : "SFUIDisplay-Regular";
-font-size     : 11px;
-color         : #E06060;
-letter-spacing: 0px;
-background    : #F7F0F0;
-line-height   : 15px;
-padding       : 5px;
-padding-left  : 23px;
+  font-family   : "SFUIDisplay-Regular";
+  font-size     : 11px;
+  color         : #E06060;
+  letter-spacing: 0px;
+  background    : #F7F0F0;
+  line-height   : 15px;
+  padding       : 5px;
+  padding-left  : 23px;
 }
 
 .panel-group .panel-heading {
@@ -643,12 +646,12 @@ padding-left  : 23px;
 }
 
 .panel-heading > h4{
-font-family       : "SFUIDisplay-Regular";
-font-size     : 10px;
-color         : #E06060;
-letter-spacing: 0px;
-display       : inline-block;
-padding-left  : 12px;
+  font-family   : "SFUIDisplay-Regular";
+  font-size     : 10px;
+  color         : #E06060;
+  letter-spacing: 0px;
+  display       : inline-block;
+  padding-left  : 12px;
 }
 
 .icon, .icon:hover{
@@ -693,14 +696,14 @@ background: none;
 }
 
 .group-trends>.btn {
-  font-family     : "SFUIDisplay-Bold";
-  font-size       : 21px;
-  color           : #F7F0F0;
-  border          : 1px solid #F7F0F0;
-  border-radius   : 100px;
-  letter-spacing  : 0px;
-  background      : #313B72;
-  padding-left    : 18px;
+    font-family     : "SFUIDisplay-Bold";
+    font-size       : 21px;
+    color           : #F7F0F0;
+    border          : 1px solid #F7F0F0;
+    border-radius   : 100px;
+    letter-spacing  : 0px;
+    background      : #313B72;
+    padding-left    : 18px;
 }
 .btn-trend .caret {
     margin-left: 14px;
@@ -708,12 +711,12 @@ background: none;
 }
 
 .dropdown-trends{
-  background      : #313B72;
-  border          : 1px solid #F7F0F0;
-  box-shadow      : 0px 0px 6px 3px #252C57;
-  border-radius   : 25px;
-  top             : -10px;
-  left            : 25%;
+    background      : #313B72;
+    border          : 1px solid #F7F0F0;
+    box-shadow      : 0px 0px 6px 3px #252C57;
+    border-radius   : 25px;
+    top             : -10px;
+    left            : 25%;
 }
 
 .dropdown-trends>li>a {
@@ -760,38 +763,38 @@ background: none;
 
 /*About*/
 .title-about{
-  color: #462255;
+    color: #462255;
 }
 .background-version{
-   background     : white;
+    background     : white;
 }
 .background-body{
-  background-color: #F7F0F0 ;
+    background-color: #F7F0F0 ;
 }
 .text-version{
-  color          : #E06060 ;
-  line-height    : 40px;
-  font-size      : 14px;
-  margin         : 0;
+    color          : #E06060 ;
+    line-height    : 40px;
+    font-size      : 14px;
+    margin         : 0;
 }
 .space{
- height           : 66px;
+    height           : 66px;
 }
 .paragraph{
-  font-family : "SFUIDisplay-Regular";
-  font-size   : 16px;
-  color       : #484349 ;
+    font-family : "SFUIDisplay-Regular";
+    font-size   : 16px;
+    color       : #484349 ;
 }
 .size-logo{
-  width : 80%;
-  margin-top: 15px;
+    width : 80%;
+    margin-top: 15px;
 }
 
 /* Feedback*/
 .paragraph-feedback{
-  font-family: "SFUIDisplay-Light";
-  font-size:16px;
-  color: #484349 ;
+    font-family: "SFUIDisplay-Light";
+    font-size:16px;
+    color: #484349 ;
 }
 .color-feedback{
   color: #462255;
@@ -800,9 +803,9 @@ background: none;
   width: 38%;
 }
 .comments{
-  margin-left: 5%;
-  font-size: 14px;
-  color: #E06060
+    margin-left: 5%;
+    font-size: 14px;
+    color: #E06060
 }
 .comments-textarea{
     width: 100%;
@@ -810,8 +813,51 @@ background: none;
     resize: none;
 }
 .row-border{
-  background: #fff;
-  border-bottom: solid 2px #C2C0C2;
+    background: #fff;
+    border-bottom: solid 2px #C2C0C2;
+}
+
+/* Info */
+
+.icons-info{
+  float: right;
+  margin-right: 12px;
+  margin-top: 15px !important;
+}
+
+.title-info{
+  font-size: 15px;
+  color: #484349;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.text-icons{
+  margin-top: 25px;
+}
+
+.instruction{
+  text-align: left;
+  font-family: "SFUIDisplay-Thin";
+  color: #9B9B9B;
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+.info-img{
+  width: 55%;
+  margin-top: 30px;
+  margin-left: 25px;
+}
+
+body.modalBlur > *:not(.modal) {
+  background: #ffffff;
+  -webkit-filter: blur(10px);
+}
+
+.modal-backdrop {
+  opacity: 0.9;
+  filter: alpha(opacity=90);
 }
 
 /*Footer*/
@@ -853,7 +899,8 @@ background: none;
   content     : url('../img/filter-active.png');
 }
 .filter-inactive{
-  content     : url('../img/filter-inactive.png');
+  content : url('../img/filter-inactive.png');
+  width   : 23px;
 }
 .graph{
   content     : url('../img/graph.png');
@@ -908,7 +955,6 @@ background: none;
 .world-icon{
   content     : url('../img/world-icon.png');
 }
-
  
 /*Media queries*/
 
@@ -935,6 +981,7 @@ background: none;
   .logo-esq {
     width: 20%;
   }
+
 
 }
 @media (max-width : 1024px) {
@@ -969,12 +1016,12 @@ background: none;
   }
 
   .body-login{
-  background-image: url('../img/background-tablet.jpg'); 
-  background-size : cover;
+    background-image: url('../img/background-tablet.jpg'); 
+    background-size : cover;
   }
 
   .dropdown-trends{
-  left: 37%;
+    left: 37%;
   }
 
   .logo-esq {
@@ -984,29 +1031,28 @@ background: none;
    .back-icon-white, .back-icon {
     margin-top: 20%;
   }
-
-
 }
+
 @media (max-width : 414px) {
-    #menu_smartphone {
-        left      :-414px;
-        width     :414px;    
-    }
+  #menu_smartphone {
+    left      :-414px;
+    width     :414px;    
+}
 
   .body-login{
-  background-image: url('../img/background.jpg'); 
-  background-size : cover;
+    background-image: url('../img/background.jpg'); 
+    background-size : cover;
   }
 
   .dropdown-trends{
-  left: 25%;
+    left: 25%;
   }
 
   .logo-esq {
-    width: 35%;
+    width: 40%;
   }
 
-   .back-icon-white, .back-icon {
+  .back-icon-white, .back-icon {
     margin-top: 45%;
   }
 

@@ -39,7 +39,7 @@
 /*Set color of the line label on Y Axis*/
 .lineAxis{
 	stroke: #C2C0C2;
-  stroke-width: 1px;
+  	stroke-width: 1px;
 }
 /*Set the font, size and color of text label on Y axis*/
 .textAxis{
@@ -49,5 +49,6 @@
 }
 
 #BarChartVSeg{
-	width: 143px;
+width: 143px;
+margin-top: 12%;
 }

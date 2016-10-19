@@ -122,15 +122,15 @@ positionOther = 0;
                     html += '<button class="btn btn-primary dropdown-toggle button-notification" name="position-' + positionPanel + '' + position + '" type="button" data-toggle="dropdown">ABOVE ';
                     html += '<span class="caret"> </span></button>';
                     html += '<ul class="dropdown-menu dropdown-options">';
-                        html += '<li><a class="option-notification" href="#" id="position-' + positionPanel + '' + position + '">ABOVE</a></li>';
-                        html += '<li><a class="option-notification" href="#" id="position-' + positionPanel + '' + position + '">EQUALS</a></li>';
-                        html += '<li><a class="option-notification" href="#" id="position-' + positionPanel + '' + position + '">BELOW</a></li>';
+                        html += '<li><a class="option-notification" href="javascript:void(0);" id="position-' + positionPanel + '' + position + '">ABOVE</a></li>';
+                        html += '<li><a class="option-notification" href="javascript:void(0);" id="position-' + positionPanel + '' + position + '">EQUALS</a></li>';
+                        html += '<li><a class="option-notification" href="javascript:void(0);" id="position-' + positionPanel + '' + position + '">BELOW</a></li>';
                     html += '</ul>';
                 html += '</div>';
                 html += '<div class="notification-values">';
                     html += '<form  method="POST" class="select-percent" id="select-percent">';
                         html += '<input type="button" value="-" class="less" field="'+ field + '' + position + '"/>';
-                        html += '<input type="number" name="' + field + '' + position +'" value="0" class="percent" id="position-' + positionPanel + '' + position + '"/>';
+                        html += '<input type="number" name="' + field + '' + position +'" value="0" class="percent"  inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" id="position-' + positionPanel + '' + position + '"/>';
                         html += '<span class="label-percent">%</span>';
                         html += '<input type="button" value="+" class="plus" field="'+ field + '' + position +'"/>';
                         html += '<a class="remove less-icon" id="position-' + positionPanel + '' + position + '"></a>';
@@ -154,7 +154,7 @@ positionOther = 0;
             $('input[name='+fieldName+']').val(currentVal + 1);
         } else {
             // Otherwise put a 0 there
-            $('input[name='+fieldName+']').val();
+            $('input[name='+fieldName+']').val(0);
         }
 });
 
@@ -172,7 +172,7 @@ $(document).on("click touchstart",".less",function(e) {
             $('input[name='+fieldName+']').val(currentVal - 1);
         } else {
             // Otherwise put a 0 there
-            $('input[name='+fieldName+']').val();
+            $('input[name='+fieldName+']').val(100);
         }
 });
 
@@ -210,7 +210,6 @@ var vt = $('button[name='+btntext+']').text();
 var prct2 =$('input[id='+inputext+']').val();
 
 console.log(vt, prct2);
-
 
 });
 

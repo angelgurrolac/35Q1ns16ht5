@@ -94,7 +94,7 @@ $(document).ready(function() {
 
 		//Add g label with y and axis class and the position, also call the Y axis to display
 	  svg.append("g")
-			.attr("class", "y axis")
+			.attr("class", "yy axis")
 			.attr("transform", "translate(0,0)")
 			.call(yAxis);
 
@@ -109,7 +109,7 @@ $(document).ready(function() {
 			.attr("y2", -height - margin.top);
 
 		//Give width to a line on Y axis
-		svg.selectAll(".y line")
+		svg.selectAll(".yy line")
 			.attr("x2", width);
 
 		//Bar creation with the corresponding values

@@ -1,5 +1,4 @@
-    
-    $(document).ready(function() {
+$(document).ready(function() {
     	 //Lateral menu
     var isMenuOpen = false;
  
@@ -35,17 +34,25 @@
         }
     });
 
+var filterMethod = "modalBlur";
+
+    $(".modal-fullscreen").on('show.bs.modal', function () {
+  setTimeout( function() {
+    $(document.body).addClass(filterMethod);
+  }, 0);
+});
+$(".modal-fullscreen").on('hidden.bs.modal', function () {
+  $(document.body).removeClass(filterMethod);
+});
+
+
 //Nav.
    $(".nav-tabs a").click(function(){
      $(this).tab('show');
 });
 
-
-//Drag/Drop
-    $(".widgets").shapeshift();
+   
 
 });
-
-
 
     

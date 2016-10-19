@@ -14,11 +14,11 @@ svg{
 	shape-rendering: crispEdges;
 }
 
-.y.axis .domain {
+.yy.axis .domain {
   display: none;
 }
 
-.y.axis .tick line{
+.yy.axis .tick line{
 	fill: none;
   	stroke: #C2C0C2;
   	stroke-width: 1px;
@@ -57,7 +57,7 @@ label{
 	right: 10px;
 }
 
-.y.axis .tick text{
+.yy.axis .tick text{
 	font-family: SFUIDisplay-Regular;
 	font-size: 10px;
 	fill: #C2C0C2;
@@ -73,5 +73,6 @@ label{
 	padding: 0px;
   	margin: 0px;
   	width: 174px;
-  	margin-top: 20px;
+  	margin-top: 40px;
+  	margin-left: 10px;
 }
