@@ -1,0 +1,79 @@
+{
+
+"widgets":
+{
+
+"working":{
+	
+	"data":[
+	{"id": "w-working", "class": "working"}
+	]
+},
+
+"transactions":{
+	
+	"data":[
+	{"id": "w-transactions", "class": "transactions"}
+	]
+},
+
+"approved-transactions":{
+	
+"data":[
+		{"id": "w-approved-t", "class":"approved-transactions"}
+		]
+},
+
+"origin":{
+	
+"data":[
+		{"id": "w-origin", "class":"origin"}
+	]
+},
+
+"critical-failures":{
+	
+"data":[
+		{"id": "w-critical-failures", "class":"critical-failures"}
+	]
+},
+
+"disposals-available":{
+	
+"data":[
+		{"id": "w-DisposalsAvailable", "class":"Disposals-Available"}
+	]
+},
+
+"transactions-second":{
+	
+"data":[
+		{"id": "w-transactions-second", "class":"transactions-second"}
+	]
+},
+
+"response-time":{
+	
+"data":[
+		{"id": "w-response", "class":"response-time"}
+	]
+},
+
+"sla-violation":{
+	
+"data":[
+		{"id": "w-SlaViolation", "class":"sla-violation"}
+	]
+},
+
+"sla-violation":{
+	
+"data":[
+		{"id": "w-Network", "class":"network-availability"}
+	]
+},
+
+}
+
+}
+

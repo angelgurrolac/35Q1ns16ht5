@@ -1,0 +1,15 @@
+{
+	"letters":[{
+		"letter": "average"
+	},
+	{
+		"letter":"interchange"
+	}],
+	"frequencies":[{
+		"frequency" : 0.89
+	},
+	{
+		"frequency" : 6.21
+	}],
+	"avg": 3
+}
