@@ -130,7 +130,7 @@ positionOther = 0;
                 html += '<div class="notification-values">';
                     html += '<form  method="POST" class="select-percent" id="select-percent">';
                         html += '<input type="button" value="-" class="less" field="'+ field + '' + position + '"/>';
-                        html += '<input type="number" name="' + field + '' + position +'" value="0" class="percent"  inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" id="position-' + positionPanel + '' + position + '"/>';
+                        html += '<input type="number" name="' + field + '' + position +'" value="0" class="percent"  inputmode="numeric" pattern="[0-9]*" id="position-' + positionPanel + '' + position + '" onKeyUp="if(this.value>100){this.value=0;}else if(this.value<0){this.value=0;}"/>';
                         html += '<span class="label-percent">%</span>';
                         html += '<input type="button" value="+" class="plus" field="'+ field + '' + position +'"/>';
                         html += '<a class="remove less-icon" id="position-' + positionPanel + '' + position + '"></a>';
