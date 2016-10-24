@@ -406,24 +406,25 @@ input:checked + .slider:before {
 
 .widget-nav{
     color           : #462255;
-    background-color: #C2C0C2;
+    background-color: #D8D8D8;
     text-decoration : none;
 }
 
   .nav {
     margin-top: 0;
     width: 100%;
-    margin-left: -14px;
+    /*margin-left: -14px;*/
     margin-bottom: 10px;
   }
 
 .nav-tabs{
-  background: #C2C0C2;
+  background: #D8D8D8;
   border-radius: 14px 14px 0 0;
 }
 .nav-tabs>li.active>.widget-nav, .nav-tabs>li.active>.widget-nav:focus, .nav-tabs>li.active>.widget-nav:hover {
     color              : #F59292;
     cursor             : default;
+    border-radius: 14px 14px 0 0;
     background-color   : #fff;
 }
 
@@ -447,7 +448,7 @@ input:checked + .slider:before {
 
 .nav-tabs>li {
   width     : 50%;
-  margin-top: -6px;
+  margin-top: -5px;
 }
 
 .nav-tabs>li>a{
@@ -1237,7 +1238,7 @@ body.modalBlur > *:not(.modal) {
 }
 
 .widget-nav-title{
-  background: #F7F0F0 ;
+  background: #F1F1F1 ;
 }
 .nav-tabs-title{
  background: #F7F0F0 ;
@@ -1270,4 +1271,8 @@ body.modalBlur > *:not(.modal) {
 .tab-title-a {
    width: 100%;
    padding: 10px 0px !important;
+}
+
+#w-DisposalsAvailable{
+  padding: 0px;
 }
