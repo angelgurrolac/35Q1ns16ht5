@@ -1,0 +1,82 @@
+{
+
+"widgets":
+{
+"working":{
+
+	"id": 1, 
+	"name": "w-working"
+
+},
+
+"transactions":{
+	
+	"id": 2, 
+	"name": "w-transactions"
+	
+},
+
+"approvedTransactions":{
+
+		"id":3, 
+		"name": "w-approved-t"	
+
+},
+
+"origin":{
+	
+		"id":4, 
+		"name": "w-origin"
+	
+},
+
+"criticalFailures":{
+	
+		"id":5, 
+		"name": "w-critical-failures"
+
+},
+
+"disposalsAvailable":{
+	
+		"id":6, 
+		"name": "w-DisposalsAvailable"
+	
+},
+
+"transactionsSecond":{
+	
+
+		"id":7, 
+		"name": "w-transactions-second"
+
+},
+
+"responseTime":{
+	
+
+		"id":8, 
+		"name": "w-response"
+	
+},
+
+"slaViolation":{
+	
+
+		"id":9, 
+		"name": "w-SlaViolation"
+	
+},
+
+"networkAvailability":{
+	
+
+		"id":10, 
+		"name": "w-Network"
+	
+}
+
+}
+
+}
+
