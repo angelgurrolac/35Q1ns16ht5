@@ -38,7 +38,7 @@
 
 $(".gridly").on("press",function(){
   $(".gridly > div").css("box-shadow", "0px 0px 25px rgb(204, 204, 204)");
-  $('.gridly').gridly('draggable', 'on');
+  $(".gridly").gridly('draggable', 'on');
   $(".btn-circle").css("display", "block");
 });
 
