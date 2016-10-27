@@ -3,10 +3,9 @@ $(document).ready(function() {
   };
 
   function ಠ_ಠ() {
-    d3.json("data.json", function(datas) {
-      drawLineChart(    'lineChart',    datas.lineChart );
+    d3.json("AreaChartMonthlyWORKING/data.json", function(datas) {
+      drawLineChart(    'TrendMWork',    datas.lineChart );
     });
-    drawLineChart(    'lineChart',    data.lineChart );
   }
 
   var DURATION = 1500;
@@ -26,7 +25,7 @@ $(document).ready(function() {
     // TODO code duplication check how you can avoid that
     var containerEl = document.getElementById( elementId ),
         BAR_PADDING = 0,
-        width       = 375,
+        width       = $(".col-xs-12").width(),
         height      = 350,
 
         detailWidth  = 98,
@@ -35,12 +34,12 @@ $(document).ready(function() {
 
         container   = d3.select( containerEl ),
         svgContainer         = container.select( 'svg' )
-                                .attr( 'width', width )
+                                .attr( 'width', width + 30 )
                                 .attr( 'height', height + 50),
 
         x = d3.scale.linear()
           .domain([0, d3.max(data, function(d) { return d.date; })])
-          .range([0, width]),
+          .range([0, width + 30]),
         y = d3.scale.linear()
           .range( [ (height - 40), 0 ] ),
 
@@ -244,9 +243,9 @@ $(document).ready(function() {
                         );
 
       details.append( 'path' )
+              .attr("class", "sombra")
               .style("fill", "#F7F0F0")
               .attr( 'd', 'm9.74375,26.09958l0,0c0.06589,-3.78053 -0.53092,-3.73961 4.50487,-3.73961l8.7578,0l0,0l19.89401,0l37.30124,0c4.92259,0 5.85786,-0.27983 7.37011,0.48273c1.51226,0.76257 1.74797,2.26507 1.74797,3.25688l0,9.34902l0,0l0,5.60941l0,0c-0.13181,4.76065 -2.76422,3.55584 -7.47052,3.80086l-25.655,-0.06125l-7.15615,2.79216l-7.19876,-2.79216l-22.97749,0c-7.7378,-0.06125 -9.11809,0.71475 -9.11809,-3.73961l0,0l0,-5.60941l0,0l0,-9.34902l-0.00001,0l-0.00001,-0.00001l0,0.00001l0.00001,0l0.00001,0l0.00001,0z' )
-              .attr("filter", "url(#f2)")
               .attr( 'width', detailWidth )
               .attr( 'height', detailHeight );
 
