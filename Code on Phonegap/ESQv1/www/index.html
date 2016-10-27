@@ -43,9 +43,8 @@
     <script src="js/bootstrap.min.js" ></script>
 
     <!-- Let you add the drag/drop on widgets -->
+    <script type="text/javascript" src="js/widgets.js"></script>
     <script src="js/jquery.finger.js"></script>
-    <!--<script src="js/jquery.shapeshift.js"></script>-->
-    <!--<script src="js/jquery.touch-punch.min.js"></script>-->
     <script src='js/jquery.gridly.js'></script>
     <script src='js/test.js' type='text/javascript'></script>
 
@@ -54,14 +53,53 @@
     <link rel="stylesheet" href="css/animate.css">
     <link href='css/jquery.gridly.css' rel='stylesheet' type='text/css'>
 
+    <!--JS-->
+    <script src="RadialChartWORKING/libd3v3.5.17/d3.min.js"></script>
+
+    <!--RadialCharts-->
+    <script src="RadialChartWORKING/RadialJS.js"></script>
+    <link rel="stylesheet" href="RadialChartWORKING/RadialStyle.css">
+    <!--Origin Graph-->
+    <script src="BarChartV/BarChartVJS.js"></script>
+    <link rel="stylesheet" href="BarChartV/BarChartStyle.css">
+
+    <!--Response Time-->
+    <script src="BarChartVRESPONSETIME/BarChartVSegJS.js"></script>
+    <link rel="stylesheet" href="BarChartVRESPONSETIME/BarChartVSegStyle.css">
+
+    <!--Approved Transactions-->
+    <script src="BarCharHorAloneAPPROTRANSACTION/BarChartHorAlAPPROTRANSACTION.js"></script>
+    <link rel="stylesheet" href="BarCharHorAloneAPPROTRANSACTION/BarChartHorAlAPPROTRANSACTION.css">
+
+     <!--NETWORK AVAILABILITY-->
+    <script src="BarCharHorAloneNETWORKAVAILABILITY/BarChartHorAlNETWORKAVAILABILITY.js"></script>
+    <link rel="stylesheet" href="BarCharHorAloneNETWORKAVAILABILITY/BarChartHorAlNETWORKAVAILABILITY.css">
+
     <title>ESQ</title>
 
 </head>
 
+<svg style="position:absolute;left:0px">
+ <defs>
+   <filter id="shadow">
+     <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"></feGaussianBlur>
+     <feOffset dx="0" dy="0"></feOffset>
+       <feMerge><feMergeNode>
+     </feMergeNode>
+       <feMergeNode in="SourceGraphic">
+       </feMergeNode>
+     </feMerge>
+   </filter>
+   <linearGradient id="gradRadial" x1="0%" y1="50%" x2="100%" y2="50%">
+     <stop offset="0%" style="stop-color: rgb(224, 96, 96);"></stop>
+     <stop offset="100%" style="stop-color: rgb(49, 59, 114);"></stop>
+   </linearGradient>
+ </defs>
+</svg>
+
 <body class="animate fadeIn">
 
-
- <!--Lateral menu-->
+<!--Lateral menu-->
 <div id="menu_smartphone">
 <div class="row">
     <img class="menu_btn back-icon-white" id="back"/>
@@ -169,9 +207,7 @@
             </label>
         </div>
         <div class="col-xs-2"></div>
-
     </div>
-
 </div>
 
 </div><!--close help-info-->
@@ -192,202 +228,36 @@
 </div>
 
 <!-- initial tabs -->
- <ul class="nav nav-tabs-title nav-tabs">
+ <ul class="nav nav-tabs-title nav-tabs navcontent">
        <li class="li-title" id="regions-li"><a class="tab-title-a widget-nav-title title-nav-widgets text-center" href="#regions"><img id="regions-img" class="regions-icon" >ALL REGIONS</a></li>
-       <li class="active li-title" id="atm-li"><a class="tab-title-a widget-nav-title title-nav-widgets text-center" href="#atm"> <img id="atm-img" class="atm-icon"    >ATM</a></li>
+        <li class="active li-title" id="atm-li">
+            <a class="tab-title-a widget-nav-title title-nav-widgets text-center" href="#atm"> <img id="atm-img" class="atm-icon">ATM <img class="update-icon" src="img/filter-inactive.png" alt="Update"></a>
+        </li>
    </ul>
 
        <!--Content Disposals-->
-       <div class="tab-content">
+<div class="tab-content">
 
-           <div class="container tab-pane fade" id="regions">
-
-           </div>
-
-
-
-
+<div class="container tab-pane fade" id="regions"></div>
 <div class="container tab-pane fade in active" id="atm" >
-
 
 <!--Widgets-->
 
-<div class="widgets gridly">
-
-<!--Working-->
-    <div id="w-working" class="vertical col-lg-4 col-md-6 col-sm-6 col-xs-12 working">
-        <!-- Graph radial -->
-        <div id="radialChart" class="left"></div>
-        <!-- Active/Inactive -->
-        <div class="right">
-            <h1 class="title-widgets" align="center">WORKING</h1>
-            <a href="notification-settings.html"><span class="notification-config"></span></a>
-            <br>
-            <br>
-            <a href="trends.html"><span class="tendency-icon"></span></a>
-        </div>
-    </div> <!--Working-->
-
-<!--Transactions-->
-    <div id="w-transactions" class="complete col-lg-4 col-md-6 col-sm-6 col-xs-12 transactions">
-        <h1 class="title-widgets">TRANSACTIONS</h1>
-        <a href="#"><span class="notification-config"></span></a>
-        <br>
-        <br>
-        <a href="trends_transactions.html"><span class="tendency-icon"></span></a>
-    </div> <!--Transactions-->
-
-<!--Approved transactions-->
-    <div id="w-approved-t" class="horizontal col-lg-4 col-md-6 col-sm-6 col-xs-12 approved-transactions">
-        <!--Graph bar-->
-        <div class="up">
-            <h1 class="title-widgets">APPROVED TRANSACTIONS</h1>
-            <a href="#"><span class="notification-config"></span></a>
-        </div>
-        <!--Information-->
-        <div class="bottom">
-            <a href="trends_approved.html"><span class="tendency-icon"></span></a>
-        </div>
-
-    </div><!--Approved transactions-->
-
-<!--Origin-->
-    <div id="w-origin" class="vertical col-lg-4 col-md-6 col-sm-6 col-xs-12 origin">
-        <h1 class="title-widgets">ORIGIN</h1>
-        <!-- Graph bar -->
-        <div id="verticalChart" class="left">
-
-        </div>
-        <!-- Information -->
-        <div class="right">
-            <a href="#"><span class="notification-config"></span></a>
-            <br>
-            <br>
-            <a href="trends_origin.html"><span class="tendency-icon"></span></a>
-        </div>
-
-    </div><!--Origin-->
-
-<!--Critical failures-->
-    <div id="w-critical-failures" class="complete col-lg-4 col-md-6 col-sm-6 col-xs-12 critical-failures">
-        <h1 class="title-widgets">CRITICAL FAILURES</h1>
-            <a href="notifications-settings-cf.html"><span class="notification-config"></span></a>
-
-    </div><!--Critical failures-->
-
-<!--Disposals/Available-->
-    <div id="w-DisposalsAvailable" class="complete col-lg-4 col-md-6 col-sm-6 col-xs-12 Disposals-Available">
-    <!--menu-->
-
-    <ul class="nav nav-tabs">
-        <li class="active"><a class="widget-nav title-widgets" href="#disposals">DISPOSALS</a></li>
-        <li><a class="widget-nav title-widgets" href="#available">AVAILABLE</a></li>
-    </ul>
-
-        <!--Content Disposals-->
-        <div class="tab-content">
-            <div id="disposals" class="tab-pane fade in active">
-                <p>Information Disposals</p>
-                        <a href="#"><span class="notification-config"></span></a>
-                        <br>
-                        <br>
-                        <a href="trends_Disposals.html"><span class="tendency-icon"></span></a>
-            </div>
-                <!--Content Available-->
-            <div id="available" class="tab-pane fade">
-                <p>Information Available</p>
-                        <a href="notifications-settings-cf.html"><span class="notification-config"></span></a>
-                            <br>
-                            <br>
-                        <a href="trends_available.html"><span class="tendency-icon"></span></a>
-            </div>
-        </div><!--tab content-->
-    </div><!--Disposals/Available-->
-
-<!--Transactions per second-->
-    <div id="w-transactions-second" class="complete col-lg-4 col-md-6 col-sm-6 col-xs-12 transactions-second">
-        <h1 class="title-widgets">TRANSACTIONS PER SECOND</h1>
-            <a href="#"><span class="notification-config"></span></a>
-            <br>
-            <br>
-            <a href="trends_transactionsSecond.html"><span class="tendency-icon"></span></a>
-
-    </div><!--Transactions per second-->
-
-<!--Response time-->
-    <div id="w-response" class="vertical col-lg-4 col-md-6 col-sm-6 col-xs-12 response-time">
-        <h1 class="title-widgets">RESPONSE TIME</h1>
-        <!-- Graph bar -->
-        <div id="BarChartVSeg" class="left"></div>
-        <!-- Information -->
-        <div class="right">
-            <a href="#"><span class="notification-config"></span></a>
-            <br>
-            <br>
-            <a href="trends_responseTime.html"><span class="tendency-icon"></span></a>
-        </div>
-    </div><!--Response time-->
-
-<!--SLA violation-->
-    <div id="w-SlaViolation" class="vertical col-lg-4 col-md-6 col-sm-6 col-xs-12 sla-violation">
-        <h1 class="title-widgets">SLA VIOLATION</h1>
-        <!-- Information -->
-        <div class="left"></div>
-        <!-- Graph radial -->
-        <div class="right">
-            <a href="#"><span class="notification-config"></span></a>
-            <br>
-            <br>
-            <a href="trends_SlaViolation.html"><span class="tendency-icon"></span></a>
-        </div>
-
-    </div><!--SLA violation-->
-
-<!--Network availability-->
-    <div id="w-Network" class="horizontal col-lg-4 col-md-6 col-sm-6 col-xs-12 network-availability">
-        <h1 class="title-widgets">NETWORK AVAILABILITY</h1>
-        <!--Graph bar-->
-        <div class="up">
-            <a href="#"><span class="notification-config"></span></a>
-        </div>
-        <!--Information-->
-        <div class="bottom">
-            <a href="trends_NAvailability.html"><span class="tendency-icon"></span></a>
-        </div>
-
-    </div><!--Network availability-->
-
-</div><!--widgets-->
+<div class="widgets gridly"></div><!--widgets-->
 
 </div> <!--container-->
 
 </div> <!--tab content>-->
 
-<div class="footer">
-    <button id="disable">Ok</button>
-    <p>FOOTER</p>
-</div>
+<button id="disable" type="button" class="btn btn-success btn-circle"><i class="glyphicon glyphicon-ok"></i></button>
 
-
-    <!--JS-->
-    <script type="text/javascript" src="js/widgets.js"></script>
-    <script type="text/javascript" src="js/user-preferences.js"></script>
-    <script src="RadialChartWORKING/libd3v3.5.17/d3.min.js"></script>
-
-    <!--RadialCharts-->
-    <script src="RadialChartWORKING/RadialJS.js"></script>
-    <link rel="stylesheet" href="RadialChartWORKING/RadialStyle.css">
-    <!--Origin Graph-->
-    <script src="BarChartV/BarChartVJS.js"></script>
-    <link rel="stylesheet" href="BarChartV/BarChartStyle.css">
-
-    <!--Response Time-->
-    <script src="BarChartVRESPONSETIME/BarChartVSegJS.js"></script>
-    <link rel="stylesheet" href="BarChartVRESPONSETIME/BarChartVSegStyle.css">
-
-   <!--Scripts Phonegap-->
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript"> app.initialize(); </script>
+    <div class="footer">
+        <p>LAST UPDATED TODAY (07/11/2016) AT 09:04 AM</p>
+    </div>
+  
+<!--Scripts Phonegap-->
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript"> app.initialize(); </script>
 
 
 </body>

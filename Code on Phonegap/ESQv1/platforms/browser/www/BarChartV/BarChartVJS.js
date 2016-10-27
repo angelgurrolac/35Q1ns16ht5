@@ -1,4 +1,4 @@
-$(document).ready(function() {
+function originChart() {
 	//Margin, width and height size definition
 	var margin = {top: 20, right: 20, bottom: 30, left: 40},
 		width = $("#verticalChart").width(),
@@ -12,8 +12,10 @@ $(document).ready(function() {
 		.attr("width", width)
 		.attr("height", height + 24);
 
+	/*var defs = svgCont.append("defs");
+
 	/*Shadow definition for each bar*/
-	var shadowBar = svgCont.append("filter")
+	/*var shadowBar = defs.append("filter")
       	.attr("id", "shadow");//Shadow identifier
 
 	shadowBar.append("feGaussianBlur")
@@ -60,7 +62,7 @@ $(document).ready(function() {
 
 		//Bar width definition
 		var barWidth = (width / data.letters.length) / 1.2;
-		
+
 		//Map the X scale with the lenght of letters
 		x.domain(data.letters.map(function(d) { return d.letter; }));
 		//Give to Y scale the range with 1, 1 equals 100%
@@ -140,4 +142,4 @@ $(document).ready(function() {
 			.duration(1000)//Transition duration
 			.ease('linear');//Animation
 	});
-});
+}

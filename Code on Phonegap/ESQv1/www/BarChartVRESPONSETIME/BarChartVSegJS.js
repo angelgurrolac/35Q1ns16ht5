@@ -1,4 +1,4 @@
-$(document).ready(function() {
+function responseChart() {
 	//Margin, width and height size definition
 	var margin = {top: 20, right: 20, bottom: 30, left: 40},
 		width = $("#BarChartVSeg").width(),
@@ -10,10 +10,12 @@ $(document).ready(function() {
 	//Svg label definition with width and height
 	var svgCont = d3.select("#BarChartVSeg").append("svg")
 		.attr("width", width)
-		.attr("height", height + 10)
+		.attr("height", height + 10);
+
+	/*var defs = svgCont.append("defs");
 
 	/*Shadow definition for each bar*/
-	var shadowBar = svgCont.append("filter")
+	/*var shadowBar = defs.append("filter")
       	.attr("id", "shadow");//Shadow identifier
 
 	shadowBar.append("feGaussianBlur")
@@ -149,4 +151,4 @@ $(document).ready(function() {
 			.duration(1000)//Transition duration
 			.ease('linear');//Animation
 	});
-});
+}

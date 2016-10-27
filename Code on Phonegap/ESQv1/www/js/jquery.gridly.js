@@ -112,6 +112,7 @@ Copyright 2015 Kevin Sylvestre
       }
       event.preventDefault();
       event.stopPropagation();
+
       this.bind('on');
       this.$target = $(event.target).closest(this.$container.find(this.selector));
       this.$target.addClass('dragging');
@@ -119,7 +120,7 @@ Copyright 2015 Kevin Sylvestre
         x: this.coordinate(event).pageX - this.$target.position().left,
         y: this.coordinate(event).pageY - this.$target.position().top
       };
-      return (ref = this.callbacks) != null ? typeof ref.began === "function" ? ref.began(event) : void 0 : void 0;
+      return (ref = this.callbacks) !== null ? typeof ref.began === "function" ? ref.began(event) : void 0 : void 0;
     };
 
     Draggable.prototype.ended = function(event) {
@@ -315,7 +316,7 @@ Copyright 2015 Kevin Sylvestre
       $elements = this.$sorted();
       this.ordinalize($elements);
       setTimeout(this.layout, 0);
-      return (ref = this.settings) != null ? (ref1 = ref.callbacks) != null ? typeof ref1.reordered === "function" ? ref1.reordered($elements, this._draggable.dragged) : void 0 : void 0 : void 0;
+      return (ref = this.settings) !== null ? (ref1 = ref.callbacks) != null ? typeof ref1.reordered === "function" ? ref1.reordered($elements, this._draggable.dragged) : void 0 : void 0 : void 0;
     };
 
     Gridly.prototype.draggingMoved = function(event) {

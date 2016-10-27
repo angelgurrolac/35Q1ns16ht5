@@ -1,5 +1,6 @@
-$(document).ready(function() {
-  
+//$(document).ready(function() {
+function RadialWorking() {
+
   /* Variables definition (angle, percent, avgPercent, difference)
   * angle: this had the value of oval charted
   * percent: this is the percent that show about how many ATM's are working
@@ -12,7 +13,7 @@ $(document).ready(function() {
   var difference = 0;
 
   /*Here is defined the values of size for chart and the format*/
-  var width = $("#radialChart").width(), //Get in the variable width the container width
+  var width = 177, //Get in the variable width the container width
       widthRad = width / 3, //WidthRad is the width of radius and this is the container width divided by 3
       heightRad = widthRad, //heightRad is the same value of widthRad
       height = width - 40, //This is the height of chart, this is equals to the width minus 40 pixels
@@ -69,7 +70,7 @@ $(document).ready(function() {
       .attr("class", "background")
       .attr("d", arc.endAngle(twoPi));
 
-  /*Add a foreground circle to meter with the foreground class and a stroke attribute with the value url(#gradRadial), 
+  /*Add a foreground circle to meter with the foreground class and a stroke attribute with the value url(#gradRadial),
   the url(#gradRadial) is added to paint the circle with the gradient color*/
   var foreground = meter.append("path")
       .attr("class", "foreground")
@@ -81,19 +82,19 @@ $(document).ready(function() {
       .attr("dy", "-0.50em")
       .attr("dx", "0.35em");
 
-  /*Add a text label in avgMeter with position text-anchor to the end, then the value on y position is 3em and x position is 2em, 
+  /*Add a text label in avgMeter with position text-anchor to the end, then the value on y position is 3em and x position is 2em,
   this is the difference percent*/
   var avg = avgMeter.append("text")
       .attr("text-anchor", "end")
       .attr("dy", "3em")
       .attr("dx", "2em");
 
-  /*Add a path label in avgMeter with position text-anchor to the end, then the value on y position is 1em, 
+  /*Add a path label in avgMeter with position text-anchor to the end, then the value on y position is 1em,
   this triangle indicates if it is above or below the average*/
   var triangle = UDMeter.append("path")
       .attr("dy", "1em");
 
-  /*Add a path label in UDMeter with position text-anchor in the middle, then the value on y position is -0.5em and x position is 0.5em, 
+  /*Add a path label in UDMeter with position text-anchor in the middle, then the value on y position is -0.5em and x position is 0.5em,
   this text indicates the average percent*/
   var ud = UDMeter.append("text")
       .attr("text-anchor", "middle")
@@ -101,13 +102,13 @@ $(document).ready(function() {
       .attr("dy", "0.5em");
 
   /*Connect with the API and get JSON information*/
-  d3.json("RadialChartWORKING/data.json", function(data){
+  d3.json("dataRadial.json", function(data){
     percent = data.total;//percent is equals to a total of ATM's that are working
     angle = percent * twoPi;//The angle is equals to a percent times twoPi, this multiplication gives the circle size that will paint
     avgPercent = data.avg;//avgPercent gives the average
     angle2 = avgPercent *  twoPi;//angle2 is the imaginary circle and it's equals to a avgPercent times twoPi
     difference = avgPercent - percent;//difference is equals to avgPercent minus percent
-    
+
     /*Here is a condition that paint the triangle, if the difference is higher than 0 the triangle will be pink color*/
     if (difference > 0) {
       triangle.attr("d", "M-25 5 L-30 0 L-20 0 Z")
@@ -139,7 +140,7 @@ $(document).ready(function() {
 
         /*Here is a condition, if angle is equals to 0 dissapear stroke attribute*/
         if (angle == 0) {
-          foreground.style("stroke", "")
+          foreground.style("stroke", "");
         }
         else{
           angle = i(t) - 0.05;//angle is the interpolate i and give the t parameter
@@ -157,7 +158,7 @@ $(document).ready(function() {
 
   /*The values like width, widthRad, heightRad, height change when resize the container and then pass the values to a labels again,
   this is for a responsive design*/
-  $(window).resize(function() {
+  /*$(window).resize(function() {
       width = $("#radialChart").width(),
       widthRad = width / 3,
       heightRad = widthRad,
@@ -179,7 +180,7 @@ $(document).ready(function() {
 
       d3.select(".foreground")
         .attr("d", arc.endAngle(angle))
-  });
+  });*/
 
 
 
@@ -200,4 +201,8 @@ $(document).ready(function() {
   *
   */
 
-});
+}
+/*$(function(){
+  $('#radialChart[onload]').trigger('onload');
+  alert('ja');
+});*/

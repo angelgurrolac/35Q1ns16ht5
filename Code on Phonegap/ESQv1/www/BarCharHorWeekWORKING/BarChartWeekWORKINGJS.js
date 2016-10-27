@@ -4,8 +4,10 @@ $(document).ready(function() {
   var tapped=false;
 
   var margin = {top: 20, right: 30, bottom: 20, left: 30},
-    width = 350,
+    width = $(".col-xs-12").width(),
     height = 400;
+
+  console.log(width);
 
   var formatPercent = d3.format(".0%");
 

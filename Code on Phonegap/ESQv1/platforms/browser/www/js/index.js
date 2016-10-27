@@ -46,4 +46,19 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
+
+};
+
+if (localStorage.length == 0) {
+localStorage.setItem('1', 'true');   
+localStorage.setItem('2', 'true');   
+localStorage.setItem('3', 'true');   
+localStorage.setItem('4', 'true');   
+localStorage.setItem('5', 'true');   
+localStorage.setItem('6', 'true');   
+localStorage.setItem('7', 'true');   
+localStorage.setItem('8', 'true');   
+localStorage.setItem('9', 'true');   
+localStorage.setItem('10', 'true');   
+
 };

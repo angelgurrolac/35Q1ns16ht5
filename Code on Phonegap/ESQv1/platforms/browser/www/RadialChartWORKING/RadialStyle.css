@@ -38,11 +38,3 @@
   fill: #313B72;
   letter-spacing: 0.3px;
 }
-
-
-/*Agregar tamaño al div*/
-#radialChart{
-  padding: 0px;
-  margin: 10px;
- 
-}

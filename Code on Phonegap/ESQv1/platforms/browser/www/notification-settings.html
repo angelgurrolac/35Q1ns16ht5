@@ -40,7 +40,6 @@
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js" ></script>
-    <script src="js/validate.min.js"></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
@@ -84,9 +83,9 @@ $(document).ready(function() {
         }
     });
 
-    //Add the value selected in every notifications settings button
-$(document).on("click",".dropdown-menu li a",function() {
-    var btnwork = $(this).attr('id');
+    //Add the value selected in every notifications settings button 
+$(document).on("click",".dropdown-menu li a",function() {    
+    var btnwork = $(this).attr('id');  
     var selText = $(this).text();
      $("button[id="+btnwork+"]").html(selText + ' <span class="caret"> </span>');
 
@@ -97,17 +96,17 @@ $(document).on("click",".dropdown-menu li a",function() {
 
     function save() {
 
-    var Sworking1 = $('#working-1').text();
+    var Sworking1 = $('#working-1').text();   
     var percent1 = document.getElementById("percent-working1").value;
-    var Sworking2 = $('#working-2').text();
+    var Sworking2 = $('#working-2').text();  
     var percent2 = document.getElementById("percent-working2").value;
-    var Sworking3 = $('#working-3').text();
+    var Sworking3 = $('#working-3').text();  
     var percent3 = document.getElementById("percent-working3").value;
-    	//alert(" First value : " +Sworking1+ "" +percent1+ "" + " Second value : " + Sworking2+ "" + percent2 + "" + " third value : " +Sworking3+ "" + percent3);
+    alert(" First value : " +Sworking1+ "" +percent1+ "" + " Second value : " + Sworking2+ "" + percent2 + "" + " third value : " +Sworking3+ "" + percent3);
     }
 
 
-</script>
+</script> 
 
 <title>NOTIFICATIONS SETTINGS</title>
 
@@ -154,7 +153,7 @@ $(document).on("click",".dropdown-menu li a",function() {
     <div class="notification-values">
         <form class="notification-form"  method='POST' action='#' class="select-percent" id="select-percent">
             <input type='button' value='-' class='less' field='quantity' />
-            <input type='number' name='quantity' value='0' class='percent'  min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" id="percent-working1"/>
+            <input type='number' name='quantity' value='0' class='percent'  inputmode="numeric" pattern="[0-9]*" onKeyUp="if(this.value>100){this.value='0';}else if(this.value<0){this.value='0';}" id="percent-working1"/>
             <span class="label-percent">%</span>
             <input type='button' value='+' class='plus' field='quantity' />
         </form>
@@ -181,7 +180,7 @@ $(document).on("click",".dropdown-menu li a",function() {
     <div class="notification-values">
         <form class="notification-form"  method='POST' action='#' class="select-percent" id="select-percent">
             <input type='button' value='-' class='less' field='amount' />
-            <input type='number' name='amount' value='0' class='percent' min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" id="percent-working2"/>
+            <input type='number' name='amount' value='0' class='percent' inputmode="numeric" pattern="[0-9]*" onKeyUp="if(this.value>100){this.value='0';}else if(this.value<0){this.value='0';}" id="percent-working2"/>
             <span class="label-percent">%</span>
             <input type='button' value='+' class='plus' field='amount' />
         </form>
@@ -208,7 +207,7 @@ $(document).on("click",".dropdown-menu li a",function() {
     <div class="notification-values">
         <form class="notification-form"  method='POST' action='#' class="select-percent" id="select-percent">
             <input type='button' value='-' class='less' field='value' />
-            <input type='number' name='value' value='0' class='percent' min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" id="percent-working3"/>
+            <input type='number' name='value' value='0' class='percent' inputmode="numeric" pattern="[0-9]*" onKeyUp="if(this.value>100){this.value='0';}else if(this.value<0){this.value='0';}" id="percent-working3"/>
             <span class="label-percent">%</span>
             <input type='button' value='+' class='plus' field='value' />
         </form>
