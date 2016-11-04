@@ -1,0 +1,51 @@
+[
+  {
+    "letter": "MUN",
+    "transactions": 1115 ,
+    "percentage": 0.98,
+    "avgDiary": 0.4,
+    "avgWeekly": 0.9
+  },
+  {
+    "letter": "TUE",
+    "transactions": 10158,
+    "percentage": 0.98,
+    "avgDiary": 0.5,
+    "avgWeekly": 0.9
+  },
+  {
+    "letter": "WED",
+    "transactions": 12158,
+    "percentage": 1,
+    "avgDiary": 0.3,
+    "avgWeekly": 0.9
+  },
+  {
+    "letter": "THU",
+    "transactions": 9158,
+    "percentage": 0.98,
+    "avgDiary": 0.5,
+    "avgWeekly": 0.9
+  },
+  {
+    "letter": "FRI",
+    "transactions": 10158,
+    "percentage": 0.98,
+    "avgDiary": 0.32,
+    "avgWeekly": 0.9
+  },
+  {
+    "letter": "SAT",
+    "transactions": 12158,
+    "percentage": 1,
+    "avgDiary": 0.8,
+    "avgWeekly": 0.9
+  },
+  {
+    "letter": "SUN",
+    "transactions": 11158,
+    "percentage": 0.98,
+    "avgDiary": 1,
+    "avgWeekly": 0.9
+  }
+]
