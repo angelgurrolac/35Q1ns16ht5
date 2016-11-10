@@ -281,7 +281,7 @@ border-radius : 57px;
 .button-switch{
   right: 0;
   float: right;
-  margin-right: 5px;
+  margin-right: 0;
 }
 
 .switch input {display:none;}
@@ -512,7 +512,6 @@ input:checked + .slider:before {
  font-family: "SFUIDisplay-Thin";
  color:#9B9B9B;
  font-size: 16px;
- margin-left: 8px;
  letter-spacing: 1px;
  line-height: 16px;
 }
@@ -789,6 +788,10 @@ input:checked + .slider:before {
     line-height : 24px;
     color       : #462255;
     margin-top  : 0px;
+}
+
+.title-widget>label{
+  font-weight: normal;
 }
 
 .panel-body {
