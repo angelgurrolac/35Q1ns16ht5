@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  
 //Working
 var Active, Inactive, TotalATM;
 //Transactions
@@ -119,7 +119,7 @@ function SeparateNumber(val){
     return val;
 }
 
-//Function that allow simplify the numbers
+//Function that allow simplify the numbers 
 function abbrNum(number, decPlaces) {
     var orig = number;
     var dec = decPlaces;
@@ -171,7 +171,8 @@ for (var j = 0; j <= data.kpis["atmta.transactions"].data[0].values[0].data.leng
   TotalTransactions=SeparateNumber(TotalTransactions);
 }
 //Transactions per Second
-TransactionsSecond=data.kpis["atmta.transactions"].data[0].values[0].data[0][1];
+TransactionsSecond=data.kpis["atmta.transactions"].data[0].values[0].data[0][1]/300;
+TransactionsSecond=TransactionsSecond.toFixed(4);
 //Approved Transactions
 Approved=data.kpis["atmta.transactions"].data[0].values[0].data[0][2];
 Denied=data.kpis["atmta.transactions"].data[0].values[0].data[0][3];
@@ -191,7 +192,6 @@ OtherIssuer=SeparateNumber(OtherIssuer);
 DifferentATM=SeparateNumber(DifferentATM);
 
 //Critical Failures
-
 CriticalFailures[0]=data.kpis["sstob.atmfaults"].data[0].values[0].data[0][1];
 CriticalFailures[0]+=" OUT OF SERVICE";
 CriticalFailures[1]=data.kpis["sstob.atmfaults"].data[0].values[0].data[0][2];
@@ -274,7 +274,7 @@ lastMonth=data.kpis["sstob.avb"].data[0].values[0].data[1][1];
 
 },
 error:function(result){
- console.log(result);
+ console.error(result);
 }
 
 });
@@ -327,7 +327,7 @@ $(data).each(function (index, data) {$('.widgets').html(
           "<ul class='ul-widgetT'>"+
           "<li class='today'><span>TODAY</span></li>"+
           "<li><span class='information-T'>"+TotalTransactions+"</span><span class='glyphicon glyphicon-triangle-bottom icon-down'></span><span class='info-percentd'>2%</span></li>"+
-          "<li class='info-avg'>AVG </li>"+
+          "<li class='info-avg'>AVG. </li>"+
           "</ul>"+
           "</div>"+
       "</div>"+
@@ -366,7 +366,7 @@ $(data).each(function (index, data) {$('.widgets').html(
           "approtranChart();"+
           "</script>"+
       "</div>"+
-
+      
       "<div id="+data.widgets.origin.id+" class='vertical col-lg-4 col-md-6 col-sm-6 col-xs-12 "+data.widgets.origin.name+"' style='position: relative; '>"+
         "<h1 class='title-widgets'>ORIGIN</h1>"+
         "<div id='verticalChart' onload='originChart()' class='left'></div>"+
@@ -380,19 +380,19 @@ $(data).each(function (index, data) {$('.widgets').html(
                 //Information-Same Bank//
               "<li class='li-blue'><span>SAME BANK</span>"+
                   "<ul class='ul-infow'>"+
-                  "<li><span class='information-AA'>"+SameBank+"</span><span class='information-AI'>/AVG</span></li>"+
+                  "<li><span class='information-AA'>"+SameBank+"</span><span class='information-AI'>/AVG. 4,654</span></li>"+
                   "</ul>"+
               "</li>"+
                 //Information-Other Issues//
               "<li class='li-purple'><span>OTHER ISSUER</span>"+
                 "<ul class='ul-infow'>"+
-                "<li><span class='information-AA'>"+OtherIssuer+"</span><span class='information-AI'>/AVG</span></li>"+
+                "<li><span class='information-AA'>"+OtherIssuer+"</span><span class='information-AI'>/AVG. 4,654</span></li>"+
                 "</ul>"+
               "</li>"+
                 //Information Different ATM
               "<li class='li-orange'><span>DIFFERENT ATM</span>"+
                 "<ul class='ul-infow'>"+
-                  "<li><span class='information-AA'>"+DifferentATM+"</span><span class='information-AI'>/AVG</span></li>"+
+                  "<li><span class='information-AA'>"+DifferentATM+"</span><span class='information-AI'>/AVG. 4,654</span></li>"+
                 "</ul>"+
               "</li>"+
             "</ul>"+
@@ -494,7 +494,7 @@ $(data).each(function (index, data) {$('.widgets').html(
 
       //Information Available//
             "<div class='widget-information'>"+
-
+                
                 "<div class='col-lg-5 col-md-5 col-sm-5 col-xs-5 info-DAL'>"+
                  "<ul class='ul-widgets'>"+
                   "<li><span class='accounting'>"+Instances[0]+"</span>"+
@@ -551,7 +551,7 @@ $(data).each(function (index, data) {$('.widgets').html(
             "<ul class='ul-widgetT'>"+
             "<li class='today'><span>TODAY</span></li>"+
             "<li><span class='information-T'>"+TransactionsSecond+"</span><span class='glyphicon glyphicon-triangle-bottom icon-down'></span><span class='info-percentd'>%</span></li>"+
-            "<li class='info-avg'>AVG</li>"+
+            "<li class='info-avg'>AVG. 40</li>"+
             "</ul>"+
           "</div>"+
 
@@ -571,13 +571,13 @@ $(data).each(function (index, data) {$('.widgets').html(
                 //Information-Same Bank//
               "<li class='li-purple'><span>AVERAGE</span>"+
                   "<ul class='ul-infow'>"+
-                  "<li><span class='information-AA'>"+Average+"</span><span class='information-AI'>/AVG 1</span></li>"+
+                  "<li><span class='information-AA'>"+Average+"</span><span class='information-AI'>/AVG. 1</span></li>"+
                   "</ul>"+
               "</li>"+
                 //Information-Other Issues//
               "<li class='li-orange'><span>INTERCHANGE</span>"+
                 "<ul class='ul-infow'>"+
-                "<li><span class='information-AA'>"+Interchange+"</span><span class='information-AI'>/AVG 1</span></li>"+
+                "<li><span class='information-AA'>"+Interchange+"</span><span class='information-AI'>/AVG. 1</span></li>"+
                 "</ul>"+
               "</li>"+
             "</ul>"+
@@ -619,13 +619,13 @@ $(data).each(function (index, data) {$('.widgets').html(
         "</div>"+
         "<div class='bottom'>"+
         "<a href='trends_NAvailability.html'><span class='tendency-icon'></span></a>"+
-
+            
             "<div class='widget-information'>"+
               "<div class='col-lg-5 col-md-5 col-sm-5 col-xs-5  info-NAL'>"+
                  "<ul class='ul-widgets'>"+
                   "<li><span class='accounting'>CURRENT MONTH</span>"+
                     "<ul class='ul-infow'>"+
-                    "<li><span class='currency'>"+currentMonth+"</span><span class='information-AI'>/</span></li>"+
+                    "<li><span class='currency'>"+currentMonth+"</span><span class='information-AI obj-na'>/ 99%</span></li>"+
                     "</ul>"+
                   "</li>"+
                   "</ul>"+
@@ -634,7 +634,7 @@ $(data).each(function (index, data) {$('.widgets').html(
                  "<ul class='ul-widgets'>"+
                   "<li><span class='accounting'>LAST MONTH</span>"+
                     "<ul class='ul-infow'>"+
-                    "<li><span class='currency'>"+lastMonth+"</span><span class='information-AI'>/</span></li>"+
+                    "<li><span class='currency'>"+lastMonth+"</span><span class='information-AI obj-na'>/ 99%</span></li>"+
                     "</ul>"+
                   "</li>"+
                 "</ul>"+

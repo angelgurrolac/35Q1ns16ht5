@@ -415,6 +415,7 @@ input:checked + .slider:before {
   margin-right: 8px;
   font-size: 12px;
   top: -2px;
+
 }
 
 .info-percentd{
@@ -533,7 +534,7 @@ input:checked + .slider:before {
 }
 
 .info-SLA{
-  margin-top: 40px;
+  margin-top: 30%;
   margin-left: 15px;
 }
 
@@ -698,6 +699,11 @@ input:checked + .slider:before {
  right: 35px;
  position: absolute;
  opacity: 0.5;
+}
+
+.obj-na{
+  font-family: "SFUIDisplay-Regular";
+  font-size: 15px;
 }
 
 /*Widgets, Graphs-Information positions*/
