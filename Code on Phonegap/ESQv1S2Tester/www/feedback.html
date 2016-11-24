@@ -40,6 +40,8 @@
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js" ></script>
+    
+    <script src='js/modals.js'></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
@@ -50,16 +52,16 @@
 </head>
 <body class="background-body">
 
-<div class="row background-version row-border">
-    <div class="col-xs-2 text-center"><a class="encabezado back-icon" href="index.html"></a></div>
-    <div class="col-xs-8 text-center"><h1 class="title-menu">FEEDBACK</h1></div>
-    <div class="col-xs-2"></div>
+<div class="row background-version row-border" id="header-feedback">
+    <div class="col-md-1 col-sm-1 col-xs-2 text-center"><a class="encabezado back-icon" href="index.html"></a></div>
+    <div class="col-md-10 col-sm-10 col-xs-8 text-center"><h1 class="title-menu">FEEDBACK</h1></div>
+    <div class="col-md-1 col-sm-1 col-xs-2"></div>
 </div>
 
-<div class="container">
+<div class="container" id="body-feedback">
     <br>
     <br>
-    <div class="row">
+    <div class="row logo-feedback">
         <div class="col-xs-3"></div>
         <div class="col-xs-6 text-center"><img class="size-logo-feedback" src="img/logo-color.png" alt=""></div>
         <div class="col-xs-3"></div>
@@ -72,10 +74,10 @@
     </div>
     <div class="row">
         <div class="col-xs-1"></div>
-        <div class="col-xs-10"> <p class="paragraph-feedback">You are welcome to send us suggestions <br>
+        <div class="col-xs-11"> <p class="paragraph-feedback">You are welcome to send us suggestions <br>
             about our Insights App. We welcome <br>
             problems reports, feature ideas and general comments.</p>
-</div>
+        </div>
         <div class="col-xs-1"></div>
     </div>
     <div class="row">
@@ -83,16 +85,15 @@
         <div class="col-xs-2"></div>
     </div>
     <div class="row">
-        <div class="col-xs-12"><textarea class="comments-textarea" name="" id="" cols="30" rows="10"></textarea></div>
+        <div id="text-feedback" class="col-md-12 col-xs-12"><textarea class="comments-textarea" name="" id="" cols="30" rows="10"></textarea></div>
     </div>
         <br>
         
- <div class="btn-login col-lg-12 col-md-12 col-sm-12 col-xs-12">
+ <div id="send-feedback" class="btn-login col-lg-12 col-md-12 col-sm-10 col-xs-12">
         <input type='button' value='SEND' class="btn-sign" onclick=""/>
 </div>
 
-</div><!--Container Transactional Collection-->
-
+</div><!--Container-->
 <!--Scripts Phonegap-->
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript"> app.initialize(); </script>

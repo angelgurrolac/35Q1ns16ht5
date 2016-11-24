@@ -68,14 +68,14 @@ $("#panel").tabs();
 <body class="trend">
 
 <!--header-->
-<div class="row row-border">
+<div class="row row-border menu-trends">
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
         <img class="menu_btn menu_function hamburguer" align="left"/>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
         <img class="logo-esq" src="img/logo-color.png">
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center icons">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 icons">
         <a href="#"><span class="info-icon"></span></a>
         <a href="#"><span class="notification"></span></a>
     </div>
@@ -136,16 +136,16 @@ $("#panel").tabs();
 
 <!--Header trends-->
 <div class="row header-trends  animated zoomIn">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center"><a class="encabezado back-icon-white" href="index.html"></a></div>
-    <div class="col-xs-8 text-center"><h1 class="title-menu-trends">RESPONSE TIME</h1></div>
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-2 col-md-1 col-sm-1 col-xs-2 text-center"><a class="encabezado back-icon-white" href="index.html"></a></div>
+    <div class="col-md-10 col-sm-10 col-xs-8 text-center"><h1 class="title-menu-trends">RESPONSE TIME</h1></div>
+    <div class="col-lg-2 col-md-1 col-sm-1 col-xs-2"></div>
 </div> <!--Header trends close-->
 
 
 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center"></div>
 
-<div class="text-center col-lg-12 col-md-12 col-sm-12 col-xs-12">
-     <div id="panel" class="group-trends text-center">
+<div class="text-center col-lg-10 col-md-10 col-sm-10 col-xs-10">
+     <div id="panel" class="group-trends animated zoomIn text-center">
         <button type="button" class="btn dropdown-toggle btn-trend" data-toggle="dropdown">TODAY<span class="caret"></span></button>
             <ul class="dropdown-menu dropdown-trends">
                    <li><a href="#TodayResponseT">TODAY</a></li>
@@ -156,61 +156,15 @@ $("#panel").tabs();
         <div class="space"></div>
 
         <!--Graphs -->
-        <div class="row row-graph responseToday col-lg-6 col-md-12 col-sm-12 col-xs-12" id="TodayResponseT">
-          <svg id="lineChartSVG" class="lineChart--svg">
-            <defs>
-              <filter id="f2" x="-10" y="-10" width="100" height="100">
-                <feFlood result="flood" flood-color="#9B9B9B" flood-opacity="1"></feFlood>
-                <feComposite in="flood" result="mask" in2="SourceGraphic" operator="in"></feComposite>
-                <feMorphology in="mask" result="dilated" operator="dilate" radius="0.5"></feMorphology>
-                <feGaussianBlur in="dilated" result="blurred" stdDeviation="2"></feGaussianBlur>
-                <feMerge>
-                    <feMergeNode in="blurred"></feMergeNode>
-                    <feMergeNode in="SourceGraphic"></feMergeNode>
-                </feMerge>
-              </filter>
-              <linearGradient id="lineChart--gradientBackgroundArea" x1="50%" y1="0%" x2="50%" y2="100%" >
-                <stop offset="35%" style="stop-color:rgb(34,11,43);stop-opacity:0.9" />
-                <stop offset="100%" style="stop-color:rgb(224,96,96);stop-opacity:0.9" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <div class="row row-graph responseWeek col-lg-12 col-md-12 col-sm-12 col-xs-12" id="WeekResponseT"></div>
-        <div class="row row-graph responseMonthly col-lg-12 col-md-12 col-sm-12 col-xs-12" id="MonthResponseT">
-          <svg id="lineChartSVGsa" class="lineChart--svgsa">
-            <defs>
-              <filter id="f2" x="-10" y="-10" width="100" height="100">
-                  <feFlood result="flood" flood-color="#9B9B9B " flood-opacity="1"></feFlood>
-                  <feComposite in="flood" result="mask" in2="SourceGraphic" operator="in"></feComposite>
-                  <feMorphology in="mask" result="dilated" operator="dilate" radius="0.5"></feMorphology>
-                  <feGaussianBlur in="dilated" result="blurred" stdDeviation="2"></feGaussianBlur>
-                  <feMerge>
-                    <feMergeNode in="blurred"></feMergeNode>
-                    <feMergeNode in="SourceGraphic"></feMergeNode>
-                  </feMerge>
-              </filter>
-              <linearGradient id="lineChart--gradientBackgroundAreaMon" x1="50%" y1="0%" x2="50%" y2="100%" >
-                <stop offset="35%" style="stop-color:rgb(34,11,43);stop-opacity:0.9" />
-                <stop offset="100%" style="stop-color:rgb(224,96,96);stop-opacity:0.9" />
-              </linearGradient>
-            </defs>
-           </svg>
-        </div>
+        <div class="row row-graph" id="TodayResponseT"></div>
+        <div class="row row-graph" id="WeekResponseT"></div>
+        <div class="row row-graph" id="MonthResponseT"></div>
 
      </div> <!--Tabs-->
 </div> <!--Close Menú trends-->
 
 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center"></div>
 
-<link rel="stylesheet" href="AreaChartTodayRESPONSETIME/AreaChartTodayRESPONSETIME.css">
-<script type="text/javascript" src="AreaChartTodayRESPONSETIME/AreaChartTodayRESPONSETIME.js"></script>
-
-<link rel="stylesheet" href="BarCharHorWeekRESPONSETIME/BarChartWeekRESPONSETIME.css">
-<script type="text/javascript" src="BarCharHorWeekRESPONSETIME/BarChartWeekRESPONSETIMEJS.js"></script>
-
-<link rel="stylesheet" href="AreaChartMonthlyRESPONSETIME/AreaChartMonthlyRESPONSETIME.css">
-<script type="text/javascript" src="AreaChartMonthlyRESPONSETIME/AreaChartMonthlyRESPONSETIME.js"></script>
 <script>
   function algo(){
     location.reload()

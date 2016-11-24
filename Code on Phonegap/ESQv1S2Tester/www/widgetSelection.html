@@ -40,7 +40,7 @@
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js" ></script>
-
+<script src='js/modals.js'></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
 
@@ -51,20 +51,21 @@
 
 <body class="animate fadeInRight">
 
-<div class="row background-version row-border">
+<div class="row background-version row-border" id="header-select">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center"><a class="encabezado back-icon" href="index.html"></a></div>
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center"><h1 class="title-menu">WIDGET SELECTION</h1></div>
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
 </div>
 
+<div id="body-select">
 <!--Title Collection-->
 <h3 class="collection-type">ATM COLLECTION</h3>
 
-<div class="container">
+<div class="container select-w">
 
 <!--Widget's name/ Slide button -->
 
-<div class="select-widget col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+<div class="select-widget col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
 	<div class="widget-name">Working ATM'S</div>
 		<div  class="button-switch">
 			<label class="switch">
@@ -74,7 +75,7 @@
 		</div>	
 </div>
 
-<div class="select-widget col-lg-6 col-md-6 col-sm-6 col-xs-12">	
+<div class="select-widget col-lg-6 col-md-6 col-sm-12 col-xs-12">	
 	<div class="widget-name">Critical Failures</div>
 		<div class="button-switch">
 			<label class="switch">
@@ -84,7 +85,7 @@
 		</div>
 </div>	
 
-<div class="select-widget col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="select-widget col-lg-6 col-md-6 col-sm-12 col-xs-12">
 	<div class="widget-name">Response time</div>
 		<div class="button-switch">
 			<label class="switch">
@@ -95,7 +96,7 @@
 </div>	
 
 
-<div class="select-widget col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="select-widget col-lg-6 col-md-6 col-sm-12 col-xs-12">
 	<div class="widget-name">SLA Violation</div>
 		<div class="button-switch">
 			<label class="switch">
@@ -105,7 +106,7 @@
 		</div>	
 </div>
 
-<div class="select-widget col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="select-widget col-lg-6 col-md-6 col-sm-12 col-xs-12">
 	<div class="widget-name">Network Availability</div>
 		<div class="button-switch">
 			<label class="switch">
@@ -120,11 +121,11 @@
 <!--Title Collection-->
 <h3 class="collection-type">TRANSACTIONAL COLLECTION</h3>
 
-<div class="container">
+<div class="container select-w">
 
 <!--Widget's name (BUY)-->
 
-<div class="select-widget col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="select-widget col-lg-6 col-md-6 col-sm-12 col-xs-12">
 	<div class="widget-name">Transactions</div>
 		<div class="button-switch">
 			<label class="switch">
@@ -134,7 +135,7 @@
 		</div>	
 </div>
 
-<div class="select-widget col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="select-widget col-lg-6 col-md-6 col-sm-12 col-xs-12">
 	<div class="widget-name">Aproved transactions</div>
 		<div class="button-switch">
 			<label class="switch">
@@ -144,7 +145,7 @@
 		</div>	
 </div>
 
-<div class="select-widget col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="select-widget col-lg-6 col-md-6 col-sm-12 col-xs-12">
 	<div class="widget-name">Origin</div>
 		<div class="button-switch">
 			<label class="switch">
@@ -154,7 +155,7 @@
 		</div>	
 </div>
 
-<div class="select-widget col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="select-widget col-lg-6 col-md-6 col-sm-12 col-xs-12">
 	<div class="widget-name">Transactions per Second</div>
 		<div class="button-switch">
 			<label class="switch">
@@ -164,7 +165,7 @@
 		</div>	
 </div>
 
-<div class="select-widget col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="select-widget col-lg-6 col-md-6 col-sm-12 col-xs-12">
 	<div class="widget-name">Disposals/Available money</div>
 		<div class="button-switch">
 			<label class="switch">
@@ -177,6 +178,7 @@
 </div><!--Container Transactional Collection-->
 <h3 class="collection-type">OTHER COLLECTION <button class="buy-widget">BUY</button></h3>
 
+</div>
 
 <script type="text/javascript" src="js/user-preferences.js"></script>
 <!--Scripts Phonegap-->

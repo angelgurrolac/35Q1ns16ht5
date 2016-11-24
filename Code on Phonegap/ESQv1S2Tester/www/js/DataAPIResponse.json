@@ -181,8 +181,6 @@
       ]
     },
 
-
-
     "sstob.avb": {
       "name": "Network Availability",
       "metrics": [

@@ -39,7 +39,7 @@ var isMenuOpen = false;
       isMenuOpen = true;
     }
   });
-  $('#back').click(function()
+  $('#back, #feedback-link, #select-link, #about-link').click(function()
   {
     if (isMenuOpen === true)
     {
@@ -54,8 +54,10 @@ var isMenuOpen = false;
       $(".menu_btn").fadeIn(600);
 
       isMenuOpen = false;
+
     }
   });
+
 
 //Menu Info
 var filterMethod = "modalBlur";
@@ -97,7 +99,6 @@ var atm;
      $("#atm-img").addClass("atm-icon");
    }
   });
-
 
 //Take Only the Numbers in the Array
 function Numbermatch(v){
@@ -152,7 +153,7 @@ function abbrNum(number, decPlaces) {
 
 //Data Widgets
 $.ajax({
-type: "get",
+type: "GET",
 url: "js/DataAPIResponse.json",
 dataType:"json",
 success: function(data) {
@@ -271,7 +272,6 @@ TotalSla=SeparateNumber(TotalSla);
 //Network Availability
 currentMonth=data.kpis["sstob.avb"].data[0].values[0].data[0][1];
 lastMonth=data.kpis["sstob.avb"].data[0].values[0].data[1][1];
-
 },
 error:function(result){
  console.error(result);
@@ -454,7 +454,7 @@ $(data).each(function (index, data) {$('.widgets').html(
                  "<ul class='ul-widgets'>"+
                   "<li><span class='accounting'>"+Instances[0]+"</span>"+
                     "<ul class='ul-infow'>"+
-                    "<li><span class='currency'>"+Dis[0]+"</span><span class='information-AI'></span></li>"+
+                    "<li><span class='currency'>"+Dis[0]+"</span><span class='information-AI'>/AVG. 280M</span></li>"+
                     "</ul>"+
                   "</li>"+
                   "</ul>"+
@@ -463,7 +463,7 @@ $(data).each(function (index, data) {$('.widgets').html(
                  "<ul class='ul-widgets'>"+
                   "<li><span class='accounting'>"+Instances[1]+"</span>"+
                     "<ul class='ul-infow'>"+
-                    "<li><span class='currency'>"+Dis[1]+"</span><span class='information-AI'></span></li>"+
+                    "<li><span class='currency'>"+Dis[1]+"</span><span class='information-AI'>/AVG. 241K</span></li>"+
                     "</ul>"+
                   "</li>"+
                 "</ul>"+
@@ -490,11 +490,10 @@ $(data).each(function (index, data) {$('.widgets').html(
         "</div>"+//Disposals
 
         "<div id='available' class='tab-pane fade'>"+
-        "<a href='notifications-settings-available.html'><span class='notification-config'></span></a>"+
+        "<a href='notification-settings-available.html'><span class='notification-config'></span></a>"+
 
       //Information Available//
             "<div class='widget-information'>"+
-                
                 "<div class='col-lg-5 col-md-5 col-sm-5 col-xs-5 info-DAL'>"+
                  "<ul class='ul-widgets'>"+
                   "<li><span class='accounting'>"+Instances[0]+"</span>"+
@@ -619,7 +618,6 @@ $(data).each(function (index, data) {$('.widgets').html(
         "</div>"+
         "<div class='bottom'>"+
         "<a href='trends_NAvailability.html'><span class='tendency-icon'></span></a>"+
-            
             "<div class='widget-information'>"+
               "<div class='col-lg-5 col-md-5 col-sm-5 col-xs-5  info-NAL'>"+
                  "<ul class='ul-widgets'>"+
@@ -644,7 +642,9 @@ $(data).each(function (index, data) {$('.widgets').html(
         "netavaChart();"+
         "</script>"+
         "</div>"
+      
 );//Html
+
 }); //each
 for(var i=0, t=localStorage.length; i < t; i++) {
    key = localStorage.key(i);

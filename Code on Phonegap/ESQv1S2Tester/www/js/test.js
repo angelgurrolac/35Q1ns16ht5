@@ -12,7 +12,6 @@
    $('.gridly').gridly('draggable', 'off');
 
    if ($(window).width() <= 736) {
-     console.log($(window).width());
      $('.gridly').gridly({
          //base: 40, // px
          gutter: 1, // px
@@ -20,17 +19,16 @@
      });
    }
    else if ($(window).width() >= 738 && $(window).width() < 1024) {
-     console.log($(".gridly").width());
        $('.gridly').gridly({
            gutter: 5, // px
            columns: 16
        });
      }
+
      else if ($(window).width() == 1024) {
-       console.log($(".gridly").width());
          $('.gridly').gridly({
              //base: 40, // px
-             gutter: 1, // px
+             gutter: 5, // px
              columns: 16
          });
        }
@@ -61,5 +59,7 @@ $(".gridly").on("press",function(){
       $('.gridly').gridly('draggable', 'off');
       $(this).css("display", "none");
     });
+
+
 
 });

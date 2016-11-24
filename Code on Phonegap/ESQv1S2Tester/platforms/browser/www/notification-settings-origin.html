@@ -40,6 +40,7 @@
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js" ></script>
+    <script src="js/modals.js" ></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
@@ -105,15 +106,14 @@ $(document).on("click",".dropdown-menu li a",function() {
     alert(" First value : " +Sworking1+ "" +percent1+ "" + " Second value : " + Sworking2+ "" + percent2 + "" + " third value : " +Sworking3+ "" + percent3);
     }
 
-
 </script> 
 
 <title>NOTIFICATIONS SETTINGS</title>
 
-<div class="row background-version row-border">
-    <div class="col-xs-2 text-center"><a class="encabezado back-icon" href="index.html"></a></div>
-    <div class="col-xs-8 text-center"><h1 class="title-menu">NOTIFICATIONS SETTINGS</h1></div>
-    <div class="col-xs-2"></div>
+<div class="row background-version row-border" id="header-notifications">
+    <div class="col-md-1 col-sm-1 col-xs-2 text-center"><a class="encabezado back-icon" href="index.html"></a></div>
+    <div class="col-md-10 col-sm-10 col-xs-8 text-center"><h1 class="title-menu">NOTIFICATIONS SETTINGS</h1></div>
+    <div class="col-md-1 col-sm-1 col-xs-2"></div>
 </div>
 
 </head>
@@ -121,9 +121,9 @@ $(document).on("click",".dropdown-menu li a",function() {
 
 <div class="container">
 
-<div class="notification-widget col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="notification-widget">
 	<div class="title-widget">ORIGIN
-		<div  class="button-switch">
+		<div  class="button-switch switch-notification">
 			<label class ="switch">
 			  <input type="checkbox">
 			  <div class ="slider"></div>
@@ -215,16 +215,17 @@ $(document).on("click",".dropdown-menu li a",function() {
 
 </div><!--values widget-->
 
-</div><!--container-->
-
-<br>
-<div class="row space-work"></div>
-<div class="save-notification-working col-lg-12 col-md-12 col-sm-12 col-xs-12">
-     <input type='submit' value='SAVE' class="btn-save" onclick="save()"/>
+<div>
+    <div class="col-lg-1 col-md-1 col-sm-1"></div>
+    <div class="save-notification col-lg-10 col-md-10 col-sm-10 col-xs-12" >
+        <input type='submit' value='SAVE' class="btn-save" onclick="save()"/>
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-1"></div>
 </div>
 
+</div><!--container-->
 
-<script type="text/javascript" src="cordova.js"></script>
+
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript"> app.initialize(); </script>
 </body>

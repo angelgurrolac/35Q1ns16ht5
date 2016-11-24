@@ -40,6 +40,7 @@
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js" ></script>
+    <script src="js/modals.js" ></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
@@ -57,7 +58,7 @@ $(document).ready(function() {
         // Get its current value
         var currentVal = parseInt($('input[name='+fieldName+']').val());
         // If is not undefined
-        if (!isNaN(currentVal)  && currentVal <100) {
+        if (!isNaN(currentVal)) {
             // Increment
             $('input[name='+fieldName+']').val(currentVal + 1);
         } else {
@@ -79,7 +80,7 @@ $(document).ready(function() {
             $('input[name='+fieldName+']').val(currentVal - 1);
         } else {
             // Otherwise put a 0 there
-            $('input[name='+fieldName+']').val(100);
+            $('input[name='+fieldName+']').val();
         }
     });
 
@@ -105,25 +106,24 @@ $(document).on("click",".dropdown-menu li a",function() {
     alert(" First value : " +Sworking1+ "" +percent1+ "" + " Second value : " + Sworking2+ "" + percent2 + "" + " third value : " +Sworking3+ "" + percent3);
     }
 
-
 </script> 
 
 <title>NOTIFICATIONS SETTINGS</title>
 
-<div class="row background-version row-border">
-    <div class="col-xs-2 text-center"><a class="encabezado back-icon" href="index.html"></a></div>
-    <div class="col-xs-8 text-center"><h1 class="title-menu">NOTIFICATIONS SETTINGS</h1></div>
-    <div class="col-xs-2"></div>
+<div class="row background-version row-border" id="header-notifications">
+    <div class="col-md-1 col-sm-1 col-xs-2 text-center"><a class="encabezado back-icon" href="index.html"></a></div>
+    <div class="col-md-10 col-sm-10 col-xs-8 text-center"><h1 class="title-menu">NOTIFICATIONS SETTINGS</h1></div>
+    <div class="col-md-1 col-sm-1 col-xs-2"></div>
 </div>
 
 </head>
 <body class="animate fadeInDown">
 
-<div class="container">
+<div class="container" id="body-notifications">
 
-<div class="notification-widget col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="notification-widget">
 	<div class="title-widget">AVAILABLE
-		<div  class="button-switch">
+		<div  class="button-switch switch-notification">
 			<label class ="switch">
 			  <input type="checkbox">
 			  <div class ="slider"></div>
@@ -131,7 +131,7 @@ $(document).on("click",".dropdown-menu li a",function() {
 		</div>
 	</div>
 <br>
-	<span>Notify me when...</span>
+	<span class="advice">Notify me when...</span>
 </div>
 <br>
 <!-- First option-->
@@ -153,8 +153,7 @@ $(document).on("click",".dropdown-menu li a",function() {
     <div class="notification-values">
         <form class="notification-form"  method='POST' action='#' class="select-percent" id="select-percent">
             <input type='button' value='-' class='less' field='quantity' />
-            <input type='number' name='quantity' value='0' class='percent'  inputmode="numeric" pattern="[0-9]*" onKeyUp="if(this.value>100){this.value='0';}else if(this.value<0){this.value='0';}" id="percent-working1"/>
-            <span class="label-percent">%</span>
+            <input type='number' name='quantity' value='0' class='percent'  inputmode="numeric" pattern="[0-9]*" id="percent-working1"/>
             <input type='button' value='+' class='plus' field='quantity' />
         </form>
     </div>
@@ -180,8 +179,7 @@ $(document).on("click",".dropdown-menu li a",function() {
     <div class="notification-values">
         <form class="notification-form"  method='POST' action='#' class="select-percent" id="select-percent">
             <input type='button' value='-' class='less' field='amount' />
-            <input type='number' name='amount' value='0' class='percent' inputmode="numeric" pattern="[0-9]*" onKeyUp="if(this.value>100){this.value='0';}else if(this.value<0){this.value='0';}" id="percent-working2"/>
-            <span class="label-percent">%</span>
+            <input type='number' name='amount' value='0' class='percent' inputmode="numeric" pattern="[0-9]*" id="percent-working2"/>
             <input type='button' value='+' class='plus' field='amount' />
         </form>
     </div>
@@ -207,24 +205,24 @@ $(document).on("click",".dropdown-menu li a",function() {
     <div class="notification-values">
         <form class="notification-form"  method='POST' action='#' class="select-percent" id="select-percent">
             <input type='button' value='-' class='less' field='value' />
-            <input type='number' name='value' value='0' class='percent' inputmode="numeric" pattern="[0-9]*" onKeyUp="if(this.value>100){this.value='0';}else if(this.value<0){this.value='0';}" id="percent-working3"/>
-            <span class="label-percent">%</span>
+            <input type='number' name='value' value='0' class='percent' inputmode="numeric" pattern="[0-9]*" id="percent-working3"/>
             <input type='button' value='+' class='plus' field='value' />
         </form>
     </div>
 
 </div><!--values widget-->
 
-</div><!--container-->
-
-<br>
-<div class="row space-work"></div>
-<div class="save-notification-working col-lg-12 col-md-12 col-sm-12 col-xs-12">
-     <input type='submit' value='SAVE' class="btn-save" onclick="save()"/>
+<div>
+    <div class="col-lg-1 col-md-1 col-sm-1"></div>
+    <div class="save-notification col-lg-10 col-md-10 col-sm-10 col-xs-12" >
+        <input type='submit' value='SAVE' class="btn-save" onclick="save()"/>
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-1"></div>
 </div>
 
+</div><!--container-->
 
-<script type="text/javascript" src="cordova.js"></script>
+
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript"> app.initialize(); </script>
 </body>

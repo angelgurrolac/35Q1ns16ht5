@@ -40,7 +40,6 @@
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js" ></script>
-
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
 
@@ -213,23 +212,23 @@ console.log(vt, prct2);
 
 });
 
-
 });
+
 </script>
     
 <div class="row background-version row-border">
-    <div class="col-xs-2 text-center"><a class="encabezado back-icon" href="index.html"></a></div>
-    <div class="col-xs-8 text-center"><h1 class="title-menu">NOTIFICATIONS SETTINGS</h1></div>
-    <div class="col-xs-2"></div>
+    <div class="col-md-1 col-sm-1 col-xs-2 text-center"><a class="encabezado back-icon" href="index.html"></a></div>
+    <div class="col-md-10 col-sm-10 col-xs-8 text-center"><h1 class="title-menu">NOTIFICATIONS SETTINGS</h1></div>
+    <div class="col-md-1 col-sm-1 col-xs-2"></div>
 </div>
 
 </head>
 
 <body class="animate fadeInUp">
 
-<div class="notification-widget col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <div class="title-widget"><span>CRITICAL FAILURES</span>
-        <div  class="button-switch">
+<div class="notification-widget">
+    <div class="title-widget">CRITICAL FAILURES
+        <div  class="button-switch switch-notification">
             <label class ="switch">
               <input type="checkbox">
               <div class ="slider"></div>
@@ -237,15 +236,15 @@ console.log(vt, prct2);
         </div>
     </div>
 <br>
-    <span class="advice">Notify me when...</span>
+    <span>Notify me when...</span>
 </div>
-
+<br>
 
 <div class="titles-notification col-lg-12 col-md-12 col-sm-12 col-xs-12">
 <h1 class="settings-option">OUT OF SERVICE</h1>
 <a id="out-service" class="more-icon"></a>
     <!-- Container out of cash -->
-    <div class="panel-collapse container">
+    <div class="panel-collapse">
         <div class="panel-body outOfService"></div>
     </div>
 
@@ -255,7 +254,7 @@ console.log(vt, prct2);
 <h1 class="settings-option">COMMUNICATION</h1>
 <a id="communication-icon" class="more-icon"></a>
     <!-- Container communication -->
-    <div class="panel-collapse container">
+    <div class="panel-collapse">
         <div class="panel-body notification-communication"></div>
     </div>
 </div>
@@ -264,7 +263,7 @@ console.log(vt, prct2);
 <h1 class="settings-option">OUT OF CASH</h1>
 <a id="out-cash-icon" class="more-icon"></a>
     <!-- Container out of cash -->
-    <div class="panel-collapse container">
+    <div class="panel-collapse">
         <div class="panel-body notification-cash"></div>
     </div>
 </div>
@@ -273,7 +272,7 @@ console.log(vt, prct2);
 <h1 class="settings-option">PRINTER</h1>
 <a id="printer" class="more-icon"></a>
     <!-- Container printer -->
-    <div class="panel-collapse container">
+    <div class="panel-collapse">
         <div class="panel-body notification-printer"></div>
     </div>
 </div>
@@ -282,18 +281,21 @@ console.log(vt, prct2);
 <h1 class="settings-option">OTHER</h1>
 <a id="other" class="more-icon"></a>
     <!-- Container other -->
-    <div class="panel-collapse container">
+    <div class="panel-collapse">
         <div class="panel-body notification-other"></div>
     </div>
 
 </div>
 
 <!-- Save preferences button  -->
-<div class="save-notification-cf col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <input type='submit' value='SAVE' class="btn-save"/>
+<div>
+    <div class="col-lg-1 col-md-1 col-sm-1"></div>
+    <div class="save-notification-cf col-lg-10 col-md-10 col-sm-10 col-xs-12" >
+        <input type='submit' value='SAVE' class="btn-save"/>
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-1"></div>
 </div>
 
-</div><!--container-->
 
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript"> app.initialize(); </script>
