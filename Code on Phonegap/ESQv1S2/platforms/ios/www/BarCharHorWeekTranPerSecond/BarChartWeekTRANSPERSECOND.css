@@ -1,0 +1,81 @@
+@font-face {
+    font-family: "SFUIDisplay-Regular";
+    src: url(font/SF-UI-Display/SF-UI-Display-Regular.otf) format("opentype");
+}
+@font-face {
+    font-family: "SFUIDisplay-Bold";
+    src: url(font/SF-UI-Display/SF-UI-Display-Bold.otf) format("opentype");
+}
+body {
+  padding: 0;
+  margin: 0;
+  font: 10px sans-serif;
+  /*background-color: purple;*/
+}
+
+.axis path{
+  display: none;
+}
+
+.axis line {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: 0.3;
+  shape-rendering: crispEdges;
+}
+
+.x.axis text {
+  font-family: SFUIDisplay-Bold;
+  font-size: 12px;
+  fill: #F59292;
+}
+.y.axis text {
+  font-family: SFUIDisplay-Regular;
+  font-size: 10px;
+  fill: #F7F0F0;
+  letter-spacing: 0px;
+  line-height: 12px;
+}
+
+.percent{
+  font-family: SFUIDisplay-Regular;
+  fill: #F7F0F0;
+  font-size: 17px;
+  font-weight: bold;
+}
+.avg{
+  font-family: SFUIDisplay-Regular;
+  fill: #C65963;
+  font-size: 13px;
+  font-weight: bold;
+}
+.tooltipBar{
+  fill: #F7F0F0;
+}
+.textTooltip{
+  font-family: SFUIDisplay-Regular;
+  font-size: 14px;
+  fill: #462255;
+}
+.textTooltipPercent{
+  font-family: SFUIDisplay-Regular;
+  font-size: 14px;
+  fill: #9B9B9B;
+}
+.textTooltipDay{
+  font-family: SFUIDisplay-Regular;
+  font-size: 10px;
+  fill: #9B9B9B;
+}
+.textDifference{
+  font-family: SFUIDisplay-Regular;
+  font-size: 10px;
+  fill:#C2C0C2;
+}
+.x.axis .tick:first-of-type{
+  	display: none;
+}
+.sombra{
+   -webkit-filter: drop-shadow( 0px 0px 8px rgba(245, 146, 146, 1) );
+   filter: drop-shadow( 0px 0px 8px rgba(245, 146, 146, 1) );
+}
