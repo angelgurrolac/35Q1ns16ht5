@@ -33,8 +33,37 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+      // app.receivedEvent('deviceready');
+      app.setupPush();
     },
+  setupPush: function() {
+    FCMPlugin.getToken(
+      function(token){
+        console.log(token);
+      },
+      function(err){
+        console.log('error retrieving token: ' + err);
+      }
+    );
+
+    FCMPlugin.onNotification(
+      function(data) {
+        if (data.wasTapped) {
+          //Notification was received on device tray and tapped by the user.
+          alert(JSON.stringify(data));
+        } else {
+          //Notification was received in foreground. Maybe the user needs to be notified.
+          alert(JSON.stringify(data));
+        }
+      },
+      function(msg) {
+        console.log('onNotification callback successfully registered: ' + msg);
+      },
+      function(err){
+        console.log('Error registering onNotification callback: ' + err);
+      }
+    );
+  },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
@@ -50,15 +79,15 @@ var app = {
 };
 
 if (localStorage.length == 0) {
-localStorage.setItem('1', 'true');   
-localStorage.setItem('2', 'true');   
-localStorage.setItem('3', 'true');   
-localStorage.setItem('4', 'true');   
-localStorage.setItem('5', 'true');   
-localStorage.setItem('6', 'true');   
-localStorage.setItem('7', 'true');   
-localStorage.setItem('8', 'true');   
-localStorage.setItem('9', 'true');   
-localStorage.setItem('10', 'true');   
+localStorage.setItem('1', 'true');
+localStorage.setItem('2', 'true');
+localStorage.setItem('3', 'true');
+localStorage.setItem('4', 'true');
+localStorage.setItem('5', 'true');
+localStorage.setItem('6', 'true');
+localStorage.setItem('7', 'true');
+localStorage.setItem('8', 'true');
+localStorage.setItem('9', 'true');
+localStorage.setItem('10', 'true');
 
 };
