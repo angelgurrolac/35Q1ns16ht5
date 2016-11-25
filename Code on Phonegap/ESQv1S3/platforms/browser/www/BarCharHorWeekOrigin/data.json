@@ -1,0 +1,44 @@
+[
+  {
+    "letter": "MUN",
+    "frequency": 50,
+    "avgDiary": 40,
+    "avgWeekly": 90
+  },
+  {
+    "letter": "TUE",
+    "frequency": 40,
+    "avgDiary": 50,
+    "avgWeekly": 90
+  },
+  {
+    "letter": "WED",
+    "frequency": 50,
+    "avgDiary": 60,
+    "avgWeekly": 90
+  },
+  {
+    "letter": "THU",
+    "frequency": 20,
+    "avgDiary": 30,
+    "avgWeekly": 90
+  },
+  {
+    "letter": "FRI",
+    "frequency": 50,
+    "avgDiary": 32,
+    "avgWeekly": 90
+  },
+  {
+    "letter": "SAT",
+    "frequency": 50,
+    "avgDiary": 80,
+    "avgWeekly": 90
+  },
+  {
+    "letter": "SUN",
+    "frequency": 50,
+    "avgDiary": 100,
+    "avgWeekly": 90
+  }
+]
