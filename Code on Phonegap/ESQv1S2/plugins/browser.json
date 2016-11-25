@@ -63,6 +63,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "cordova-plugin-fcm": {
+            "PACKAGE_NAME": "com.eisei.esqinsights"
         }
     },
     "dependent_plugins": {
