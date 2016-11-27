@@ -33,30 +33,34 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        // app.receivedEvent('deviceready');
-      console.log('Received Device Ready Event');
-      console.log('calling setup push');
+      // app.receivedEvent('deviceready');
       app.setupPush();
     },
   setupPush: function() {
-    console.log('calling push init');
-    console.log(FCMPlugin);
-    if (FCMPlugin === null){
-      console.log('is null');
-    } else {
-      console.log('NOT NULL');
-    }
-    if (FCMPlugin == null){
-      console.log('is null');
-    } {
-      console.log('NOT NULL');
-    }
     FCMPlugin.getToken(
       function(token){
         console.log(token);
       },
       function(err){
         console.log('error retrieving token: ' + err);
+      }
+    );
+
+    FCMPlugin.onNotification(
+      function(data) {
+        if (data.wasTapped) {
+          //Notification was received on device tray and tapped by the user.
+          alert(JSON.stringify(data));
+        } else {
+          //Notification was received in foreground. Maybe the user needs to be notified.
+          alert(JSON.stringify(data));
+        }
+      },
+      function(msg) {
+        console.log('onNotification callback successfully registered: ' + msg);
+      },
+      function(err){
+        console.log('Error registering onNotification callback: ' + err);
       }
     );
   },
