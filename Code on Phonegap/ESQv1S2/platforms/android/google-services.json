@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "616773790654",
+    "firebase_url": "https://esq-insights.firebaseio.com",
+    "project_id": "esq-insights",
+    "storage_bucket": "esq-insights.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616773790654:android:8a2f96c9cdb338f3",
+        "android_client_info": {
+          "package_name": "com.eisei.esqinsights"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616773790654-52b5pacfttpl83guljc8kpjl9ur0ju3u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.eisei.esqinsights",
+            "certificate_hash": "1C14702A6A593DA8899CD0408FD738130160BD1C"
+          }
+        },
+        {
+          "client_id": "616773790654-ic9kh0f6kl5rpuenlars3ct1vpmdl3sc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtwTEKfDXoC4-9qAnZnaEOPRLpsC6FoYo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "616773790654-ic9kh0f6kl5rpuenlars3ct1vpmdl3sc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

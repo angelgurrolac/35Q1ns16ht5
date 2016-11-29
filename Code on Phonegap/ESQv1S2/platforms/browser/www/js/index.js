@@ -33,8 +33,33 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        // app.receivedEvent('deviceready');
+      console.log('Received Device Ready Event');
+      console.log('calling setup push');
+      app.setupPush();
     },
+  setupPush: function() {
+    console.log('calling push init');
+    console.log(FCMPlugin);
+    if (FCMPlugin === null){
+      console.log('is null');
+    } else {
+      console.log('NOT NULL');
+    }
+    if (FCMPlugin == null){
+      console.log('is null');
+    } {
+      console.log('NOT NULL');
+    }
+    FCMPlugin.getToken(
+      function(token){
+        console.log(token);
+      },
+      function(err){
+        console.log('error retrieving token: ' + err);
+      }
+    );
+  },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
@@ -50,15 +75,15 @@ var app = {
 };
 
 if (localStorage.length == 0) {
-localStorage.setItem('1', 'true');   
-localStorage.setItem('2', 'true');   
-localStorage.setItem('3', 'true');   
-localStorage.setItem('4', 'true');   
-localStorage.setItem('5', 'true');   
-localStorage.setItem('6', 'true');   
-localStorage.setItem('7', 'true');   
-localStorage.setItem('8', 'true');   
-localStorage.setItem('9', 'true');   
-localStorage.setItem('10', 'true');   
+localStorage.setItem('1', 'true');
+localStorage.setItem('2', 'true');
+localStorage.setItem('3', 'true');
+localStorage.setItem('4', 'true');
+localStorage.setItem('5', 'true');
+localStorage.setItem('6', 'true');
+localStorage.setItem('7', 'true');
+localStorage.setItem('8', 'true');
+localStorage.setItem('9', 'true');
+localStorage.setItem('10', 'true');
 
 };
