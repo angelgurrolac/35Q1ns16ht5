@@ -1,5 +1,6 @@
 $(document).ready(function() {
-
+//Updates
+var UpdateTime;
 //Working
 var Active, Inactive, TotalATM;
 //Transactions
@@ -155,8 +156,11 @@ $.ajax({
 type: "GET",
 url: "js/DataAPIResponse.json",
 dataType:"json",
+async: false,
 success: function(data) {
-
+//Last Update
+UpdateTime=data.generated;
+console.log(UpdateTime);
 //Working
 Active=data.kpis["sstob.atms"].data[0].values[0].data[0][1];
 Inactive=data.kpis["sstob.atms"].data[0].values[0].data[0][2];
@@ -273,8 +277,9 @@ currentMonth=data.kpis["sstob.avb"].data[0].values[0].data[0][1];
 lastMonth=data.kpis["sstob.avb"].data[0].values[0].data[1][1];
 
 },
+
 error:function(result){
- console.log(result);
+ console.error(result);
 }
 
 });
@@ -550,8 +555,8 @@ $(data).each(function (index, data) {$('.widgets').html(
           "<div class='widget-information'>"+
             "<ul class='ul-widgetT'>"+
             "<li class='today'><span>TODAY</span></li>"+
-            "<li><span class='information-T'>"+TransactionsSecond+"</span><span class='glyphicon glyphicon-triangle-bottom icon-down'></span><span class='info-percentd'>%</span></li>"+
-            "<li class='info-avg'>AVG</li>"+
+            "<li><span class='information-T'>"+TransactionsSecond+"</span><span class='glyphicon glyphicon-triangle-bottom icon-down'></span><span class='info-percentd'>2%</span></li>"+
+            "<li class='info-avg'>AVG. 40</li>"+
             "</ul>"+
           "</div>"+
 

@@ -19,7 +19,7 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html class="animate fadeIn">
+<html>
 <head>
 	<meta charset="utf-8" />
 	<meta name="format-detection" content="telephone=no" />
@@ -38,10 +38,41 @@
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
+    <style type="text/css">
+            html{
+                height: 100%;
+                -webkit-background: linear-gradient(135deg, rgba(227,80,157,1) 0%, rgba(70,34,85,0.89) 85%);
+                background: linear-gradient(135deg, rgba(227,80,157,1) 0%, rgba(70,34,85,0.89) 85%);
+            }
+            @media (max-width : 1024px) {
+              body{
+                -webkit-background-image: url('img/background-desktop.jpg');
+                -webkit-background-size : cover;
+                background-image: url('img/background-desktop.jpg');
+                background-size : cover;
+              }
+            }
 
+            @media (max-width : 768px) {
+              body{
+                -webkit-background-image: url('img/background-tablet.jpg');
+                -webkit-background-size : cover;
+                background-image: url('img/background-tablet.jpg');
+                background-size : cover;
+              }
+            }
+            @media (max-width : 414px) {
+              body{
+                -webkit-background-image: url('img/background.jpg');
+                -webkit-background-size : cover;
+                background-image: url('img/background.jpg');
+                background-size : cover;
+              }
+            }
+    </style>
 </head>
 
-<body class="body-login">
+<body>
      <div align="center"><img class="img-login" src="img/logo-color.png"></div>
 <div class="container">
 
@@ -60,7 +91,7 @@
 <label class="passError" style="color:#fff; text-center"></label>
 <label class="nameError" style="color:#fff; text-center"></label>
 </center>
-<div class="btn-login col-lg-12 col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 col-xs-12">
+<div class="btn-login col-lg-offset-3 col-lg-6 col-lg-offset-3 col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 col-xs-12">
         <!--<input type='button' value='SIGN IN' class="btn-sign" onclick="location.href='index.html'"/>-->
 				<button type='submit' class="btn-sign">SIGN IN</button>
 </div>
