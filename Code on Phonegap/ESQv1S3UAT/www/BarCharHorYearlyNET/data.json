@@ -1,0 +1,74 @@
+[
+  {
+    "letter": "JAN",
+    "frequency": 1,
+    "avgDiary": 0.4,
+    "avgWeekly": 0.9
+  },
+  {
+    "letter": "FEB",
+    "frequency": 0.14,
+    "avgDiary": 0.5,
+    "avgWeekly": 0.9
+  },
+  {
+    "letter": "MAR",
+    "frequency": 0.99,
+    "avgDiary": 0.3,
+    "avgWeekly": 0.9
+  },
+  {
+    "letter": "APR",
+    "frequency": 0.12,
+    "avgDiary": 0.5,
+    "avgWeekly": 0.9
+  },
+  {
+    "letter": "MAY",
+    "frequency": 0.50,
+    "avgDiary": 0.32,
+    "avgWeekly": 0.9
+  },
+  {
+    "letter": "JUNE",
+    "frequency": 0.8,
+    "avgDiary": 0.8,
+    "avgWeekly": 0.9
+  },
+  {
+    "letter": "JUL",
+    "frequency": 1,
+    "avgDiary": 1,
+    "avgWeekly": 0.9
+  },
+  {
+    "letter": "AUG",
+    "frequency": 1,
+    "avgDiary": 1,
+    "avgWeekly": 0.9
+  },
+  {
+    "letter": "SEP",
+    "frequency": 1,
+    "avgDiary": 1,
+    "avgWeekly": 0.9
+  },
+  {
+    "letter": "OCT",
+    "frequency": 1,
+    "avgDiary": 1,
+    "avgWeekly": 0.9
+  },
+  {
+    "letter": "NOV",
+    "frequency": 1,
+    "avgDiary": 1,
+    "avgWeekly": 0.9
+  },
+  {
+    "letter": "DEC",
+    "frequency": 0.99,
+    "avgDiary": 1,
+    "avgWeekly": 0.9
+  }
+]
