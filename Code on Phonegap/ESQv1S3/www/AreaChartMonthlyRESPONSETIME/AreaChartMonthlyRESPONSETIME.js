@@ -28,7 +28,7 @@ $(document).ready(function() {
     var containerEl = document.getElementById( elementId ),
         BAR_PADDING = 0,
         width       = $('.responseMonthly').width(),
-        height      = 350,
+        height      = $('.responseToday').height(),
 
         detailWidth  = 98,
         detailHeight = 55,
@@ -130,7 +130,7 @@ $(document).ready(function() {
 
     svg.append( 'g' )
       .attr( 'class', 'lineChart--yAxisTicks' )
-      .attr( 'transform', 'translate(' + detailWidth / 2.9 + ',0)' )
+      .attr( 'transform', 'translate(' + detailWidth / 2.5 + ',0)' )
       .call( yAxisTicks );
 
 
@@ -172,8 +172,7 @@ $(document).ready(function() {
                           .attr("cx");
 
                         d3.select('[transform="translate(' + cxSelected +',0)"] text').style({
-                          "font-family": "SFUIDisplay-Bold",
-                          "font-size": "14px"
+                          "font-family": "SFUIDisplay-Bold"
                         });
 
                         d.active = true;
@@ -219,8 +218,7 @@ $(document).ready(function() {
                       .remove();
 
       d3.selectAll('.lineChart--xAxisTicks .tick text').style({
-        "font-family": "SFUIDisplay-Regular",
-        "font-size": "12px"
+        "font-family": "SFUIDisplay-Regular"
       });
     }
 

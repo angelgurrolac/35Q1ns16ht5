@@ -6,7 +6,7 @@ $(document).ready(function() {
 
   var margin = {top: 20, right: 30, bottom: 20, left: 30},
     width = $('.originWeek').width(),
-    height = 400;
+    height = $('.originToday').height();
 
   var formatPercent = d3.format(".0%");
   var formatNumber = d3.format("0,000");

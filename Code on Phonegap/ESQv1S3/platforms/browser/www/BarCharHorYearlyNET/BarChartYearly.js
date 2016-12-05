@@ -4,17 +4,13 @@ $(document).ready(function() {
   var tapped=false;
 
   var margin = {top: 20, right: 30, bottom: 20, left: 30},
-    width = $('.responseWeek').width(),
-    height = $('.responseToday').height();
+    width = $('.netYearly').width(),
+    height = $('.netYearly').height();
 
   var formatPercent = d3.format(".0%");
-  var formatNumber = d3.format("s");
-
-  var xPercent = d3.scale.linear()
-      .range([0, width - 20]);
 
   var x = d3.scale.linear()
-      .range([0, width - 20]);
+      .range([0, width]);
 
   var y = d3.scale.ordinal()
       .rangeRoundBands([height, 0], 0.2, 0.1);
@@ -22,23 +18,20 @@ $(document).ready(function() {
   var yTooltip = d3.scale.linear()
       .range([height, 0]);
 
-  var xAxisPercent = d3.svg.axis()
-      .scale(xPercent)
-      .orient("bottom");
-
   var xAxis = d3.svg.axis()
       .scale(x)
       .orient("bottom")
-      .ticks(5);
+      .tickValues([0, 0.25, 0.5, 0.75, 1])
+      .tickFormat(d3.format("%"));
 
   var yAxis = d3.svg.axis()
       .scale(y)
       .tickSize(0)
       .orient("left");
 
-  var svgCont = d3.select("#WeekResponseT").append("svg")
+  var svgCont = d3.select("#NetAYear").append("svg")
       .attr({
-        "width": width,
+        "width": width + 20,
         "height": height + margin.top + margin.bottom
       });
 
@@ -167,16 +160,12 @@ $(document).ready(function() {
   var svg = svgCont.append("g")
       .attr("transform", "translate(20,10)");
 
-  d3.json("BarCharHorWeekRESPONSETIME/data.json", function(error, data) {
-    var diffDiary = 0;
-    var diffWeekly = 0;
-    var MaxValue = d3.max(data, function( d ) { return d.responsetime; });
+  d3.json("BarCharHorYearlyNET/data.json", function(error, data) {
+    var diffMonthly = 0;
 
     data.reverse();
 
-    //xAxis.tickValues([0, (MaxValue / 4), (MaxValue / 2), (MaxValue / 1.3), MaxValue]);
-    //xPercent.domain([0, d3.max("1")]);
-    x.domain([0, d3.max(data, function( d ) { return d.responsetime; })]);
+    x.domain([0, d3.max("1")]);
     y.domain(data.map(function(d) { return d.letter; }));
 
 
@@ -214,7 +203,7 @@ $(document).ready(function() {
             coordinates = d3.mouse(this);
             var xPosition = coordinates[0];
             var yPosition = coordinates[1];
-            yPosition = ((-30 ) + y(d.letter));
+            yPosition =  y(d.letter);
             if (yPosition <= 32) {
               yPosition = 12;
             }
@@ -232,21 +221,19 @@ $(document).ready(function() {
             var tooltip = svg.append("g")
               .attr("class", "too")
               .attr("transform", function() {
-                //console.log(xPosition);
                 return "translate(" + xPosition + "," + yPosition +")";
               });
 
             xPosition = 0;
             sombra = d3.select(this)
               .transition()
-              .duration(500)
-              .attr("class", "shadowWeek");
+              .duration(500);
 
             tooltip.append("rect")
               .attr("class", "tooltipBar")
               .attr("x", 4)
-              .attr("width", 110)
-              .attr("height", 60)
+              .attr("width", 90)
+              .attr("height", 25)
               .attr("rx", "4px")
               .attr("ry", "4px")
               .transition().duration(300)
@@ -256,33 +243,13 @@ $(document).ready(function() {
               .attr("class", "textTooltip")
               .attr("x", 8)
               .attr("y", 18)
-              .text(formatNumber(d.responsetime) /*+ " → "*/);
+              .text(formatPercent(d.frequency));
 
-              /*tooltip.append("text")
-                .attr("class", "textTooltipPercent")
-                .attr("x", 45)
-                .attr("y", 18)
-                .text(formatPercent(d.percentage));*/
-
-            tooltip.append("text")
-              .attr("class", "textTooltipDay")
-              .attr("x", 8)
-              .attr("y", 38)
-              .text("LAST " + d.letter);
-
-            tooltip.append("text")
-              .attr("class", "textTooltipDay")
-              .attr("x", 58)
-              .attr("y", 38)
-              .text("LAST WEEK");
 
             var gTriangle = tooltip.append("g")
-              .attr("transform", "translate(75,10)");
+              .attr("transform", "translate(115,-23)");
 
-            var triangleDiary = gTriangle.append("path")
-              .attr("dy", "1em");
-
-            var triangleWeekly = gTriangle.append("path")
+            var triangleMonthly = gTriangle.append("path")
               .attr("dy", "1em");
 
             var ud = gTriangle.append("text")
@@ -291,56 +258,33 @@ $(document).ready(function() {
               .attr("dx", "-4.5em")
               .attr("dy", "4em");
 
-            var ud2 = gTriangle.append("text")
-              .attr("class", "textDifference")
-              .attr("text-anchor", "middle")
-              .attr("dx", "0.5em")
-              .attr("dy", "4em");
-
             //console.log(d.avgDiary);
-            diffDiary = (d.responsetime / d.avgDiary) - 1;
-            diffWeekly = (d.responsetime / d.avgWeekly) - 1;
+            diffMonthly = d.avgDiary - d.frequency;
 
 
-            if (diffDiary < 0 ) {
-              triangleDiary.attr("d", "M-63 40 L-68 35 L-58 35 Z")
-                .style("fill", "#3A8686");
-
-              ud.style("fill", "#3A8686");
-              diffDiary = Math.abs(diffDiary);
-            }
-            else if (diffDiary > 0 ) {
-              triangleDiary.attr("d", "M-63 35 L-58 40 L-68 40 Z")
+            if (diffMonthly > 0 ) {
+              triangleMonthly.attr("d", "M-63 40 L-68 35 L-58 35 Z")
                 .style("fill", "#E3509D");
 
               ud.style("fill", "#E3509D");
-              diffDiary = Math.abs(diffDiary);//Convert the negative value to a positive
+              diffMonthly = Math.abs(diffMonthly);
             }
-
-            if (diffWeekly < 0 ) {
-              triangleWeekly.attr("d", "M-13 40 L-18 35 L-8 35 Z")
+            else if (diffMonthly < 0 ) {
+              triangleMonthly.attr("d", "M-63 35 L-58 40 L-68 40 Z")
                 .style("fill", "#3A8686");
 
-              ud2.style("fill", "#3A8686");
-              diffWeekly = Math.abs(diffWeekly);
-            }
-            else if (diffWeekly > 0) {
-              triangleWeekly.attr("d", "M-13 35 L-8 40 L-18 40 Z")
-                .style("fill", "#E3509D");
-
-              ud2.style("fill", "#E3509D");
-              diffWeekly = Math.abs(diffWeekly);
+              ud.style("fill", "#3A8686");
+              diffMonthly = Math.abs(diffMonthly);//Convert the negative value to a positive
             }
 
-            ud.text(formatPercent(diffDiary));
-            ud2.text(formatPercent(diffWeekly));
+
+
+            ud.text(formatPercent(diffMonthly));
 
             tooltip.transition().duration(500).delay(3000).style('opacity', 0).ease('linear').remove();
 
             sombra.transition().duration(500).delay(3000).style('filter', "").ease('linear').each('end', function() {
               activeTooltip = false;
-              //activeDblClick = false;
-              //tapped=false;
             });
 
         })
@@ -352,8 +296,6 @@ $(document).ready(function() {
         .on('touchstart', function(event) {
           if(!tapped){
               tapped=setTimeout(function(){
-                  //alert("single");
-                  //single_tap();
                   tapped=null;
               },300); //wait 300ms
             } else {
@@ -365,20 +307,11 @@ $(document).ready(function() {
           event.preventDefault();
         });
 
-    bar.selectAll(".j").transition().ease("quad-out").duration(2000).delay(0).attr("width", function(d) { return x(d.responsetime); }).each('end', function() {
+    bar.selectAll(".j").transition().ease("quad-out").duration(2000).delay(0).attr("width", function(d) { return x(d.frequency); }).each('end', function() {
       activeTooltip = false;
       //activeDblClick = false;
       //tapped=false;
     });
-
-    /*svg.append("g")
-        .attr({
-          "class": "x axis",
-          "transform": "translate(0," + height + ")"
-        })
-        .call(xAxisPercent)
-        .selectAll("line")
-        .attr("y2", -height);*/
 
     svg.append("g")
         .attr({
@@ -390,7 +323,7 @@ $(document).ready(function() {
         .attr("y2", -height);
 
     d3.select(".x.axis .tick:last-of-type > text")
-        .attr("x", "-5");
+        .attr("x", "-20");
 
     svg.append("g")
         .attr("class", "y axis")

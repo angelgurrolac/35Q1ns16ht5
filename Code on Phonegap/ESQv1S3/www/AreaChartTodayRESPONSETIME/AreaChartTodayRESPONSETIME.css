@@ -1,10 +1,10 @@
 @font-face {
     font-family: "SFUIDisplay-Regular";
-    src: url(../BarCharHorWeekWORKING/font/SF-UI-Display/SF-UI-Display-Regular.otf) format("opentype");
+    src: url(../fonts/font/SF-UI-Display/SF-UI-Display-Regular.otf) format("opentype");
 }
 @font-face {
     font-family: "SFUIDisplay-Bold";
-    src: url(../BarCharHorWeekWORKING/font/SF-UI-Display/SF-UI-Display-Bold.otf) format("opentype");
+    src: url(../fonts/font/SF-UI-Display/SF-UI-Display-Bold.otf) format("opentype");
 }
 /**
  * Variable power

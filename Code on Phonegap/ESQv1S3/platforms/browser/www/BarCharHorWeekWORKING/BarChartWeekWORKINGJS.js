@@ -5,7 +5,7 @@ $(document).ready(function() {
 
   var margin = {top: 20, right: 30, bottom: 20, left: 30},
     width = $(".workWeek").width(),
-    height = 400;
+    height = $(".workToday").height();
 
   var formatPercent = d3.format(".0%");
 

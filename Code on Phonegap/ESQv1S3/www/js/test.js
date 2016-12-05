@@ -57,18 +57,6 @@ $(".gridly").on("press",function(){
       $(".gridly > div").css("box-shadow", "");
       $('.gridly').gridly('draggable', 'off');
       $(this).css("display", "none");
-
-//Positions
-      setTimeout(function() {
-      for (var i = $(".gridly > div").length - 1; i >= 0; i--) {
-          var style = $(".gridly > div:nth-child("+(i + 1)+")").attr("id");
-          console.log(style);
-          console.log($("#" + style).css("top"));
-          console.log($("#" + style).css("left"));
-      }
-    },
-    1000);
-
     });
 
 });

@@ -38,7 +38,7 @@ $(document).ready(function() {
     var containerEl = document.getElementById( elementId ),
         BAR_PADDING = 0,
         width       = $(".transToday").width(),
-        height      = 400,
+        height      = $(".transToday").height(),
 
         panExtent = {x: [0,width], y:[0, height]},
 
@@ -169,7 +169,7 @@ $(document).ready(function() {
 
     svgContainer.append( 'g' )
       .attr( 'class', 'lineChart--yAxisTicks' )
-      .attr( 'transform', 'translate(' + detailWidth / 2.9 + ',50)' )
+      .attr( 'transform', 'translate(' + detailWidth / 2.5 + ',50)' )
       .call( yAxisTicks );
 
     // Helper functions!!!
@@ -209,8 +209,7 @@ $(document).ready(function() {
                         .attr("cx");
 
                       d3.select('[transform="translate(' + cxSelected +',0)"] text').style({
-                        "font-family": "SFUIDisplay-Bold",
-                        "font-size": "14px"
+                        "font-family": "SFUIDisplay-Bold"
                       });
 
                         d.active = true;
@@ -257,8 +256,7 @@ $(document).ready(function() {
                       .remove();
 
       d3.selectAll('.lineChart--xAxisTicks .tick text').style({
-        "font-family": "SFUIDisplay-Regular",
-        "font-size": "12px"
+        "font-family": "SFUIDisplay-Regular"
       });
     }
 

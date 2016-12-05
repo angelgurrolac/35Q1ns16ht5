@@ -40,7 +40,7 @@
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js" ></script>
-    <script src="js/modals.js" ></script>
+    <script src="js/form-validator.min.js" ></script>
    
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
@@ -92,6 +92,9 @@ $(document).on("click",".dropdown-menu li a",function() {
 
 });
 
+$.validate({
+    errorMessagePosition : 'top' // Instead of 'inline' which is default
+  });
 
 });
 
@@ -153,7 +156,7 @@ $(document).on("click",".dropdown-menu li a",function() {
     <div class="notification-values">
         <form class="notification-form"  method='POST' action='#' class="select-percent" id="select-percent">
             <input type='button' value='-' class='less' field='quantity' />
-            <input type='number' name='quantity' value='0' class='percent'  inputmode="numeric" pattern="[0-9]*" onKeyUp="if(this.value>100){this.value='0';}else if(this.value<0){this.value='0';}" id="percent-working1"/>
+            <input type='number' name='quantity' value='0' class='percent' inputmode="numeric" pattern="[0-9]*" onKeyUp="if(this.value>100){this.value='0';}else if(this.value<0){this.value='0';}" id="percent-working1" data-validation="number" data-validation-allowing="range[0;100]" data-validation-error-msg="Invalid value"/>
             <span class="label-percent">%</span>
             <input type='button' value='+' class='plus' field='quantity' />
         </form>
@@ -180,7 +183,7 @@ $(document).on("click",".dropdown-menu li a",function() {
     <div class="notification-values">
         <form class="notification-form"  method='POST' action='#' class="select-percent" id="select-percent">
             <input type='button' value='-' class='less' field='amount' />
-            <input type='number' name='amount' value='0' class='percent' inputmode="numeric" pattern="[0-9]*" onKeyUp="if(this.value>100){this.value='0';}else if(this.value<0){this.value='0';}" id="percent-working2"/>
+            <input type='number' name='amount' value='0' class='percent' inputmode="numeric" pattern="[0-9]*" onKeyUp="if(this.value>100){this.value='0';}else if(this.value<0){this.value='0';}" id="percent-working2" data-validation="number" data-validation-allowing="range[0;100]" data-validation-error-msg="Invalid value"/>
             <span class="label-percent">%</span>
             <input type='button' value='+' class='plus' field='amount' />
         </form>
@@ -207,7 +210,7 @@ $(document).on("click",".dropdown-menu li a",function() {
     <div class="notification-values">
         <form class="notification-form"  method='POST' action='#' class="select-percent" id="select-percent">
             <input type='button' value='-' class='less' field='value' />
-            <input type='number' name='value' value='0' class='percent' inputmode="numeric" pattern="[0-9]*" onKeyUp="if(this.value>100){this.value='0';}else if(this.value<0){this.value='0';}" id="percent-working3"/>
+            <input type='number' name='value' value='0' class='percent' inputmode="numeric" pattern="[0-9]*" onKeyUp="if(this.value>100){this.value='0';}else if(this.value<0){this.value='0';}" id="percent-working3" data-validation="number" data-validation-allowing="range[0;100]" data-validation-error-msg="Invalid value"/>
             <span class="label-percent">%</span>
             <input type='button' value='+' class='plus' field='value' />
         </form>

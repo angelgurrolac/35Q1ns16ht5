@@ -1,6 +1,5 @@
 $(document).ready(function() {
-//Updates
-var UpdateTime;
+
 //Working
 var Active, Inactive, TotalATM;
 //Transactions
@@ -152,142 +151,146 @@ function abbrNum(number, decPlaces) {
 }
 
 //Data Widgets
+
 $.ajax({
 type: "GET",
 url: "js/DataAPIResponse.json",
 dataType:"json",
-async: false,
-success: function(data) {
-//Last Update
-UpdateTime=data.generated;
-console.log(UpdateTime);
-//Working
-Active=data.kpis["sstob.atms"].data[0].values[0].data[0][1];
-Inactive=data.kpis["sstob.atms"].data[0].values[0].data[0][2];
-TotalATM=data.kpis["sstob.atms"].data[0].values[0].data[0][3];
-Active=SeparateNumber(Active);
-Inactive=SeparateNumber(Inactive);
-TotalATM=SeparateNumber(TotalATM);
+async: false
+}).done(function(data) {
+  //console.log(data);
+  if (!data.length) {
+    //success: function(data) {
 
-//Transactions
-for (var j = 0; j <= data.kpis["atmta.transactions"].data[0].values[0].data.length-1; j++){
-  TotalTransactions+=data.kpis["atmta.transactions"].data[0].values[0].data[j][1];
-  TotalTransactions=SeparateNumber(TotalTransactions);
-}
-//Transactions per Second
-TransactionsSecond=data.kpis["atmta.transactions"].data[0].values[0].data[0][1];
-//Approved Transactions
-Approved=data.kpis["atmta.transactions"].data[0].values[0].data[0][2];
-Denied=data.kpis["atmta.transactions"].data[0].values[0].data[0][3];
-Approved=SeparateNumber(Approved);
-Denied=SeparateNumber(Denied);
-//Response Time
-Average=data.kpis["atmta.transactions"].data[0].values[0].data[0][4]/300;
-Interchange=data.kpis["atmta.transactions"].data[0].values[0].data[0][5]/300;
-//Origin
-SameBank=data.kpis["atmta.transactions"].data[0].values[0].data[0][1];
-OtherIssuer=data.kpis["atmta.transactions"].data[1].values[0].data[0][1];
-//Origin-Operation
-DifferentATM=OtherIssuer-SameBank;
-//Add function
-SameBank=SeparateNumber(SameBank);
-OtherIssuer=SeparateNumber(OtherIssuer);
-DifferentATM=SeparateNumber(DifferentATM);
+    //Working
+    Active=data.kpis["sstob.atms"].data[0].values[0].data[0][1];
+    Inactive=data.kpis["sstob.atms"].data[0].values[0].data[0][2];
+    TotalATM=data.kpis["sstob.atms"].data[0].values[0].data[0][3];
+    Active=SeparateNumber(Active);
+    Inactive=SeparateNumber(Inactive);
+    TotalATM=SeparateNumber(TotalATM);
 
-//Critical Failures
+    //Transactions
+    for (var j = 0; j <= data.kpis["atmta.transactions"].data[0].values[0].data.length-1; j++){
+      TotalTransactions+=data.kpis["atmta.transactions"].data[0].values[0].data[j][1];
+      TotalTransactions=SeparateNumber(TotalTransactions);
+    }
+    //Transactions per Second
+    TransactionsSecond=data.kpis["atmta.transactions"].data[0].values[0].data[0][1];
+    //Approved Transactions
+    Approved=data.kpis["atmta.transactions"].data[0].values[0].data[0][2];
+    Denied=data.kpis["atmta.transactions"].data[0].values[0].data[0][3];
+    Approved=SeparateNumber(Approved);
+    Denied=SeparateNumber(Denied);
+    //Response Time
+    Average=data.kpis["atmta.transactions"].data[0].values[0].data[0][4]/300;
+    Interchange=data.kpis["atmta.transactions"].data[0].values[0].data[0][5]/300;
+    //Origin
+    SameBank=data.kpis["atmta.transactions"].data[0].values[0].data[0][1];
+    OtherIssuer=data.kpis["atmta.transactions"].data[1].values[0].data[0][1];
+    //Origin-Operation
+    DifferentATM=OtherIssuer-SameBank;
+    //Add function
+    SameBank=SeparateNumber(SameBank);
+    OtherIssuer=SeparateNumber(OtherIssuer);
+    DifferentATM=SeparateNumber(DifferentATM);
 
-CriticalFailures[0]=data.kpis["sstob.atmfaults"].data[0].values[0].data[0][1];
-CriticalFailures[0]+=" OUT OF SERVICE";
-CriticalFailures[1]=data.kpis["sstob.atmfaults"].data[0].values[0].data[0][2];
-CriticalFailures[1]+=" COMMUNICATION";
-CriticalFailures[2]=data.kpis["sstob.atmfaults"].data[0].values[0].data[0][3];
-CriticalFailures[2]+=" OUT OF CASH";
-CriticalFailures[3]=data.kpis["sstob.atmfaults"].data[0].values[0].data[0][4];
-CriticalFailures[3]+=" PRINTER";
-CriticalFailures[4]=data.kpis["sstob.atmfaults"].data[0].values[0].data[0][5];
-CriticalFailures[4]+=" OTHER";
+    //Critical Failures
 
-CriticalFailures.sort(function(v1,v2) {
-v1=parseInt(v1.match(/\d/g).join(""));
-v2=parseInt(v2.match(/\d/g).join(""));
-    if (v1<v2)
-      return 1;
-    else
-      return 0;
-});
+    CriticalFailures[0]=data.kpis["sstob.atmfaults"].data[0].values[0].data[0][1];
+    CriticalFailures[0]+=" OUT OF SERVICE";
+    CriticalFailures[1]=data.kpis["sstob.atmfaults"].data[0].values[0].data[0][2];
+    CriticalFailures[1]+=" COMMUNICATION";
+    CriticalFailures[2]=data.kpis["sstob.atmfaults"].data[0].values[0].data[0][3];
+    CriticalFailures[2]+=" OUT OF CASH";
+    CriticalFailures[3]=data.kpis["sstob.atmfaults"].data[0].values[0].data[0][4];
+    CriticalFailures[3]+=" PRINTER";
+    CriticalFailures[4]=data.kpis["sstob.atmfaults"].data[0].values[0].data[0][5];
+    CriticalFailures[4]+=" OTHER";
 
-COne=Numbermatch(CriticalFailures[0]);
-Ctwo=Numbermatch(CriticalFailures[1]);
-CThree=Numbermatch(CriticalFailures[2]);
-CFour=Numbermatch(CriticalFailures[3]);
-CFive=Numbermatch(CriticalFailures[4]);
-COneValue=Valuematch(CriticalFailures[0]);
-CtwoValue=Valuematch(CriticalFailures[1]);
-CThreeValue=Valuematch(CriticalFailures[2]);
-CFourValue=Valuematch(CriticalFailures[3]);
-CFiveValue=Valuematch(CriticalFailures[4]);
+    CriticalFailures.sort(function(v1,v2) {
+    v1=parseInt(v1.match(/\d/g).join(""));
+    v2=parseInt(v2.match(/\d/g).join(""));
+        if (v1<v2)
+          return 1;
+        else
+          return 0;
+    });
 
-//Disposals-Available
-for (var i = 0; i < data.kpis["sstob.atmcash"].data.length; i++) {
-//Disposals
-Dis[i]=data.kpis["sstob.atmcash"].data[i].values[0].data[0][1];
-//Available
-Ava[i]=data.kpis["sstob.atmcash"].data[i].values[0].data[0][2];
-//Instance-Name
-Instances[i]=data.kpis["sstob.atmcash"].data[i].instanceName;
-}
+    COne=Numbermatch(CriticalFailures[0]);
+    Ctwo=Numbermatch(CriticalFailures[1]);
+    CThree=Numbermatch(CriticalFailures[2]);
+    CFour=Numbermatch(CriticalFailures[3]);
+    CFive=Numbermatch(CriticalFailures[4]);
+    COneValue=Valuematch(CriticalFailures[0]);
+    CtwoValue=Valuematch(CriticalFailures[1]);
+    CThreeValue=Valuematch(CriticalFailures[2]);
+    CFourValue=Valuematch(CriticalFailures[3]);
+    CFiveValue=Valuematch(CriticalFailures[4]);
 
-if (data.kpis["sstob.atmcash"].data.length===1) {
-  for (var k = 1; k <= 3; k++) {
-    Dis[k]="";
-    Ava[k]="";
-    Instances[k]="";
+    //Disposals-Available
+    for (var i = 0; i < data.kpis["sstob.atmcash"].data.length; i++) {
+    //Disposals
+    Dis[i]=data.kpis["sstob.atmcash"].data[i].values[0].data[0][1];
+    //Available
+    Ava[i]=data.kpis["sstob.atmcash"].data[i].values[0].data[0][2];
+    //Instance-Name
+    Instances[i]=data.kpis["sstob.atmcash"].data[i].instanceName;
+    }
+
+    if (data.kpis["sstob.atmcash"].data.length===1) {
+      for (var k = 1; k <= 3; k++) {
+        Dis[k]="";
+        Ava[k]="";
+        Instances[k]="";
+      }
+    }
+    if (data.kpis["sstob.atmcash"].data.length===2) {
+      for (var h = 2; h <= 3; h++) {
+        Dis[h]="";
+        Ava[h]="";
+        Instances[h]="";
+      }
+    }
+    if (data.kpis["sstob.atmcash"].data.length===3) {
+        Dis[3]="";
+        Ava[3]="";
+        Instances[3]="";
+    }
+
+    Dis[0]=abbrNum(Dis[0], 4);
+    Dis[1]=abbrNum(Dis[1], 4);
+    Dis[2]=abbrNum(Dis[2], 4);
+    Dis[3]=abbrNum(Dis[3], 4);
+
+    Ava[0]=abbrNum(Ava[0], 4);
+    Ava[1]=abbrNum(Ava[1], 4);
+    Ava[2]=abbrNum(Ava[2], 4);
+    Ava[3]=abbrNum(Ava[3], 4);
+
+    //SLA-Violation Information
+    breached=data.kpis["sstob.sla"].data[0].values[0].data[0][1];
+    breached=SeparateNumber(breached);
+    TotalSla=data.kpis["sstob.sla"].data[0].values[0].data[0][2];
+    TotalSla=SeparateNumber(TotalSla);
+    //Network Availability
+    currentMonth=data.kpis["sstob.avb"].data[0].values[0].data[0][1];
+    lastMonth=data.kpis["sstob.avb"].data[0].values[0].data[1][1];
+
+    //},
+    /*error:function(result){
+     console.log(result);
+    //}*/
   }
-}
-if (data.kpis["sstob.atmcash"].data.length===2) {
-  for (var h = 2; h <= 3; h++) {
-    Dis[h]="";
-    Ava[h]="";
-    Instances[h]="";
+  else {
+    alert(data.Error);
   }
-}
-if (data.kpis["sstob.atmcash"].data.length===3) {
-    Dis[3]="";
-    Ava[3]="";
-    Instances[3]="";
-}
-
-Dis[0]=abbrNum(Dis[0], 4);
-Dis[1]=abbrNum(Dis[1], 4);
-Dis[2]=abbrNum(Dis[2], 4);
-Dis[3]=abbrNum(Dis[3], 4);
-
-Ava[0]=abbrNum(Ava[0], 4);
-Ava[1]=abbrNum(Ava[1], 4);
-Ava[2]=abbrNum(Ava[2], 4);
-Ava[3]=abbrNum(Ava[3], 4);
-
-//SLA-Violation Information
-breached=data.kpis["sstob.sla"].data[0].values[0].data[0][1];
-breached=SeparateNumber(breached);
-TotalSla=data.kpis["sstob.sla"].data[0].values[0].data[0][2];
-TotalSla=SeparateNumber(TotalSla);
-//Network Availability
-currentMonth=data.kpis["sstob.avb"].data[0].values[0].data[0][1];
-lastMonth=data.kpis["sstob.avb"].data[0].values[0].data[1][1];
-
-},
-
-error:function(result){
- console.error(result);
-}
-
 });
 
 //Select KPI widgets
 
 $.ajax({
-  type: "get",
+  type: "GET",
   url: "js/preferences.json",
   dataType:"json",success: function (data) {
 
@@ -555,8 +558,8 @@ $(data).each(function (index, data) {$('.widgets').html(
           "<div class='widget-information'>"+
             "<ul class='ul-widgetT'>"+
             "<li class='today'><span>TODAY</span></li>"+
-            "<li><span class='information-T'>"+TransactionsSecond+"</span><span class='glyphicon glyphicon-triangle-bottom icon-down'></span><span class='info-percentd'>2%</span></li>"+
-            "<li class='info-avg'>AVG. 40</li>"+
+            "<li><span class='information-T'>"+TransactionsSecond+"</span><span class='glyphicon glyphicon-triangle-bottom icon-down'></span><span class='info-percentd'>%</span></li>"+
+            "<li class='info-avg'>AVG</li>"+
             "</ul>"+
           "</div>"+
 

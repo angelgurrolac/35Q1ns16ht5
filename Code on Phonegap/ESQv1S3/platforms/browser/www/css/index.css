@@ -91,6 +91,7 @@ a:focus, a:hover{
 
 
 /*Log In*/
+
 .img-login{
   padding-top: 25px;
   width: 100px;
@@ -126,9 +127,11 @@ a:focus, a:hover{
 ::-webkit-input-placeholder {
     color: rgba(255, 255, 255, 0.6);
 }
+
 .img-border {
-    border: 3px solid white;
+   border: 3px solid white;
 }
+
 /*Button Login*/
 .btn-sign{
   background          : #462255;
@@ -196,8 +199,8 @@ border-radius : 57px;
 
 .logo-esq{
   height: 40%;
-  padding: 3%;
   margin-top: 4px;
+  padding: 3%;
 }
 #back {
   cursor      : pointer;
@@ -352,7 +355,7 @@ input:checked + .slider:before {
 .widgets {
     border  : 1px ;
     position: relative;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     bottom: 10px;
 }
 
@@ -550,7 +553,6 @@ input:checked + .slider:before {
 /* Critical */
 .widget-critical{
   margin-top:30px;
-  margin-left: 15px;
 }
 .info-CF{
   padding: 0;
@@ -886,7 +888,7 @@ input.error{border:1px solid red;}
     color             : #E06060;
     letter-spacing    : 0px;
     padding           : 8px;
-    width             : 40px;
+    width             : 55px;
     text-align        : center;
     outline           : none;
 }
@@ -903,6 +905,7 @@ input.error{border:1px solid red;}
 .values-widget {
   border-bottom: none;
   padding      : 15px;
+  margin-bottom: 10px;
 }
 
 .values-widget + .values-widget{
@@ -915,7 +918,14 @@ input.error{border:1px solid red;}
 }
 
 .notification-values{
-  float : right;
+  text-align: center;
+  position: absolute;
+}
+
+.notification-valuescf{
+  text-align: center;
+  position: absolute;
+  right: 25%;
 }
 
 .space-work{
@@ -926,6 +936,14 @@ input.error{border:1px solid red;}
 .save-notification{
   text-align: center;
   margin-top: 70%;
+}
+
+.help-block{
+ display: block;
+ margin-top: 2px;
+ margin-left: 0;
+ margin-bottom: 10px;
+ color: #a94442 ;
 }
 /*Button save notification Critical-Failures*/
 .save-notification-cf{
@@ -1328,6 +1346,10 @@ body.modalBlur > *:not(.modal) {
  padding-right: 10%;
 }
 
+/*Media queries*/
+
+/* Mobile */
+
 #radialChart{
   padding: 0px;
 }
@@ -1351,140 +1373,161 @@ body.modalBlur > *:not(.modal) {
     top: 10px;
 }
 .workToday{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
 }
 .workWeek{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
   text-align: justify;
 }
 .workMonthly{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
   text-align: justify;
 }
 
 .transToday{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
 }
 .transWeek{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
   text-align: justify;
 }
 .transMonthly{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
   text-align: justify;
 }
 
 .approToday{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
 }
 .approWeek{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
   text-align: justify;
 }
 .approMonthly{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
   text-align: justify;
 }
 
 .transSecToday{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
 }
 .transSecWeek{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
   text-align: justify;
 }
 .transSecMonthly{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
   text-align: justify;
 }
 
 .responseToday{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
 }
 .responseWeek{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
   text-align: justify;
 }
 .responseMonthly{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
   text-align: justify;
 }
 
 .originToday{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
 }
 .originWeek{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
   text-align: justify;
 }
 .originMonthly{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
   text-align: justify;
 }
 
 .slaToday{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
 }
 .slaWeek{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
   text-align: justify;
 }
 .slaMonthly{
+  height: 60%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
   text-align: justify;
 }
 
 .netYearly{
+  height: 65%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   margin-bottom: 0px;
   padding-left: 15px;
 }
-/*Media queries*/
+/*media queries*/
 
-/* Mobile */
 @media (max-width: 1200px) {
     #menu_smartphone {
         left :-1200px;
@@ -1523,25 +1566,100 @@ body.modalBlur > *:not(.modal) {
 
 }
 @media (min-width : 1024px){
+  .title-menu-trends{
+    margin-top: 50px;
+  }
   .btn-trend{
     position: absolute;
     left: -35%;
-    top: 70%;
+    top: 95%;
   }
   .dropdown-trends{
     position: absolute;
     left: -40%;
-    top: 70%;
+    top: 95%;
+  }
+  .workToday{
+    height: 80%;
+  }
+  .workWeek{
+    height: 80%;
+  }
+  .workMonthly{
+    height: 80%;
+  }
+
+  .transToday{
+    height: 80%;
+  }
+  .transWeek{
+    height: 80%;
+  }
+  .transMonthly{
+    height: 80%;
+  }
+
+  .approToday{
+    height: 80%;
+  }
+  .approWeek{
+    height: 80%;
+  }
+  .approMonthly{
+    height: 80%;
+  }
+
+  .originToday{
+    height: 80%;
+  }
+  .originWeek{
+    height: 80%;
+  }
+  .originMonthly{
+    height: 80%;
+  }
+
+  .transSecToday{
+    height: 80%;
+  }
+  .transSecWeek{
+    height: 80%;
+  }
+  .transSecMonthly{
+    height: 80%;
+  }
+
+  .responseToday{
+    height: 80%;
+  }
+  .responseWeek{
+    height: 80%;
+  }
+  .responseMonthly{
+    height: 80%;
+  }
+
+  .slaToday{
+    height: 80%;
+  }
+  .slaWeek{
+    height: 80%;
+  }
+  .slaMonthly{
+    height: 80%;
   }
 }
 @media (max-width : 1024px) {
-   #menu_smartphone {
-     left      :-1024px;
-     width     :1024px;
-  }
+ #menu_smartphone {
+   left      :-1024px;
+   width     :1024px;
+}
+
+
   .dropdown-trends{
   /*left: 40%;*/
   }
+
   .logo-esq {
     width: 18%;
     padding-top: 0;
@@ -1568,9 +1686,11 @@ body.modalBlur > *:not(.modal) {
   .space-row-about {
     margin-top: 20%;
   }
+
   .space-row-feedback {
-    margin-top: 3%;
-  }
+   margin-top: 3%;
+ }
+
   .hamburguer {
     margin-top: 5%;
     margin-left: 3%;
@@ -1605,21 +1725,33 @@ body.modalBlur > *:not(.modal) {
    margin-top: 0;
   }
   .background-version{
-    margin-top: 80px;
-    margin-bottom: -50px;
-  }
-  .navcontent {
-    padding-top: 60px;
-  }
+   margin-top: 80px;
+   margin-bottom: -50px;
+ }
+ .navcontent {
+   padding-top: 60px;
+ }
+ .info-SLA {
+   margin-top: 25%;
+ }
+ .notification-values {
+   right: 30%;
+ }
 }
 @media (max-width : 768px) {
   #menu_smartphone {
     left      :-768px;
     width     :768px;
   }
+
+
   .dropdown-trends{
     left: 37%;
   }
+
+  .space-row-feedback {
+     margin-top: 7%;
+   }
 
   .logo-esq {
     width: 63px;
@@ -1635,9 +1767,7 @@ body.modalBlur > *:not(.modal) {
     margin-top: 15px;
     margin-left: 0;
   }
-  .space-row-feedback {
-    margin-top: 7%;
-  }
+
   .back-icon {
     margin-top: 20px;
   }
@@ -1696,18 +1826,25 @@ body.modalBlur > *:not(.modal) {
    margin-top: 0;
   }
   .background-version{
-        margin-top: 75px;
-    margin-bottom: -47px;
+      margin-top: 75px;
+     margin-bottom: -47px;
+   }
+   .navcontent {
+     padding-top: 63px;
   }
-  .navcontent {
-    padding-top: 63px;
-}
+  .info-SLA {
+    margin-top: 30%;
+  }
+  .notification-values {
+     right: 25%;
+   }
 }
 @media (max-width : 768px) and (orientation: landscape) {
   .workToday{
     position: relative;
     bottom: 0;
     margin-bottom: 0px;
+    height: 400px;
   }
   .workWeek{
     position: relative;
@@ -1718,12 +1855,14 @@ body.modalBlur > *:not(.modal) {
     position: relative;
     bottom: 0;
     margin-bottom: 0px;
+    height: 400px;
   }
 
   .transToday{
     position: relative;
     bottom: 0;
     margin-bottom: 0px;
+    height: 400px;
   }
   .transWeek{
     position: relative;
@@ -1734,12 +1873,14 @@ body.modalBlur > *:not(.modal) {
     position: relative;
     bottom: 0;
     margin-bottom: 0px;
+    height: 400px;
   }
 
   .approToday{
     position: relative;
     bottom: 0;
     margin-bottom: 0px;
+    height: 400px;
   }
   .approWeek{
     position: relative;
@@ -1750,12 +1891,14 @@ body.modalBlur > *:not(.modal) {
     position: relative;
     bottom: 0;
     margin-bottom: 0px;
+    height: 400px;
   }
 
   .transSecToday{
     position: relative;
     bottom: 0;
     margin-bottom: 0px;
+    height: 400px;
   }
   .transSecWeek{
     position: relative;
@@ -1766,12 +1909,14 @@ body.modalBlur > *:not(.modal) {
     position: relative;
     bottom: 0;
     margin-bottom: 0px;
+    height: 400px;
   }
 
   .responseToday{
     position: relative;
     bottom: 0;
     margin-bottom: 0px;
+    height: 400px;
   }
   .responseWeek{
     position: relative;
@@ -1782,12 +1927,14 @@ body.modalBlur > *:not(.modal) {
     position: relative;
     bottom: 0;
     margin-bottom: 0px;
+    height: 400px;
   }
 
   .originToday{
     position: relative;
     bottom: 0;
     margin-bottom: 0px;
+    height: 400px;
   }
   .originWeek{
     position: relative;
@@ -1798,12 +1945,14 @@ body.modalBlur > *:not(.modal) {
     position: relative;
     bottom: 0;
     margin-bottom: 0px;
+    height: 400px;
   }
 
   .slaToday{
     position: relative;
     bottom: 0;
     margin-bottom: 0px;
+    height: 400px;
   }
   .slaWeek{
     position: relative;
@@ -1814,6 +1963,7 @@ body.modalBlur > *:not(.modal) {
     position: relative;
     bottom: 0;
     margin-bottom: 0px;
+    height: 400px;
   }
   .menu-trends {
     padding-top: 2%;
@@ -1822,13 +1972,23 @@ body.modalBlur > *:not(.modal) {
   .back-icon-white, .back-icon {
     margin-top: 20px;
   }
+
+  .netYearly{
+    height: 500px;
+    position: relative;
+    bottom: 0;
+    margin-bottom: 0px;
+    margin-top: 50px;
+  }
 }
 
 @media (max-width : 414px) {
   #menu_smartphone {
     left      :-414px;
     width     :414px;
-  }
+}
+
+
   .dropdown-trends{
     left: 25%;
   }
@@ -1857,7 +2017,7 @@ body.modalBlur > *:not(.modal) {
     padding: 0;
   }
   .img-border{
-  width : 40%;
+    width : 40%;
   }
   .space-row{
     margin-top: 20%;
@@ -1880,18 +2040,25 @@ body.modalBlur > *:not(.modal) {
     margin-top: 7%;
   }
   .save-notification {
-    margin-top: 70%;
+    margin-top: 65%;
   }
   .text-icons {
     margin-top: 20%;
   }
   .background-version{
-    margin-top: 0;
-    margin-bottom: 0;
+     margin-top: 0;
+     margin-bottom: 0;
   }
   .navcontent{
-  padding-top: 57px;
-}
+    padding-top: 57px;
+  }
+  .info-SLA {
+    margin-top: 30%;
+  }
+
+  .notification-values{
+     right: 5%;
+   }
 }
 
 /*Transitions*/
@@ -2109,8 +2276,10 @@ body.modalBlur > *:not(.modal) {
   z-index: 1;
   padding-top: 10px;
   padding-bottom: 5px;
+}/*
+.navcontent{
+  padding-top: 53px;
 }
-
 /*Five minutes filter icon*/
 .update-icon{
   margin-right: 20px;

@@ -1,7 +1,7 @@
 /*Import the font to aply on the text*/
 @font-face {
     font-family: "SFUIDisplay-Regular";
-    src: url(font/SF-UI-Display/SF-UI-Display-Regular.otf) format("opentype");
+    src: url(../fonts/font/SF-UI-Display/SF-UI-Display-Regular.otf) format("opentype");
 }
 /*Hide the domain label*/
 .y.axis .domain {

@@ -1,6 +1,6 @@
 @font-face {
     font-family: "SFUIDisplay-Regular";
-    src: url(font/SF-UI-Display/SF-UI-Display-Regular.otf) format("opentype");
+    src: url(../fonts/font/SF-UI-Display/SF-UI-Display-Regular.otf) format("opentype");
 }
 
 svg{

@@ -40,31 +40,35 @@
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js" ></script>
+     <script src="js/form-validator.min.js" ></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
-
 <script>
 
 $(document).ready(function(){
 
-//Functions that allow you to insert notifications settings.  
+//Functions that allow you to insert notifications settings.
 
 positionService = 0;
 
-    $(document).on("click touchstart","#out-service",function(e){
+$(document).on("click touchstart","#out-service",function(e){
     // Stop acting like a button
         e.preventDefault();
         //Add the option settings in the title selected
         fieldName = "Oservice";
         positionPanel = 0;
         positionService = positionService + 1;
-        var html = values(fieldName, positionService, positionPanel); 
-         $(".outOfService").append(html);    
+        var html = values(fieldName, positionService, positionPanel);
+         $(".outOfService").append(html);
+
+        $.validate({
+        errorMessagePosition : 'top' // Instead of 'inline' which is default
+        });
     });
 
 positionComm = 0;
 
-    $(document).on("click touchstart","#communication-icon",function(e){
+$(document).on("click touchstart","#communication-icon",function(e){
     // Stop acting like a button
         e.preventDefault();
         //Add the option settings in the title selected
@@ -73,10 +77,14 @@ positionComm = 0;
         positionComm = positionComm + 1;
         var html = values(fieldName, positionComm, positionPanel);
          $(".notification-communication").append(html);
-    });
+
+        $.validate({
+        errorMessagePosition : 'top' // Instead of 'inline' which is default
+        });
+});
 
 positionOut = 0;
-    $(document).on("click touchstart","#out-cash-icon",function(e){
+$(document).on("click touchstart","#out-cash-icon",function(e){
     // Stop acting like a button
         e.preventDefault();
         //Add the option settings in the title selected
@@ -85,10 +93,14 @@ positionOut = 0;
         positionOut = positionOut + 1;
         var html = values(fieldName, positionOut, positionPanel);
          $(".notification-cash").append(html);
-    });
+
+        $.validate({
+        errorMessagePosition : 'top' // Instead of 'inline' which is default
+        });
+});
 
 positionPrinter = 0;
-    $(document).on("click touchstart","#printer",function(e){
+$(document).on("click touchstart","#printer",function(e){
     // Stop acting like a button
         e.preventDefault();
         //Add the option settings in the title selected
@@ -97,10 +109,14 @@ positionPrinter = 0;
         positionPrinter = positionPrinter + 1;
         var html = values(fieldName, positionPrinter, positionPanel);
          $(".notification-printer").append(html);
-    });
+
+        $.validate({
+        errorMessagePosition : 'top' // Instead of 'inline' which is default
+        });
+});
 
 positionOther = 0;
-    $(document).on("click touchstart","#other",function(e){
+$(document).on("click touchstart","#other",function(e){
     // Stop acting like a button
         e.preventDefault();
         //Add the option settings in the title selected
@@ -110,7 +126,11 @@ positionOther = 0;
         var html = values(fieldName, positionOther, positionPanel);
          $(".notification-other").append(html);
 
-    });
+        $.validate({
+        errorMessagePosition : 'top' // Instead of 'inline' which is default
+        });
+
+});
 
 //function html with all the notification options
 
@@ -126,18 +146,19 @@ positionOther = 0;
                         html += '<li><a class="option-notification" href="javascript:void(0);" id="position-' + positionPanel + '' + position + '">BELOW</a></li>';
                     html += '</ul>';
                 html += '</div>';
-                html += '<div class="notification-values">';
+                html += '<div class="notification-valuescf">';
                     html += '<form  method="POST" class="select-percent" id="select-percent">';
                         html += '<input type="button" value="-" class="less" field="'+ field + '' + position + '"/>';
-                        html += '<input type="number" name="' + field + '' + position +'" value="0" class="percent"  inputmode="numeric" pattern="[0-9]*" id="position-' + positionPanel + '' + position + '" onKeyUp="if(this.value>100){this.value=0;}else if(this.value<0){this.value=0;}"/>';
+                        html += '<input type="number" name="' + field + '' + position +'" value="0" class="percent"  inputmode="numeric" pattern="[0-9]*" id="position-' + positionPanel + '' + position + '" onKeyUp="if(this.value>100){this.value=0;}else if(this.value<0){this.value=0;}" data-validation="number" data-validation-allowing="range[0;100]" data-validation-error-msg="Invalid value"/>';
                         html += '<span class="label-percent">%</span>';
                         html += '<input type="button" value="+" class="plus" field="'+ field + '' + position +'"/>';
-                        html += '<a class="remove less-icon" id="position-' + positionPanel + '' + position + '"></a>';
-                    html += '</form>';
+                        html += '</form>';
                 html += '</div>';
-            html += '</div>';
+                html += '<a class="less-icon remove" id="position-' + positionPanel + '' + position + '"></a>';
+                html += '</div>';
             return html;
-    }
+}
+
 
 // This button will increment the value
     $(document).on("click touchstart",".plus", function(e){
@@ -175,12 +196,12 @@ $(document).on("click touchstart",".less",function(e) {
         }
 });
 
-//This button remove the notifications settings   
+//This button remove the notifications settings
 $(document).on("click touchstart",".remove",function(e){
     // Stop acting like a button
         e.preventDefault();
 //Var iddiv select the ID you want remover
-var iddiv = $(this).parent().parent().parent().attr("id");
+var iddiv = $(this).attr("id");
 
 //Animation
   $("#" + iddiv).hide( "fast", function() {
@@ -190,7 +211,7 @@ var iddiv = $(this).parent().parent().parent().attr("id");
 });
 
 
-//Add the value selected in every notifications settings button 
+//Add the value selected in every notifications settings button
 $(document).on("click",".dropdown-menu li a",function() {
     var idb = $(this).attr("id");
     var selText = $(this).text();
@@ -208,14 +229,15 @@ var inputext = $(".percent").attr('id');
 var vt = $('button[name='+btntext+']').text();
 var prct2 =$('input[id='+inputext+']').val();
 
-console.log(vt, prct2);
 
 });
+
+
 
 });
 
 </script>
-    
+
 <div class="row row-border">
     <div class="col-md-1 col-sm-1 col-xs-2 text-center"><a class="encabezado back-icon" href="index.html"></a></div>
     <div class="col-md-10 col-sm-10 col-xs-8 text-center"><h1 class="title-menu">NOTIFICATIONS SETTINGS</h1></div>
@@ -295,7 +317,6 @@ console.log(vt, prct2);
     </div>
     <div class="col-lg-1 col-md-1 col-sm-1"></div>
 </div>
-
 
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript"> app.initialize(); </script>

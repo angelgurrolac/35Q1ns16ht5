@@ -1,10 +1,10 @@
 @font-face {
     font-family: "SFUIDisplay-Regular";
-    src: url(../BarCharHorWeekWORKING/font/SF-UI-Display/SF-UI-Display-Regular.otf) format("opentype");
+    src: url(../fonts/font/SF-UI-Display/SF-UI-Display-Regular.otf) format("opentype");
 }
 @font-face {
     font-family: "SFUIDisplay-Bold";
-    src: url(../BarCharHorWeekWORKING/font/SF-UI-Display/SF-UI-Display-Bold.otf) format("opentype");
+    src: url(../fonts/font/SF-UI-Display/SF-UI-Display-Bold.otf) format("opentype");
 }
 /**
  * Variable power
@@ -130,4 +130,12 @@
 .shadowMont{
   -webkit-filter: drop-shadow( 0px 0px 3px #9B9B9B );
   filter: drop-shadow( 0px 0px 3px #9B9B9B );
+}
+@media (min-width : 768px) {
+  .lineChart--xAxisTicks .tick text {
+    font-size: 15px;
+  }
+  .lineChart--yAxisTicks .tick text{
+    font-size: 13px;
+  }
 }

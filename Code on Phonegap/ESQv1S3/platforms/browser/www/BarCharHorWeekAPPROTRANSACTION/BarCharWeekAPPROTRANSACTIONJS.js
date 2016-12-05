@@ -5,7 +5,7 @@ $(document).ready(function() {
 
   var margin = {top: 20, right: 30, bottom: 20, left: 30},
     width =  $('.approWeek').width(),
-    height = 400;
+    height = $('.approToday').height();
 
   var formatPercent = d3.format(".0%");
 
@@ -209,8 +209,8 @@ $(document).ready(function() {
               yPosition = 12;
             }
             //console.log(yPosition);
-            if (xPosition >= width - 120 ){
-              xPosition = width - 120;
+            if (xPosition >= width - 140 ){
+              xPosition = width - 140;
             }
             else if(xPosition <= 29){
               xPosition = 5;

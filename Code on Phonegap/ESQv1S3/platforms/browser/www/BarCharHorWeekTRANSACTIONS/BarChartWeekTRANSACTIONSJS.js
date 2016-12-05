@@ -5,7 +5,7 @@ $(document).ready(function() {
   var percent;
   var margin = {top: 20, right: 30, bottom: 20, left: 30},
     width = $(".transWeek").width(),
-    height = 400;
+    height = $(".transToday").height();
 
   var formatPercent = d3.format(".0%");
   var formatNumber = d3.format("0,000");

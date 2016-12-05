@@ -57,11 +57,6 @@ body {
   font-size: 14px;
   fill: #462255;
 }
-.textTooltipPercent{
-  font-family: SFUIDisplay-Regular;
-  font-size: 14px;
-  fill: #9B9B9B;
-}
 .textTooltipDay{
   font-family: SFUIDisplay-Regular;
   font-size: 10px;
@@ -74,10 +69,6 @@ body {
 }
 .x.axis .tick:first-of-type{
   	display: none;
-}
-.sombra{
-   -webkit-filter: drop-shadow( 0px 0px 8px rgba(245, 146, 146, 1) );
-   filter: drop-shadow( 0px 0px 8px rgba(245, 146, 146, 1) );
 }
 @media (min-width : 768px) {
   .x.axis text {
